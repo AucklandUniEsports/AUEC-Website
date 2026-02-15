@@ -6,7 +6,7 @@ import SponsorCard from "./components/SponsorCard";
 const sponsors = [
   {
     link:"https://www.facebook.com/StandingFierce/",
-    img:"standing_fierce.png"
+    img:"standing_fierce.webp"
   },
   {
     link:"https://zowie.benq.com/en-au/index.html",
@@ -14,7 +14,7 @@ const sponsors = [
   },
   {
     link:"https://gameon.co.nz/",
-    img:"game_on.png"
+    img:"game_on.webp"
   }
 
 ]
@@ -58,10 +58,10 @@ export default async function Home() {
       <div className="divider"></div>
       <section className="home-c">
           <div className="home-c-img-wrapper-outer">
-            <div className="home-c-img-wrapper-left"><img className="home-c-img" src="DSC00032.JPG" alt="" /></div>
+            <div className="home-c-img-wrapper-left"><img className="home-c-img" src="DSC00032.webp" alt="" /></div>
             <div className="home-c-img-wrapper-right">
-              <img className="home-c-img" src="DSC07430.JPG" alt="" />
-              <img className="home-c-img" src="DSC00276.JPG" alt="" />
+              <img className="home-c-img" src="DSC07430.webp" alt="" />
+              <img className="home-c-img" src="DSC00276.webp" alt="" />
             </div>
           </div>
           <h2 className="home-c-title">Meet the Esports Club.</h2>

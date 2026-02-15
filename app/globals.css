@@ -414,7 +414,7 @@ main {
 
 
 .home-a {
-  background-image: url(../public/background.png);
+  background-image: url(../public/background.webp);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
