@@ -1,0 +1,123 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model CategoriesOnEvents {
+  eventId    Int
+  categoryId Int
+  assignedAt DateTime @default(now())
+  Category   Category @relation(fields: [categoryId], references: [id])
+  Event      Event    @relation(fields: [eventId], references: [id])
+
+  @@id([eventId, categoryId])
+}
+
+model Category {
+  id                 Int                  @id @default(autoincrement())
+  createdAt          DateTime             @default(now())
+  name               String               @unique
+  CategoriesOnEvents CategoriesOnEvents[]
+}
+
+model Event {
+  id                 Int                  @id @default(autoincrement())
+  createdAt          DateTime             @default(now())
+  name               String               @unique
+  date               DateTime
+  description        String
+  link               String
+  locationId         Int
+  thumbnailPath      String
+  CategoriesOnEvents CategoriesOnEvents[]
+  Location           Location             @relation(fields: [locationId], references: [id])
+}
+
+model Location {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  name      String   @unique
+  color     String   @unique
+  Event     Event[]
+}
+
+model Sponsor {
+  id            Int         @id @default(autoincrement())
+  createdAt     DateTime    @default(now())
+  name          String      @unique
+  sponsorTierId Int
+  SponsorTier   SponsorTier @relation(fields: [sponsorTierId], references: [id])
+}
+
+model SponsorTier {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  name      String    @unique
+  Sponsor   Sponsor[]
+}
+
+model account {
+  id                    String    @id
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime
+  user                  user      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model session {
+  id             String   @id
+  expiresAt      DateTime
+  token          String   @unique
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime
+  ipAddress      String?
+  userAgent      String?
+  userId         String
+  impersonateBy  String?
+  impersonatedBy String?
+  user           user     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model user {
+  id            String    @id
+  createdAt     DateTime  @default(now())
+  email         String    @unique
+  name          String
+  emailVerified Boolean   @default(false)
+  image         String?
+  updatedAt     DateTime
+  banExpires    DateTime?
+  banReason     String?
+  banned        Boolean?
+  role          String?   @default("user")
+  account       account[]
+  session       session[]
+}
+
+model verification {
+  id         String   @id
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime
+
+  @@index([identifier])
+}
