@@ -4,7 +4,7 @@ import SocialMediaLinkBar from "../SocialMediaLinkBar";
 const FooterLinks = [
     {
         title: "Brand Kit",
-        link: "https://docs.google.com/document/d/1y3Gi6v5fEPRcjT7t76X0sTmYh6dcyaDc2lDCk3_h1VI/edit?usp=sharing"
+        link: "https://drive.google.com/drive/folders/1OHntE402jAApx0g-LOMj0Q6p1Pinmh8i?usp=sharing"
     },
     {
         title: "Club Constitution",
@@ -12,7 +12,7 @@ const FooterLinks = [
     },
         {
         title: "Sponsorship Deck",
-        link: "mailto:uoaesports@gmail.com"
+        link: "AUEC 2026 Sponsorship Deck.pdf"
     }
 ];
 
@@ -37,8 +37,8 @@ export default function Footer(){
                         </div>
                         <div>
                             <p>Contact</p>
-                            <FooterLink title={"Address: 11 Symonds Street, Auckland 1010, New Zealand"} link={""}/>
-                            <FooterLink title={"Email: uoaesports@gmail.com"} link={""}/>
+                            <FooterLink title={"Address: 11 Symonds Street, Auckland 1010, New Zealand"} link="https://maps.app.goo.gl/j8eVGiy8MUAXRWra8"/>
+                            <FooterLink title={"Email: uoaesports@gmail.com"} link="mailto:uoaesports@gmail.com"/>
                         </div>
                     </div>
                 </div>
