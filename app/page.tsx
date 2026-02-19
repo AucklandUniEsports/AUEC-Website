@@ -6,7 +6,7 @@ import SponsorCard from "./components/SponsorCard";
 const sponsors = [
   {
     link:"https://www.facebook.com/StandingFierce/",
-    img:"standing_fierce.webp"
+    img:"standing-fierce.svg"
   },
   {
     link:"https://zowie.benq.com/en-au/index.html",
@@ -14,7 +14,7 @@ const sponsors = [
   },
   {
     link:"https://gameon.co.nz/",
-    img:"game_on.webp"
+    img:"game-on.svg"
   }
 
 ]
@@ -35,7 +35,7 @@ export default async function Home() {
     <>
       <section className="home-a atf-section">
         <div className="home-a-content">
-          <h1 className="home-a-title">For The Love <br /> of The Game.</h1>
+          <h1 className="home-title">For The Love <br /> of The Game.</h1>
           <p className="standard-text">Auckland University Esports Club (AUEC) is New Zealand's biggest student e-sports organization, empowering players to compete and enjoy gaming with their peers.</p>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"  target="_blank" className="button-standard button-lime">
@@ -58,13 +58,13 @@ export default async function Home() {
       <div className="divider"></div>
       <section className="home-c">
           <div className="home-c-img-wrapper-outer">
-            <div className="home-c-img-wrapper-left"><img className="home-c-img" src="DSC00032.webp" alt="" /></div>
+            <div className="home-c-img-wrapper-left"><img className="home-c-img-left" src="DSC00032.webp" alt="" /></div>
             <div className="home-c-img-wrapper-right">
-              <img className="home-c-img" src="DSC07430.webp" alt="" />
-              <img className="home-c-img" src="DSC00276.webp" alt="" />
+              <img className="home-c-img-right" src="DSC07430.webp" alt="" />
+              <img className="home-c-img-right" src="DSC00276.webp" alt="" />
             </div>
           </div>
-          <h2 className="home-c-title">Meet the Esports Club.</h2>
+          <h2 className="home-title">Meet the <br /> Esports Club.</h2>
           <p className="standard-text">
             From fighting game locals to interclub tournaments, our team runs a bunch of events for the community and puts a lot of work into our broadcasts for the folks at home. Whether you want to grind matches or get involved behind the scenes, AUEC has a place for you.
           </p>

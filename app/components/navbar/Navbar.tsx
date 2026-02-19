@@ -32,13 +32,13 @@ export default function Navbar(){
                                 }
                                 <a href="AUEC 2026 Sponsorship Deck.pdf" target="_blank">
                                     <li className="nav-item" onClick={() => setOpen(false)}>
-                                        <h1 className="page-heading-title">SPONSORS</h1>
+                                        <h1 className="nav-item-title">Sponsors</h1>
                                         <p className="nav-item-index">04</p>
                                     </li>
                                 </a>
                                 <a href="mailto:uoaesports@gmail.com">
                                     <li className="nav-item" onClick={() => setOpen(false)}>
-                                        <h1 className="page-heading-title">CONTACT</h1>
+                                        <h1 className="nav-item-title">Contact</h1>
                                         <p className="nav-item-index">05</p>
                                     </li>
                                 </a>
