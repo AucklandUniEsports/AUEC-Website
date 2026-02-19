@@ -3,7 +3,7 @@ import SocialMediaLink from "./SocialMediaLink";
 const SocialMediaLinks = [
     {
         title:"Discord",
-        link:"discord.gg/ZmcUREd",
+        link:"http://discord.gg/ZmcUREd",
         icon:"discord.svg"
     },
     {
