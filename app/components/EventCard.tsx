@@ -29,6 +29,7 @@ export default function EventCard({event}:EventCardProps){
       year: "numeric",
       month: "long",
       day: "numeric",
+      timeZone: "UTC"
     };
     const [currentDate] = useState(() => new Date());
     const date = event.date.toLocaleDateString("en-NZ", options);
