@@ -58,9 +58,9 @@ export default function EventCard({event}:EventCardProps){
               </div>
             </div>
             <p className="event-card-countdown">
-              {(daysUntil >= 0) ?
-                `IN ${daysUntil} DAYS`
-                : `${daysDiff} DAYS AGO`
+              {(daysUntil > 0) ?
+                `IN ${daysUntil} DAYS` :
+                (daysUntil === 0) ? 'TODAY': `${daysDiff} DAYS AGO`
               
               }
             </p>
