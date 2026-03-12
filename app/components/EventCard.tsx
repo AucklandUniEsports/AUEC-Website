@@ -29,11 +29,23 @@ export default function EventCard({event}:EventCardProps){
       year: "numeric",
       month: "long",
       day: "numeric",
+      timeZone: "Pacific/Auckland"
     };
+  
     const [currentDate] = useState(() => new Date());
+    const nzDateFormatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Pacific/Auckland",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    
+    const eventDateNZ = new Date(nzDateFormatter.format(event.date) + "T00:00:00");
+    const currentDateNZ = new Date(nzDateFormatter.format(currentDate) + "T00:00:00");
+
     const date = event.date.toLocaleDateString("en-NZ", options);
     const oneDayMs = 1000 * 60 * 60 * 24; // 86,400,000 milliseconds
-    const daysUntil = Math.floor((event.date.getTime() - currentDate.getTime()) /oneDayMs);
+    const daysUntil = Math.floor((eventDateNZ.getTime() - currentDateNZ.getTime()) /oneDayMs);
     const daysDiff = Math.abs(daysUntil);
     return(
         <a className="event-card" href={event.link}>
@@ -46,9 +58,9 @@ export default function EventCard({event}:EventCardProps){
               </div>
             </div>
             <p className="event-card-countdown">
-              {(daysUntil >= 0) ?
-                `IN ${daysUntil} DAYS`
-                : `${daysDiff} DAYS AGO`
+              {(daysUntil > 0) ?
+                `IN ${daysUntil} DAYS` :
+                (daysUntil === 0) ? 'TODAY': `${daysDiff} DAYS AGO`
               
               }
             </p>
