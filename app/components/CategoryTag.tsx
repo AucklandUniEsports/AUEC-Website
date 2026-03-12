@@ -1,21 +1,22 @@
-type  CategoryTagProps =
-    |{
-        name: string;
-        htmlFor?: string;
-     }
-    |{
-        name: string;
-        htmlFor?: undefined;
-    };
+type CategoryTagProps =
+    | {
+          name: string;
+          htmlFor?: string;
+      }
+    | {
+          name: string;
+          htmlFor?: undefined;
+      };
 
-export default function CategoryTag(props: CategoryTagProps){
-    if (props.htmlFor){
-        return(
-                <label className="category-tag" htmlFor={props.htmlFor}>{props.name}</label>
-        )
-        
+export default function CategoryTag(props: CategoryTagProps) {
+    if (props.htmlFor) {
+        return (
+            <label className="category-tag" htmlFor={props.htmlFor}>
+                {props.name}
+            </label>
+        );
     }
-    return(
+    return (
         <li className="category-tag">
             <p>{props.name}</p>
         </li>
