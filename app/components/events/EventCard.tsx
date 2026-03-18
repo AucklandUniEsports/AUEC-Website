@@ -22,6 +22,14 @@ interface EventCardProps {
     };
 }
 
+function getEventDateText(daysUntil: number): string {
+    if (daysUntil > 1) return `IN ${daysUntil} DAYS`;
+    if (daysUntil === 1) return "TOMORROW";
+    if (daysUntil === 0) return "TODAY";
+    if (daysUntil === -1) return "YESTERDAY";
+    return `${Math.abs(daysUntil)} DAYS AGO`;
+}
+
 export default function EventCard({ event }: EventCardProps) {
     const options: Intl.DateTimeFormatOptions = {
         weekday: "long",
@@ -40,18 +48,17 @@ export default function EventCard({ event }: EventCardProps) {
     });
 
     const eventDateNZ = new Date(
-        nzDateFormatter.format(event.date) + "T00:00:00",
+        nzDateFormatter.format(event.date) + "T00:00:00"
     );
     const currentDateNZ = new Date(
-        nzDateFormatter.format(currentDate) + "T00:00:00",
+        nzDateFormatter.format(currentDate) + "T00:00:00"
     );
 
     const date = event.date.toLocaleDateString("en-NZ", options);
     const oneDayMs = 1000 * 60 * 60 * 24; // 86,400,000 milliseconds
     const daysUntil = Math.floor(
-        (eventDateNZ.getTime() - currentDateNZ.getTime()) / oneDayMs,
+        (eventDateNZ.getTime() - currentDateNZ.getTime()) / oneDayMs
     );
-    const daysDiff = Math.abs(daysUntil);
     return (
         <a className="event-card" href={event.link}>
             <div className="event-card-top">
@@ -66,11 +73,7 @@ export default function EventCard({ event }: EventCardProps) {
                     </div>
                 </div>
                 <p className="event-card-countdown">
-                    {daysUntil > 0
-                        ? `IN ${daysUntil} DAYS`
-                        : daysUntil === 0
-                          ? "TODAY"
-                          : `${daysDiff} DAYS AGO`}
+                    {getEventDateText(daysUntil)}
                 </p>
             </div>
             <img
