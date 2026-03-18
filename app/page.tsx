@@ -6,15 +6,19 @@ import SponsorCard from "./components/SponsorCard";
 const sponsors = [
     {
         link: "https://www.facebook.com/StandingFierce/",
-        img: "standing-fierce.svg",
+        img: "standing-fierce.webp",
     },
     {
         link: "https://zowie.benq.com/en-au/index.html",
-        img: "zowie.svg",
+        img: "zowie.webp",
     },
     {
         link: "https://gameon.co.nz/",
-        img: "game-on.svg",
+        img: "game-on.webp",
+    },
+    {
+        link: "https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/sport/EsportsArena.html",
+        img: "esports-arena.webp",
     },
 ];
 
