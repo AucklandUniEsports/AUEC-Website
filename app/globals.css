@@ -120,8 +120,8 @@ main {
 
 .navbar {
     align-items: center;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(8px);
+    --webkit-backdrop-filter: blur(8px);
     background: rgba(39, 39, 39, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 5px;
@@ -143,14 +143,59 @@ main {
     display: block;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
     .navbar-hamburger {
         display: none;
     }
 }
+@media (max-width: 1400px) {
+    .navbar-link {
+        display: none;
+    }
+}
+
+.navbar-items {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 24px;
+}
 
 .navbar-logo {
     width: 128px;
+}
+
+.navbar-link {
+    border-right: 1px solid white;
+    color: white;
+    padding-right: 24px;
+    padding-bottom: 4px;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.navbar-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: white;
+    transition: width 0.4s ease;
+}
+
+.navbar-link:hover::after {
+    width: calc(100% - 24px);
+}
+
+.navbar-link:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+.navbar-link:last-child:hover::after {
+    width: 100%;
 }
 
 .navbar-open {

@@ -23,6 +23,30 @@ export default function Navbar() {
                             alt=""
                         />
                     </a>
+                    <nav className="navbar-items">
+                        <a href="/" className="navbar-link">
+                            HOME
+                        </a>
+                        <a href="/events" className="navbar-link">
+                            EVENTS
+                        </a>
+                        <a href="/about " className="navbar-link">
+                            ABOUT
+                        </a>
+                        <a
+                            href="AUEC 2026 Sponsorship Deck.pdf"
+                            className="navbar-link"
+                            target="_blank"
+                        >
+                            SPONSORS
+                        </a>
+                        <a
+                            href="mailto:uoaesports@gmail.com"
+                            className="navbar-link"
+                        >
+                            CONTACT
+                        </a>
+                    </nav>
                     <div className="navbar-hamburger">
                         <Hamburger
                             size={28}
