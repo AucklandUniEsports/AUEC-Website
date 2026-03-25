@@ -23,7 +23,18 @@ const sponsors = [
 ];
 
 export default async function Home() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
     const events = await prisma.event.findMany({
+        where: {
+            date: {
+                gte: today,
+            },
+        },
+        orderBy: {
+            date: "asc",
+        },
+        take: 3,
         include: {
             CategoriesOnEvents: {
                 include: {
@@ -32,7 +43,6 @@ export default async function Home() {
             },
             Location: true,
         },
-        take: -3,
     });
     return (
         <>
