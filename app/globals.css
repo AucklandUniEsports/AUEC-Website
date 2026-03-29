@@ -130,9 +130,9 @@ main {
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
     color: #e2ff00;
     display: flex;
-    height: fit-content;
     justify-content: space-between;
     margin: 32px;
+
     padding: 16px 32px;
     position: fixed;
     width: calc(100% - 128px);
@@ -143,33 +143,22 @@ main {
     display: block;
 }
 
-@media (min-width: 1400px) {
-    .navbar-hamburger {
-        display: none;
-    }
-}
-@media (max-width: 1400px) {
-    .navbar-link {
-        display: none;
-    }
-}
-
 .navbar-items {
     display: flex;
     align-items: center;
     margin-left: auto;
-    gap: 24px;
+    gap: 2vw;
 }
 
 .navbar-logo {
-    width: 128px;
+    width: auto;
 }
 
 .navbar-link {
     border-right: 1px solid white;
     color: white;
-    padding-right: 24px;
-    padding-bottom: 4px;
+    padding-right: 2vw;
+    padding-bottom: 0.05vw;
     position: relative;
     text-decoration: none;
     transition: color 0.25s ease;
@@ -187,15 +176,15 @@ main {
 }
 
 .navbar-link:hover::after {
-    width: calc(100% - 24px);
+    width: calc(100% - 2vw);
 }
 
 .navbar-link:last-child {
     border-right: none;
-    padding-right: 0;
+    padding-right: 1vw;
 }
 .navbar-link:last-child:hover::after {
-    width: 100%;
+    width: 90%;
 }
 
 .navbar-open {
@@ -247,6 +236,30 @@ main {
     font-weight: 400;
     line-height: 80%;
     letter-spacing: 0.8px;
+}
+@media (min-width: 1400px) {
+    .navbar-hamburger {
+        display: none;
+    }
+    .navbar-link {
+        font-size: calc(10px + 0.5vw);
+    }
+    .navbar-logo {
+        max-height: 3vw;
+    }
+}
+@media (max-width: 1400px) {
+    .navbar {
+        height: calc(100% + 1vw);
+        max-height: 3vw;
+    }
+    .navbar-link {
+        display: none;
+    }
+    .navbar-logo {
+        height: calc(30px+ 1vw);
+        max-height: 8vw;
+    }
 }
 
 /* Layout Styles*/
