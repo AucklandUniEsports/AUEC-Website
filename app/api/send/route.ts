@@ -5,7 +5,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, email, category, message } = body;
+        const { name, email, category, message, website } = body;
+
+        if (website) {
+            // Return 200 OK so the bot thinks it succeeded.
+            return Response.json(
+                { success: true, message: "Message sent!" },
+                { status: 200 }
+            );
+        }
 
         const { data, error } = await resend.emails.send({
             from: "Brody <onboarding@resend.dev>", // Replace with your verified domain when going to production

@@ -52,6 +52,20 @@ export default function About() {
                 <div className="about-bottom">
                     <div className="about-bottom-section">
                         <form onSubmit={handleSubmit} className="contact-form">
+                            {/* Invisible Honeypot field*/}
+                            <input
+                                type="text"
+                                name="website"
+                                tabIndex={-1}
+                                autoComplete="off"
+                                style={{
+                                    position: "absolute",
+                                    opacity: 0,
+                                    top: "-9999px",
+                                    left: "-9999px",
+                                }}
+                            />
+
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input
