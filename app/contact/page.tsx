@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import StandardButton from "../components/StandardButton";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function About() {
     const [status, setStatus] = useState<string>("");
+    const [turnstileToken, setTurnstileToken] = useState<string>("");
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -14,6 +16,7 @@ export default function About() {
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
 
+        const payload = { ...data, turnstileToken };
         try {
             // Send data to your new API route
             const response = await fetch("/api/send", {
@@ -21,7 +24,7 @@ export default function About() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify(payload),
             });
 
             if (response.ok) {
@@ -120,6 +123,17 @@ export default function About() {
                                     rows={5}
                                     required
                                 ></textarea>
+                            </div>
+                            <div style={{ margin: "1rem 0" }}>
+                                <Turnstile
+                                    siteKey={
+                                        process.env
+                                            .NEXT_PUBLIC_TURNSTILE_SITE_KEY!
+                                    }
+                                    onSuccess={(token) =>
+                                        setTurnstileToken(token)
+                                    }
+                                />
                             </div>
 
                             <button
