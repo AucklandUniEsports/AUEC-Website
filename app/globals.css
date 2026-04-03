@@ -119,7 +119,7 @@ main {
 
 .events-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(550px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(550px, 100%), auto));
   gap: 24px;
 }
 
