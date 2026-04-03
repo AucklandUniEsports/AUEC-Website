@@ -66,6 +66,7 @@ main {
   background-color: #272727;
   border-radius: 5px;
   padding: 16px 16px 20px;
+  max-width: 900px;
 }
 
 .event-card-top {
@@ -113,7 +114,7 @@ main {
 
 .events-wrapper {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(min(550px, 100%), 1fr));
   gap: 24px;
 }
 
