@@ -57,7 +57,7 @@ export default function About() {
                             Behind the scenes, our team puts a lot of effort
                             into broadcast, creative design, and social media.
                             As a club, we want to create an environment where
-                            our staff can have fun and develop their skills.
+                            our staff can have fun and develop their skills. asd
                         </p>
                         <StandardButton
                             title="Join the Team."
