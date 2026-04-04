@@ -1,5 +1,5 @@
 import prisma from "@/lib/prisma";
-import SearchBar from "../components/events/SearchBar";
+import EventClient from "../components/events/EventClient";
 
 export default async function Events() {
     const events = await prisma.event.findMany({
@@ -17,8 +17,8 @@ export default async function Events() {
             <div className="home-b-top">
                 <h2 className="section-title">Explore Events</h2>
             </div>
-            <div className="searchbar-wrapper">
-                <SearchBar events={events} />
+            <div className="client-wrapper">
+                <EventClient events={events} />
             </div>
         </section>
     );
