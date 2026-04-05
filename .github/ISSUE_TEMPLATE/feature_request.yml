@@ -1,0 +1,37 @@
+name: Feature Request
+description: Describe a feature from the user's perspective
+title: "[FEATURE] "
+labels: []
+assignees: []
+
+body:
+    - type: input
+      id: summary
+      attributes:
+          label: Summary
+          placeholder: Short description of the feature
+      validations:
+          required: true
+
+    - type: textarea
+      id: problem
+      attributes:
+          label: What problem does this solve?
+          placeholder: Explain the problem
+      validations:
+          required: true
+
+    - type: textarea
+      id: solution
+      attributes:
+          label: Proposed solution
+          placeholder: What should happen?
+
+    - type: dropdown
+      id: priority
+      attributes:
+          label: Priority
+          options:
+              - Low
+              - Medium
+              - High
