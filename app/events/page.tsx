@@ -1,5 +1,5 @@
-import EventCard from "../components/events/EventCard";
 import prisma from "@/lib/prisma";
+import EventClient from "../components/events/EventClient";
 
 export default async function Events() {
     const events = await prisma.event.findMany({
@@ -17,10 +17,8 @@ export default async function Events() {
             <div className="home-b-top">
                 <h2 className="section-title">Explore Events</h2>
             </div>
-            <div className="events-wrapper">
-                {events.map((event, index) => (
-                    <EventCard event={event} key={index} />
-                ))}
+            <div className="client-wrapper">
+                <EventClient events={events} />
             </div>
         </section>
     );
