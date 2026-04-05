@@ -582,3 +582,16 @@ main {
     bottom: 32px;
   }
 } 
+
+.placeholder-text {
+  color: #ffffffca;
+  font-family: "Switzer";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.7px;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 1.2px;
+}
