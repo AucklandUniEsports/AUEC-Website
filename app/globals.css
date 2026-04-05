@@ -110,6 +110,12 @@ main {
     width: 100%;
 }
 
+.client-wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 24px;
+}
+
 .events-wrapper {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -117,9 +123,18 @@ main {
 }
 
 .searchbar {
-    margin-bottom: 10px;
     border-radius: 5px;
     border: none;
+    width: 200px;
+    height: 35px;
+    margin: auto;
+    background-color: #2727279c;
+    text-align: center;
+    color: white;
+}
+
+.searchbar:focus {
+    outline: none;
 }
 
 /* Navbar Styles */

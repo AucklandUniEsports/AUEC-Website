@@ -9,6 +9,7 @@ export default function SearchBar({ input, handleChange }: Input) {
         <input
             className="searchbar"
             value={input}
+            placeholder="Search for an event"
             onChange={(e) => handleChange(e.target.value)}
         ></input>
     );
