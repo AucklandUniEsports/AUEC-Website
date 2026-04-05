@@ -61,11 +61,11 @@ main {
 }
 
 .event-card {
-  cursor: pointer;
-  background-color: #272727;
-  border-radius: 5px;
-  padding: 16px 16px 20px;
-  max-width: 900px;
+    cursor: pointer;
+    background-color: #272727;
+    border-radius: 5px;
+    padding: 16px 16px 20px;
+    max-width: 900px;
 }
 
 .event-card-top {
@@ -108,9 +108,9 @@ main {
 }
 
 .event-card-thumbnail {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .client-wrapper {
@@ -120,9 +120,9 @@ main {
 }
 
 .events-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(550px, 100%), auto));
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(550px, 100%), auto));
+    gap: 24px;
 }
 
 .searchbar {
@@ -599,4 +599,17 @@ main {
     .navbar-open-bottom {
         bottom: 32px;
     }
+}
+
+.placeholder-text {
+    color: #ffffffca;
+    font-family: "Switzer";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.7px;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 1.2px;
 }
