@@ -74,11 +74,17 @@ export default async function Home() {
                         link="/events"
                     />
                 </div>
-                <div className="events-wrapper">
-                    {events.map((event, index) => (
-                        <EventCard event={event} key={index} />
-                    ))}
-                </div>
+                {events.length === 0 ? (
+                    <p className="placeholder-text">
+                        No featured events for now. Stay tuned!
+                    </p>
+                ) : (
+                    <div className="events-wrapper">
+                        {events.map((event, index) => (
+                            <EventCard event={event} key={index} />
+                        ))}
+                    </div>
+                )}
             </section>
             <div className="divider"></div>
             <section className="home-c">
