@@ -1,3 +1,4 @@
+
 ### **Description**
 
 <!-- Describe the issue -->
@@ -5,6 +6,8 @@
 - [What is this task and why does it matter?]
 - [Brief explanation of the feature/bug]
 - [Context/Where does this fit in the project?]
+
+---
 
 ### **Acceptance Criteria**
 
