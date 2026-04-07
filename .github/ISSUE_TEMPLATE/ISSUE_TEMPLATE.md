@@ -1,14 +1,14 @@
----
-name: Issue Template
-about: Describe a feature or functionality from the user's perspective
-title: "[ISSUE-TYPE] Short, descriptive title"
-labels: ""
-assignees: ""
----
+### **Description**
+
+<!-- Describe the issue -->
+
+- [What is this task and why does it matter?]
+- [Brief explanation of the feature/bug]
+- [Context/Where does this fit in the project?]
 
 ### **Acceptance Criteria**
 
-<!-- Define the conditions that must be met for this story to be complete: -->
+<!-- Define the conditions that must be met for this ticket to be complete: -->
 
 - [ ] The feature should [specific functionality].
 - [ ] Error states should be handled [describe errors].
@@ -21,8 +21,6 @@ assignees: ""
 <!-- Checklist of requirements that must be fulfilled before the issue can be considered complete -->
 
 - [ ] Acceptance criteria met
-- [ ] Agreed tests written
-- [ ] Agreed documentation in GitHub wiki
 - [ ] PR reviewed
 
 ---
