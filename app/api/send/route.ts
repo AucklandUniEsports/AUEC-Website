@@ -16,9 +16,9 @@ export async function POST(request: Request) {
         }
 
         const { data, error } = await resend.emails.send({
-            from: "Brody <onboarding@resend.dev>", // Replace with your verified domain when going to production
-            to: ["brodybrownlee3@gmail.com"],
-            replyTo: email, // This allows you to click "Reply" in your email client and reply directly to the user
+            from: "Contact Form <onboarding@resend.dev>", 
+            to: ["uoaesports@gmail.com"],
+            replyTo: email,
             subject: `New Contact Form Submission: ${category} from ${name}`,
             html: `
                 <h2>New Contact Form Submission</h2>
