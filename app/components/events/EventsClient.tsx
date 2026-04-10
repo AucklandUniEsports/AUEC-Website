@@ -14,7 +14,7 @@ export default function EventsClient({ endpoint }: EventsClientProps) {
         fetch(endpoint)
             .then((res) => res.json())
             .then((data) => {
-                setEvents(data);
+                setEvents(data.data);
                 setIsLoading(false);
             })
             .catch((err) => {

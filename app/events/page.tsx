@@ -8,7 +8,7 @@ export default function Events() {
     useEffect(() => {
         fetch("/api/events")
             .then((res) => res.json())
-            .then((data) => setEvents(data));
+            .then((data) => setEvents(data.data));
     }, []);
 
     return (
