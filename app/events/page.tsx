@@ -1,25 +1,16 @@
-import prisma from "@/lib/prisma";
+import { EventService } from "@/lib/service/EventService";
 import EventClient from "../components/events/EventClient";
 
 export default async function Events() {
-    const events = await prisma.event.findMany({
-        include: {
-            CategoriesOnEvents: {
-                include: {
-                    Category: true,
-                },
-            },
-            Location: true,
-        },
-    });
+    const response = await EventService.getEvents();
+    const events = response;
+
     return (
         <section className="events">
             <div className="home-b-top">
                 <h2 className="section-title">Explore Events</h2>
             </div>
-            <div className="client-wrapper">
-                <EventClient events={events} />
-            </div>
+            <EventClient events={events} />
         </section>
     );
 }
