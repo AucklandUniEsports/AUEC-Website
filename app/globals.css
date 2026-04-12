@@ -123,7 +123,7 @@ main {
     backdrop-filter: blur(8px);
     --webkit-backdrop-filter: blur(8px);
     background: rgba(39, 39, 39, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.35);
+    border: 1px solid #4700ed;
     border-radius: 5px;
     box-shadow:
         0 4px 20px rgba(0, 0, 0, 0.3),
@@ -132,7 +132,6 @@ main {
     display: flex;
     justify-content: space-between;
     margin: 32px;
-
     padding: 16px 32px;
     position: fixed;
     width: calc(100% - 128px);
@@ -150,6 +149,11 @@ main {
     gap: 2vw;
 }
 
+.navbar-items .button-standard {
+    font-size: calc(8px + 0.5vw);
+    padding: 8px 16px !important;
+}
+
 .navbar-logo {
     width: auto;
 }
@@ -160,10 +164,7 @@ main {
     padding-right: 2vw;
     padding-bottom: 0.05vw;
     position: relative;
-    text-decoration: none;
-    transition: color 0.25s ease;
 }
-
 .navbar-link.active::after {
     width: calc(100% - 2vw);
 }
@@ -181,14 +182,6 @@ main {
 
 .navbar-link:hover::after {
     width: calc(100% - 2vw);
-}
-
-.navbar-link:last-child {
-    border-right: none;
-    padding-right: 1vw;
-}
-.navbar-link:last-child:hover::after {
-    width: 90%;
 }
 
 .navbar-open {
@@ -235,7 +228,7 @@ main {
 }
 
 .nav-item-index {
-    font-size: 20px;
+    font-size: 40px;
     font-style: normal;
     font-weight: 400;
     line-height: 80%;

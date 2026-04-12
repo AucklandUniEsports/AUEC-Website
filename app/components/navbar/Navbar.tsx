@@ -67,6 +67,14 @@ export default function Navbar() {
                         >
                             CONTACT
                         </a>
+
+                        <a
+                            href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
+                            className="button-standard button-lime navbar-link"
+                            target="_blank"
+                        >
+                            Sign up to <em>AUEC.</em>
+                        </a>
                     </nav>
 
                     <div className="navbar-hamburger">
