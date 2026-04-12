@@ -1,6 +1,6 @@
 import StandardButton from "./components/StandardButton";
 import SponsorCard from "./components/SponsorCard";
-import EventsClient from "./components/events/EventsClient";
+import EventsClient from "./components/events/HomeClient";
 
 
 const sponsors = [

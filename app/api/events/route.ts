@@ -1,15 +1,12 @@
-// Stephen write the event api route in here
 import { EventService } from "@/lib/service/EventService";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(request: Request) {
-    const { searchParams } = new URL(request.url);
-    const featured = searchParams.get("featured") === "true";
+export async function GET() {
 
     try {
-        const events = await EventService.getEvents(featured);
+        const events = await EventService.getEvents();
         return NextResponse.json(
             { message: "Fetched all events", data: events },
             { status: 200 },

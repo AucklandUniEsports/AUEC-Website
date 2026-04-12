@@ -1,15 +1,9 @@
-"use client";
-import { useEffect, useState } from "react";
+import { EventService } from "@/lib/service/EventService";
 import EventClient from "../components/events/EventClient";
 
-export default function Events() {
-    const [events, setEvents] = useState([]);
-
-    useEffect(() => {
-        fetch("/api/events")
-            .then((res) => res.json())
-            .then((data) => setEvents(data.data));
-    }, []);
+export default async function Events() {
+    const response = await EventService.getEvents();
+    const events = response;
 
     return (
         <section className="events">

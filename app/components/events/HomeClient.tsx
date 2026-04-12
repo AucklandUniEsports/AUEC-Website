@@ -2,11 +2,11 @@
 import { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 
-interface EventsClientProps {
+interface HomeClientProps {
     endpoint: string;
 }
 
-export default function EventsClient({ endpoint }: EventsClientProps) {
+export default function HomeClient({ endpoint }: HomeClientProps) {
     const [events, setEvents] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -14,7 +14,19 @@ export default function EventsClient({ endpoint }: EventsClientProps) {
         fetch(endpoint)
             .then((res) => res.json())
             .then((data) => {
-                setEvents(data.data);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+
+                const upcoming = data.data
+                    .filter((event: any) => new Date(event.date) >= today)
+                    .sort(
+                        (a: any, b: any) =>
+                            new Date(a.date).getTime() -
+                            new Date(b.date).getTime(),
+                    )
+                    .slice(0, 3);
+
+                setEvents(upcoming);
                 setIsLoading(false);
             })
             .catch((err) => {
