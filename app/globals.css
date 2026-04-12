@@ -164,6 +164,10 @@ main {
     transition: color 0.25s ease;
 }
 
+.navbar-link.active::after {
+    width: calc(100% - 2vw);
+}
+
 .navbar-link::after {
     content: "";
     position: absolute;
