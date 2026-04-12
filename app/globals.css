@@ -262,7 +262,17 @@ main {
         max-height: 8vw;
     }
 }
+@media (max-width: 700px) {
+    .navbar {
+        min-height: 10vw;
+        padding: 20px 16px;
+    }
 
+    .navbar-logo {
+        height: 12vw;
+        max-height: none;
+    }
+}
 /* Layout Styles*/
 
 .nav-item-title {
