@@ -62,7 +62,7 @@ export default async function Home() {
                     target="_blank"
                     className="button-standard button-lime"
                 >
-                    Sign up to AUEC.
+                    Sign up to <em>AUEC.</em>
                 </a>
             </section>
             <section className="home-b">
