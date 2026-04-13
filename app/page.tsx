@@ -1,7 +1,7 @@
 import StandardButton from "./components/StandardButton";
 import SponsorCard from "./components/SponsorCard";
-import EventsClient from "./components/events/HomeClient";
-
+import HomeClient from "./components/home/HomeClient";
+import { EventService } from "@/lib/service/EventService";
 
 const sponsors = [
     {
@@ -22,7 +22,20 @@ const sponsors = [
     },
 ];
 
-export default function Home() {
+export default async function Home() {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const response = await EventService.getEvents();
+    const json = response;
+    const events = json
+        .filter((event: any) => new Date(event.date) >= today)
+        .sort(
+            (a: any, b: any) =>
+                new Date(a.date).getTime() - new Date(b.date).getTime(),
+        )
+        .slice(0, 3);
+
     return (
         <>
             <section className="home-a atf-section">
@@ -55,7 +68,7 @@ export default function Home() {
                 </div>
 
                 <div className="events-wrapper">
-                    <EventsClient endpoint="/api/events?featured=true" />
+                    <HomeClient events={events} />
                 </div>
             </section>
             <div className="divider"></div>
