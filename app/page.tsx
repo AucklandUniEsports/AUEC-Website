@@ -1,7 +1,6 @@
 import StandardButton from "./components/StandardButton";
 import SponsorCard from "./components/SponsorCard";
 import HomeClient from "./components/home/HomeClient";
-import { EventService } from "@/lib/service/EventService";
 
 const sponsors = [
     {
@@ -26,9 +25,9 @@ export default async function Home() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const response = await EventService.getEvents();
-    const json = response;
-    const events = json
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`);
+    const json = await response.json();
+    const events = json.data
         .filter((event: any) => new Date(event.date) >= today)
         .sort(
             (a: any, b: any) =>

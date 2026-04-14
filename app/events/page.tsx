@@ -1,9 +1,9 @@
-import { EventService } from "@/lib/service/EventService";
 import EventClient from "../components/events/EventClient";
 
 export default async function Events() {
-    const response = await EventService.getEvents();
-    const events = response;
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`);
+    const json = await response.json();
+    const events = json.data;
 
     return (
         <section className="events">
