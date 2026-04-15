@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import StandardButton from "../components/StandardButton";
 import { Turnstile } from "@marsidev/react-turnstile";
 
-export default function About() {
+export default function Contact() {
     const [status, setStatus] = useState<string>("");
     const [turnstileToken, setTurnstileToken] = useState<string>("");
 
@@ -12,13 +11,11 @@ export default function About() {
         e.preventDefault();
         setStatus("Sending...");
 
-        // Gather form data
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
 
         const payload = { ...data, turnstileToken };
         try {
-            // Send data to your new API route
             const response = await fetch("/api/send", {
                 method: "POST",
                 headers: {
@@ -29,7 +26,7 @@ export default function About() {
 
             if (response.ok) {
                 setStatus("Message sent successfully!");
-                (e.target as HTMLFormElement).reset(); // Clear the form
+                (e.target as HTMLFormElement).reset();
             } else {
                 setStatus("Failed to send message. Please try again.");
             }
@@ -55,7 +52,6 @@ export default function About() {
                 <div className="about-bottom">
                     <div className="about-bottom-section">
                         <form onSubmit={handleSubmit} className="contact-form">
-                            {/* Invisible Honeypot field*/}
                             <input
                                 type="text"
                                 name="website"
@@ -146,7 +142,6 @@ export default function About() {
                                     : "Send Message"}
                             </button>
 
-                            {/* Display success/error messages */}
                             {status && (
                                 <p
                                     className="form-status"
