@@ -65,6 +65,7 @@ main {
     background-color: #272727;
     border-radius: 5px;
     padding: 16px 16px 20px;
+    max-width: 900px;
 }
 
 .event-card-top {
@@ -108,12 +109,35 @@ main {
 
 .event-card-thumbnail {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.client-wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 24px;
 }
 
 .events-wrapper {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(min(550px, 100%), auto));
     gap: 24px;
+}
+
+.searchbar {
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    height: 35px;
+    margin: auto;
+    background-color: #2727279c;
+    text-align: center;
+    color: white;
+}
+
+.searchbar:focus {
+    outline: none;
 }
 
 /* Navbar Styles */
@@ -668,4 +692,17 @@ main {
     .navbar-open-bottom {
         bottom: 32px;
     }
+}
+
+.placeholder-text {
+    color: #ffffffca;
+    font-family: "Switzer";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.7px;
+    margin: 24px 30px 0 30px;
+    text-align: center;
+    letter-spacing: 1.2px;
 }

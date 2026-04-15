@@ -1,3 +1,5 @@
+closes #<issue_number>
+
 ## Context
 
 <!-- Include contextual info that can't be found in the linked issue. Why are you making this change? -->
