@@ -1,4 +1,6 @@
 import { Resend } from "resend";
+import { EmailTemplate } from "@/app/components/contact/EmailTemplate";
+import * as React from "react";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -8,9 +10,7 @@ async function verifyTurnstile(token: string): Promise<boolean> {
             "https://challenges.cloudflare.com/turnstile/v0/siteverify",
             {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     secret: process.env.TURNSTILE_SECRET_KEY,
                     response: token,
@@ -37,6 +37,7 @@ export async function POST(request: Request) {
                 { status: 200 }
             );
         }
+
         const isValidToken = await verifyTurnstile(turnstileToken);
         if (!isValidToken) {
             return Response.json(
@@ -50,15 +51,12 @@ export async function POST(request: Request) {
             to: ["uoaesports@gmail.com"],
             replyTo: email,
             subject: `New Contact Form Submission: ${category} from ${name}`,
-            html: `
-                <h2>New Contact Form Submission</h2>
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>Category:</strong> ${category}</p>
-                <br/>
-                <p><strong>Message:</strong></p>
-                <p>${message}</p>
-            `,
+            react: React.createElement(EmailTemplate, {
+                name,
+                email,
+                category,
+                message,
+            }),
         });
 
         if (error) {
