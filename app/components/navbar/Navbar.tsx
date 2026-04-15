@@ -26,7 +26,7 @@ export default function Navbar() {
     return (
         <>
             <div className="top-layer">
-                <header className="navbar">
+                <header className={`navbar ${isOpen ? "menu-open" : ""}`}>
                     <Link href="/">
                         <img
                             className="navbar-logo"

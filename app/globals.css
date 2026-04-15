@@ -138,6 +138,14 @@ main {
     z-index: 2;
 }
 
+.navbar.menu-open .navbar-hamburger {
+    display: block;
+}
+
+.navbar.menu-open .navbar-link {
+    display: none;
+}
+
 .navbar-hamburger {
     display: block;
 }
