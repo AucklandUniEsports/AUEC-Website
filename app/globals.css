@@ -270,7 +270,7 @@ main {
     line-height: 80%;
     letter-spacing: 0.8px;
 }
-@media (min-width: 1400px) {
+@media (width > 1400px) {
     .navbar-hamburger {
         display: none;
     }
@@ -281,7 +281,7 @@ main {
         max-height: 3vw;
     }
 }
-@media (max-width: 1400px) {
+@media (width < 1400px) {
     .navbar {
         height: calc(100% + 1vw);
         max-height: 3vw;
@@ -294,10 +294,9 @@ main {
         max-height: 8vw;
     }
 }
-@media (max-width: 700px) {
+@media (max-width: 700px) and (hover: none) {
     .navbar {
-        min-height: 10vw;
-        padding: 20px 16px;
+        min-height: 15vw;
     }
 
     .navbar-logo {
