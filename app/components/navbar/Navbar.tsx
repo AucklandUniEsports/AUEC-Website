@@ -70,7 +70,7 @@ export default function Navbar() {
 
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
-                            className="button-standard button-lime navbar-link"
+                            className="button-standard button-lime navbar-link signup-button"
                             target="_blank"
                         >
                             Sign up to <em>AUEC.</em>

@@ -213,6 +213,10 @@ main {
     transition: width 0.4s ease;
 }
 
+.signup-button::after {
+    content: none;
+}
+
 .navbar-link:hover::after {
     width: calc(100% - 2vw);
 }
