@@ -1,7 +1,6 @@
-import EventCard from "./components/events/EventCard";
 import StandardButton from "./components/StandardButton";
-import prisma from "@/lib/prisma";
 import SponsorCard from "./components/SponsorCard";
+import HomeClient from "./components/home/HomeClient";
 
 const sponsors = [
     {
@@ -23,17 +22,23 @@ const sponsors = [
 ];
 
 export default async function Home() {
-    const events = await prisma.event.findMany({
-        include: {
-            CategoriesOnEvents: {
-                include: {
-                    Category: true,
-                },
-            },
-            Location: true,
-        },
-        take: -3,
-    });
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`,
+        {
+            cache: "no-store",
+        }
+    );
+    const json = await response.json();
+    const events = json.data
+        .filter((event: any) => new Date(event.date) >= today)
+        .sort(
+            (a: any, b: any) =>
+                new Date(a.date).getTime() - new Date(b.date).getTime(),
+        )
+        .slice(0, 3);
+
     return (
         <>
             <section className="home-a atf-section">
@@ -64,10 +69,9 @@ export default async function Home() {
                         link="/events"
                     />
                 </div>
+
                 <div className="events-wrapper">
-                    {events.map((event, index) => (
-                        <EventCard event={event} key={index} />
-                    ))}
+                    <HomeClient events={events} />
                 </div>
             </section>
             <div className="divider"></div>
