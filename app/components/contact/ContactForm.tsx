@@ -37,7 +37,7 @@ export default function ContactForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="contact-form">
+        <form onSubmit={handleSubmit} className="contact-form text-white ">
             <input
                 type="text"
                 name="website"
@@ -51,12 +51,20 @@ export default function ContactForm() {
                 }}
             />
 
-            <FormField label="Name" id="name" type="text" required />
-            <FormField label="Email" id="email" type="email" required />
+            <FormField label="Name:" id="name" type="text" required />
+            <FormField label="Email:" id="email" type="email" required />
 
-            <div className="form-group">
-                <label htmlFor="category">Inquiry Category</label>
-                <select id="category" name="category" required defaultValue="">
+            <div className="mt-4">
+                <label className="mr-4" htmlFor="category">
+                    Inquiry Category
+                </label>
+                <select
+                    className="border border-white rounded p-1"
+                    id="category"
+                    name="category"
+                    required
+                    defaultValue=""
+                >
                     <option value="" disabled>
                         Select a category...
                     </option>
@@ -67,9 +75,15 @@ export default function ContactForm() {
                 </select>
             </div>
 
-            <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows={5} required />
+            <div className="form-group width-full mt-4">
+                <label className="mb-4" htmlFor="message">Message:</label>
+                <textarea
+                    className="border border-white rounded w-full mt-2"
+                    id="message"
+                    name="message"
+                    rows={5}
+                    required
+                />
             </div>
 
             <div style={{ margin: "1rem 0" }}>
@@ -80,18 +94,14 @@ export default function ContactForm() {
             </div>
 
             <button
+                className="text-black bg-[#e2ff00] w-full rounded py-2 mb-4 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                 type="submit"
-                className="button-standard button-lime"
                 disabled={status === "Sending..."}
             >
                 {status === "Sending..." ? "Sending..." : "Send Message"}
             </button>
 
-            {status && (
-                <p className="form-status" style={{ marginTop: "1rem" }}>
-                    {status}
-                </p>
-            )}
+            {status && <p className="form-status mt-1 p-4">{status}</p>}
         </form>
     );
 }

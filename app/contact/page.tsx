@@ -2,21 +2,25 @@ import ContactForm from "../components/contact/ContactForm";
 
 export default function Contact() {
     return (
-        <section className="about">
-            <div className="about-top">
-                <h1 className="home-title">Contact</h1>
-                <p className="standard-text">
-                    The Auckland University Esports Club is a student
-                    association operated by students studying at the University
-                    of Auckland, aiming to cultivate a thriving community of
-                    people with a passion for gaming and competition.
-                </p>
-            </div>
-            <div className="about-bottom">
-                <div className="about-bottom-section">
+        <div className="mt-36 ml-16">
+            <h1 className="text-[100px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px] uppercase">
+                Contact
+            </h1>
+            <h2 className="text-[48px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px]">
+                Get In Touch
+            </h2>
+            <div className="grid grid-cols-3 lg:grid-cols-2 gap-12 mt-8">
+                <div>
+                    <p className="text-white text-lg mb-8">
+                        Want to get in contact with us? Whether you have
+                        questions, want to collaborate, or need any assisstance
+                        with club matters, we’d love to hear from you! Fill out
+                        the form below and we’ll get back to you as soon as
+                        possible.
+                    </p>
                     <ContactForm />
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
