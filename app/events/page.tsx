@@ -1,27 +1,21 @@
-import EventCard from "../components/events/EventCard";
-import prisma from "@/lib/prisma";
+import EventClient from "../components/events/EventClient";
 
 export default async function Events() {
-    const events = await prisma.event.findMany({
-        include: {
-            CategoriesOnEvents: {
-                include: {
-                    Category: true,
-                },
-            },
-            Location: true,
+    const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/events`,
+        {
+            cache: "no-store",
         },
-    });
+    );
+    const json = await response.json();
+    const events = json.data;
+
     return (
         <section className="events">
             <div className="home-b-top">
                 <h2 className="section-title">Explore Events</h2>
             </div>
-            <div className="events-wrapper">
-                {events.map((event, index) => (
-                    <EventCard event={event} key={index} />
-                ))}
-            </div>
+            <EventClient events={events} />
         </section>
     );
 }
