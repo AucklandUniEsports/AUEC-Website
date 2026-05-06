@@ -30,7 +30,7 @@ export default function Navbar() {
                     <Link href="/">
                         <img
                             className="navbar-logo"
-                            src="auec_logo.svg"
+                            src="auec_logo_no_text.svg"
                             alt=""
                         />
                     </Link>
@@ -67,15 +67,51 @@ export default function Navbar() {
                         >
                             CONTACT
                         </a>
+                    </nav>
+                    <div className="navbar-right">
+                        <div className="navbar-socials-wrapper">
+                            <a
+                                href="https://discord.com/invite/ZmcUREd"
+                                target="_blank"
+                            >
+                                <img
+                                    className="navbar-logo navbar-socials"
+                                    src="discord.svg"
+                                    alt="Discord"
+                                />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/aucklanduniesports/"
+                                target="_blank"
+                            >
+                                <img
+                                    className="navbar-logo navbar-socials"
+                                    src="instagram.svg"
+                                    alt="Instagram"
+                                />
+                            </a>
+                            <a
+                                href="twitch.tv/aucklanduniesports"
+                                target="_blank"
+                            >
+                                <img
+                                    className="navbar-logo navbar-socials"
+                                    src="twitch.svg"
+                                    alt="Twitch"
+                                />
+                            </a>
+                        </div>
 
                         <a
                             href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
-                            className="button-standard button-lime navbar-link signup-button"
+                            className="button-standard button-lime signup-button"
                             target="_blank"
                         >
-                            Sign up to <em>AUEC.</em>
+                            <em>
+                                <strong>SIGN UP</strong>
+                            </em>
                         </a>
-                    </nav>
+                    </div>
 
                     <div className="navbar-hamburger">
                         <Hamburger
