@@ -5,7 +5,7 @@ import SponsorsSection from "./_components/home/Sponsors";
 
 export default async function Home() {
     const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/home`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/featured`,
         {
             cache: "no-store",
         },
