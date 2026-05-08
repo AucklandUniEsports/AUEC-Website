@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import EventCard from "./EventCard";
+import Events from "@/app/events/page";
 import SearchBar from "./SearchBar";
 
 interface Events {

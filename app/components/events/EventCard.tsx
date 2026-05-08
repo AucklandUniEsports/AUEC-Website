@@ -48,13 +48,13 @@ export default function EventCard({ event }: EventCardProps) {
     });
 
     const eventDateNZ = new Date(
-        nzDateFormatter.format(new Date (event.date)) + "T00:00:00"
+        nzDateFormatter.format(event.date) + "T00:00:00"
     );
     const currentDateNZ = new Date(
         nzDateFormatter.format(currentDate) + "T00:00:00"
     );
 
-    const date = new Date(event.date).toLocaleDateString("en-NZ", options);
+    const date = event.date.toLocaleDateString("en-NZ", options);
     const oneDayMs = 1000 * 60 * 60 * 24; // 86,400,000 milliseconds
     const daysUntil = Math.floor(
         (eventDateNZ.getTime() - currentDateNZ.getTime()) / oneDayMs

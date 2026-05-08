@@ -1,8 +1,11 @@
-@import "tailwindcss";
+/* Generic Styles */
 
 * {
+    /* outline: 1px solid red; */
     font-family: "Switzer";
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
@@ -62,6 +65,7 @@ main {
     background-color: #272727;
     border-radius: 5px;
     padding: 16px 16px 20px;
+    max-width: 900px;
 }
 
 .event-card-top {
@@ -105,12 +109,35 @@ main {
 
 .event-card-thumbnail {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.client-wrapper {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 24px;
 }
 
 .events-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(550px, 100%), auto));
     gap: 24px;
+}
+
+.searchbar {
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    height: 35px;
+    margin: auto;
+    background-color: #2727279c;
+    text-align: center;
+    color: white;
+}
+
+.searchbar:focus {
+    outline: none;
 }
 
 /* Navbar Styles */
@@ -126,7 +153,7 @@ main {
     margin: 32px;
     padding: 16px 32px;
     position: fixed;
-    width: calc(95%);
+    width: calc(100% - 128px);
     z-index: 2;
 }
 
@@ -210,7 +237,8 @@ main {
     height: 100%;
     justify-content: center;
     padding: 0 64px 0;
-    width: calc(100%);
+    padding-top: 2vw;
+    width: calc(100% - 128px);
     position: fixed;
     z-index: 1;
 }
@@ -520,7 +548,7 @@ main {
 
 .sponsor-wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto auto auto;
     gap: 16px;
 }
 
@@ -691,4 +719,17 @@ main {
     .navbar-open-bottom {
         bottom: 32px;
     }
+}
+
+.placeholder-text {
+    color: #ffffffca;
+    font-family: "Switzer";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.7px;
+    margin: 24px 30px 0 30px;
+    text-align: center;
+    letter-spacing: 1.2px;
 }
