@@ -1,6 +1,7 @@
 import StandardButton from "./components/StandardButton";
 import SponsorCard from "./components/SponsorCard";
 import HomeClient from "./components/home/HomeClient";
+import Logo from "./components/home/LogoPOC";
 
 const sponsors = [
     {
@@ -25,10 +26,11 @@ export default async function Home() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`,
+    const response = await fetch(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/events`,
         {
             cache: "no-store",
-        }
+        },
     );
     const json = await response.json();
     const events = json.data
@@ -41,6 +43,11 @@ export default async function Home() {
 
     return (
         <>
+            <section className="h-[50vh] mt-100">
+                <div className="home-logo-wrapper">
+                    <Logo />
+                </div>
+            </section>
             <section className="home-a atf-section">
                 <div className="home-a-content">
                     <h1 className="home-title">
