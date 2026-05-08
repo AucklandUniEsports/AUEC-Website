@@ -1,7 +1,7 @@
-import HeroSection from "./components/home/Hero"
-import FeaturedEventsSection from "./components/home/FeaturedEvents";
-import AboutSection from "./components/home/About";
-import SponsorsSection from "./components/home/Sponsors";
+import HeroSection from "./_components/home/Hero";
+import FeaturedEventsSection from "./_components/home/FeaturedEvents";
+import AboutSection from "./_components/home/About";
+import SponsorsSection from "./_components/home/Sponsors";
 
 export default async function Home() {
     const response = await fetch(
