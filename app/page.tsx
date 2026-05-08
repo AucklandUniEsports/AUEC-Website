@@ -1,7 +1,6 @@
-import EventCard from "./components/events/EventCard";
 import StandardButton from "./components/StandardButton";
-import prisma from "@/lib/prisma";
 import SponsorCard from "./components/SponsorCard";
+import HomeClient from "./components/home/HomeClient";
 
 const sponsors = [
     {
@@ -25,25 +24,21 @@ const sponsors = [
 export default async function Home() {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    const events = await prisma.event.findMany({
-        where: {
-            date: {
-                gte: today,
-            },
-        },
-        orderBy: {
-            date: "asc",
-        },
-        take: 3,
-        include: {
-            CategoriesOnEvents: {
-                include: {
-                    Category: true,
-                },
-            },
-            Location: true,
-        },
-    });
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events`,
+        {
+            cache: "no-store",
+        }
+    );
+    const json = await response.json();
+    const events = json.data
+        .filter((event: any) => new Date(event.date) >= today)
+        .sort(
+            (a: any, b: any) =>
+                new Date(a.date).getTime() - new Date(b.date).getTime(),
+        )
+        .slice(0, 3);
+
     return (
         <>
             <section className="home-a atf-section">
@@ -74,17 +69,10 @@ export default async function Home() {
                         link="/events"
                     />
                 </div>
-                {events.length === 0 ? (
-                    <p className="placeholder-text">
-                        No featured events for now. Stay tuned!
-                    </p>
-                ) : (
-                    <div className="events-wrapper">
-                        {events.map((event, index) => (
-                            <EventCard event={event} key={index} />
-                        ))}
-                    </div>
-                )}
+
+                <div className="events-wrapper">
+                    <HomeClient events={events} />
+                </div>
             </section>
             <div className="divider"></div>
             <section className="home-c">
