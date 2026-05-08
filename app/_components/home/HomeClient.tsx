@@ -1,23 +1,22 @@
 "use client";
-import EventCard from "../events/EventCard";
+import Hero from "./Hero";
+import FeaturedEvents from "./FeaturedEvents";
+import About from "./About";
+import Sponsors from "./Sponsors";
 
 interface HomeClientProps {
     events: any[];
 }
 
 export default function HomeClient({ events }: HomeClientProps) {
-    if (!events.length)
-        return (
-            <p className="placeholder-text">
-                No featured events for now. Stay tuned!
-            </p>
-        );
-
     return (
         <>
-            {events.map((event, index) => (
-                <EventCard event={event} key={index} />
-            ))}
+            <Hero />
+            <FeaturedEvents events={events} />
+            <div className="divider"></div>
+            <About />
+            <div className="divider"></div>
+            <Sponsors />
         </>
     );
 }

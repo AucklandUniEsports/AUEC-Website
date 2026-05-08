@@ -1,13 +1,11 @@
+import EventCard from "../events/EventCard";
 import StandardButton from "../StandardButton";
-import HomeClient from "./HomeClient";
 
-interface FeaturedEventsSectionProps {
+interface FeaturedEventsProps {
     events: any[];
 }
 
-export default function FeaturedEventsSection({
-    events,
-}: FeaturedEventsSectionProps) {
+export default function FeaturedEvents({ events }: FeaturedEventsProps) {
     return (
         <section className="home-b">
             <div className="home-b-top">
@@ -19,7 +17,15 @@ export default function FeaturedEventsSection({
                 />
             </div>
             <div className="events-wrapper">
-                <HomeClient events={events} />
+                {events.length ? (
+                    events.map((event, index) => (
+                        <EventCard event={event} key={index} />
+                    ))
+                ) : (
+                    <p className="placeholder-text">
+                        No featured events for now. Stay tuned!
+                    </p>
+                )}
             </div>
         </section>
     );
