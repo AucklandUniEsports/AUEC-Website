@@ -1,4 +1,4 @@
-import EventCard from "../../events/_components/EventCard";
+import EventCard from "../../events/components/EventCard";
 import StandardButton from "../StandardButton";
 
 interface FeaturedEventsProps {

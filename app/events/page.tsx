@@ -1,4 +1,4 @@
-import EventClient from "./_components/EventClient";
+import EventClient from "./components/EventClient";
 
 export default async function Events() {
     const response = await fetch(
