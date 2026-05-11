@@ -1,4 +1,4 @@
-import HomeClient from "./_components/home/HomeClient";
+import HomeClient from "./components/home/HomeClient";
 
 export default async function Home() {
     const response = await fetch(

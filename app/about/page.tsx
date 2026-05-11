@@ -1,4 +1,4 @@
-import StandardButton from "../_components/StandardButton";
+import StandardButton from "../components/StandardButton";
 
 const games = [
     {

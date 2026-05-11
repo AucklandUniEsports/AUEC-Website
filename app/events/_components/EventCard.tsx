@@ -1,6 +1,6 @@
 "use client";
 
-import CategoryTag from "../../_components/CategoryTag";
+import CategoryTag from "../../components/CategoryTag";
 import { useState } from "react";
 
 interface EventCardProps {
