@@ -461,7 +461,7 @@ main {
 
 @media (width < 1400px) {
     .events-wrapper {
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 
     .nav-item-title {

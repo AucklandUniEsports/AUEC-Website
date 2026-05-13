@@ -33,11 +33,17 @@ interface Events {
 export default function EventClient({ events }: { events: Events[] }) {
     const [input, setInput] = useState("");
     const [suggestion, setSuggestion] = useState<Events[]>([]);
+    const sortedEvents = [...events].sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    );
+
     const handleChange = (value: string) => {
         setInput(value);
-        const filtered = events.filter((event) =>
-            event.name.toLowerCase().includes(input.toLowerCase()),
+
+        const filtered = sortedEvents.filter((event) =>
+            event.name.toLowerCase().includes(value.toLowerCase()),
         );
+
         setSuggestion(filtered);
     };
 
@@ -53,7 +59,7 @@ export default function EventClient({ events }: { events: Events[] }) {
                 </div>
             ) : (
                 <div className="events-wrapper">
-                    {events.map((event, index) => (
+                    {sortedEvents.map((event, index) => (
                         <EventCard event={event} key={index} />
                     ))}
                 </div>
