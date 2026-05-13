@@ -1,6 +1,6 @@
 "use client";
 
-import CategoryTag from "../CategoryTag";
+import CategoryTag from "../../components/CategoryTag";
 import { useState } from "react";
 
 interface EventCardProps {
@@ -48,16 +48,16 @@ export default function EventCard({ event }: EventCardProps) {
     });
 
     const eventDateNZ = new Date(
-        nzDateFormatter.format(new Date (event.date)) + "T00:00:00"
+        nzDateFormatter.format(new Date(event.date)) + "T00:00:00",
     );
     const currentDateNZ = new Date(
-        nzDateFormatter.format(currentDate) + "T00:00:00"
+        nzDateFormatter.format(currentDate) + "T00:00:00",
     );
 
     const date = new Date(event.date).toLocaleDateString("en-NZ", options);
     const oneDayMs = 1000 * 60 * 60 * 24; // 86,400,000 milliseconds
     const daysUntil = Math.floor(
-        (eventDateNZ.getTime() - currentDateNZ.getTime()) / oneDayMs
+        (eventDateNZ.getTime() - currentDateNZ.getTime()) / oneDayMs,
     );
     return (
         <a className="event-card" href={event.link}>
