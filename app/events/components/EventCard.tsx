@@ -30,47 +30,66 @@ function getEventDateText(daysUntil: number): string {
     return `${Math.abs(daysUntil)} DAYS AGO`;
 }
 
-export default function EventCard({ event }: EventCardProps) {
-    const options: Intl.DateTimeFormatOptions = {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        timeZone: "Pacific/Auckland",
-    };
+function parseDateParts(date: Date | string): {
+    year: number;
+    month: number;
+    day: number;
+} {
+    const iso = typeof date === "string" ? date : date.toISOString();
+    const [year, month, day] = iso.split("T")[0].split("-").map(Number);
+    return { year, month, day };
+}
 
+function toUTCMidnight({
+    year,
+    month,
+    day,
+}: {
+    year: number;
+    month: number;
+    day: number;
+}): Date {
+    return new Date(Date.UTC(year, month - 1, day));
+}
+
+export default function EventCard({ event }: EventCardProps) {
     const [currentDate] = useState(() => new Date());
-    const nzDateFormatter = new Intl.DateTimeFormat("en-CA", {
+
+    const eventParts = parseDateParts(event.date);
+
+    const nzFormatter = new Intl.DateTimeFormat("en-CA", {
         timeZone: "Pacific/Auckland",
         year: "numeric",
         month: "2-digit",
         day: "2-digit",
     });
+    const [cy, cm, cd] = nzFormatter.format(currentDate).split("-").map(Number);
 
-    const eventDateNZ = new Date(
-        nzDateFormatter.format(new Date(event.date)) + "T00:00:00",
-    );
-    const currentDateNZ = new Date(
-        nzDateFormatter.format(currentDate) + "T00:00:00",
+    const eventMidnight = toUTCMidnight(eventParts);
+    const currentMidnight = toUTCMidnight({ year: cy, month: cm, day: cd });
+
+    const oneDayMs = 1000 * 60 * 60 * 24;
+    const daysUntil = Math.round(
+        (eventMidnight.getTime() - currentMidnight.getTime()) / oneDayMs,
     );
 
-    const date = new Date(event.date).toLocaleDateString("en-NZ", options);
-    const oneDayMs = 1000 * 60 * 60 * 24; // 86,400,000 milliseconds
-    const daysUntil = Math.floor(
-        (eventDateNZ.getTime() - currentDateNZ.getTime()) / oneDayMs,
-    );
+    const displayDate = new Date(
+        Date.UTC(eventParts.year, eventParts.month - 1, eventParts.day),
+    ).toLocaleDateString("en-NZ", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        timeZone: "UTC", // already midnight UTC so render as-is
+    });
+
     return (
         <a className="event-card" href={event.link}>
             <div className="event-card-top">
                 <div className="category-wrapper">
-                    <div className="category-wrapper">
-                        {event.CategoriesOnEvents.map(({ Category }) => (
-                            <CategoryTag
-                                key={Category.id}
-                                name={Category.name}
-                            />
-                        ))}
-                    </div>
+                    {event.CategoriesOnEvents.map(({ Category }) => (
+                        <CategoryTag key={Category.id} name={Category.name} />
+                    ))}
                 </div>
                 <p className="event-card-countdown">
                     {getEventDateText(daysUntil)}
@@ -85,7 +104,7 @@ export default function EventCard({ event }: EventCardProps) {
                 alt=""
             />
             <p className="event-card-info">
-                {date} | <span>Esports Arena</span>
+                {displayDate} | <span>Esports Arena</span>
             </p>
             <p className="event-card-title">{event.name}</p>
         </a>
