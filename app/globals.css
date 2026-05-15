@@ -573,3 +573,10 @@ main {
         bottom: 32px;
     }
 }
+
+@layer utilities {
+    .font-times-stretched {
+        font-family: "Times New Roman", serif !important;
+        transform: scaleY(2.3);
+    }
+}
