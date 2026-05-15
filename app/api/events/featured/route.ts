@@ -3,15 +3,11 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
     try {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-
         const allEvents = await EventService.getEvents();
         const featured = allEvents
-            .filter((event: any) => new Date(event.date) >= today)
             .sort(
                 (a: any, b: any) =>
-                    new Date(a.date).getTime() - new Date(b.date).getTime(),
+                    new Date(b.date).getTime() - new Date(a.date).getTime(),
             )
             .slice(0, 3);
 
