@@ -3,13 +3,26 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
     try {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
         const allEvents = await EventService.getEvents();
-        const featured = allEvents
+
+        const upcoming = allEvents
+            .filter((event: any) => new Date(event.date) >= today)
+            .sort(
+                (a: any, b: any) =>
+                    new Date(a.date).getTime() - new Date(b.date).getTime(),
+            );
+
+        const past = allEvents
+            .filter((event: any) => new Date(event.date) < today)
             .sort(
                 (a: any, b: any) =>
                     new Date(b.date).getTime() - new Date(a.date).getTime(),
-            )
-            .slice(0, 3);
+            );
+
+        const featured = [...upcoming, ...past].slice(0, 3);
 
         return NextResponse.json(
             { message: "Fetched featured events", data: featured },
