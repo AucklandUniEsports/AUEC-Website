@@ -157,7 +157,10 @@ export default function Navbar() {
                                 className="button-standard button-lime"
                                 onClick={() => setOpen(false)}
                             >
-                                Sign up to AUEC.
+                                Sign up to{" "}
+                                <em>
+                                    <strong>AUEC.</strong>
+                                </em>
                             </a>
 
                             <SocialMediaLinkBar />
