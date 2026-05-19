@@ -458,7 +458,9 @@ main {
     display: flex;
     gap: 16px;
 }
-
+.partners-bg {
+    background-color: #272727;
+}
 @media (width < 1400px) {
     .events-wrapper {
         grid-template-columns: auto auto;

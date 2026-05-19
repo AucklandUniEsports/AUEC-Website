@@ -15,7 +15,7 @@ const NavbarPages = [
     },
     {
         title: "sponsors",
-        link: "AUEC 2026 Sponsorship Deck.pdf",
+        link: "/sponsors",
     },
     {
         title: "contact",
