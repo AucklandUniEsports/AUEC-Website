@@ -1,18 +1,5 @@
-"use client";
-import { useState } from "react";
-import { Content } from "./_components/content/Content";
-import { Entry } from "./_components/entry/Entry";
+import { MerchClient } from "./_components/MerchClient";
 
 export default function Merch() {
-    const [showContent, setShowContent] = useState(false);
-
-    return (
-        <>
-            {showContent ? (
-                <Content />
-            ) : (
-                <Entry onEnter={() => setShowContent(true)} />
-            )}
-        </>
-    );
+    return <MerchClient />;
 }
