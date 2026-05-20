@@ -27,7 +27,6 @@ import StandardButton from "./StandardButton";
 type AboutSectionProps = {
     image: string;
     children: React.ReactNode;
-    button: React.ReactNode;
     buttonTitle: string;
     buttonColor: string;
     buttonLink: string;
