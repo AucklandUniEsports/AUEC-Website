@@ -26,7 +26,7 @@ import StandardButton from "./StandardButton";
 
 type AboutSectionProps = {
     image: string;
-    text: string;
+    children: React.ReactNode;
     button: React.ReactNode;
     buttonTitle: string;
     buttonColor: string;
@@ -35,7 +35,7 @@ type AboutSectionProps = {
 
 export default function AboutSection({
   image,
-  text,
+  children,
   buttonTitle,
   buttonColor,
   buttonLink,
@@ -44,7 +44,7 @@ export default function AboutSection({
     <div className="about-bottom-section">
       <img className="about-img" src={image} alt="about" />
 
-      <p className="standard-text">{text}</p>
+      <p className="standard-text">{children}</p>
 
       <StandardButton
         title={buttonTitle}
