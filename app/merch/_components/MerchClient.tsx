@@ -29,24 +29,26 @@ export function MerchClient() {
                 style={{ backgroundImage: `url(/merch-01.webp)` }}
             >
                 <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-                    <h1 className="text-white text-7xl text-center">
+                    <h1 className="text-white text-4xl md:text-7xl text-center">
                         2026 F/W
                         <img
                             src="/auec_logo.svg"
                             alt="AUEC"
-                            className="inline h-20"
+                            className="inline h-12 md:h-20"
                         />{" "}
                         <br /> COLLECTION
                     </h1>
-                    <p className="text-white text-5xl mt-4">Tap to Enter.</p>
+                    <p className="text-white text-2xl md:text-5xl mt-4">
+                        Tap to Enter.
+                    </p>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="merch-page flex h-screen">
-            <div className="relative w-1/2 h-full overflow-hidden">
+        <div className="merch-page flex flex-col md:flex-row">
+            <div className="relative w-full h-[50vh] overflow-hidden md:hidden">
                 {images.map((src, index) => (
                     <img
                         key={src}
@@ -54,9 +56,7 @@ export function MerchClient() {
                         alt="merch"
                         className={`absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 ${index === currentImage ? "opacity-100" : "opacity-0"}`}
                         onClick={() => {
-                            setCurrentImage(
-                                (prev) => (prev + 1) % images.length,
-                            );
+                            setCurrentImage((prev) => (prev + 1) % images.length);
                             setAutoPlay((prev) => prev + 1);
                         }}
                     />
@@ -75,9 +75,23 @@ export function MerchClient() {
                     ))}
                 </div>
             </div>
-            <div className="leading-none w-1/2 bg-white flex flex-col items-center justify-center p-16 text-center">
+
+            <div className="hidden md:block md:w-1/2 overflow-y-auto">
+                {images.map((src, index) => (
+                    <img
+                        key={index}
+                        src={src}
+                        alt="merch"
+                        className="w-full h-screen object-cover"
+                    />
+                ))}
+            </div>
+            
+            <div className="w-full md:w-1/2 md:sticky md:top-0 md:h-screen bg-white flex flex-col items-center justify-center p-8 md:p-16 text-center">
                 <p className="text-xl mb-4">2026 Fall/Winter Drop</p>
-                <h2 className="text-6xl font-medium mb-4">"The Collection"</h2>
+                <h2 className="text-4xl md:text-6xl font-medium mb-4">
+                    "The Collection"
+                </h2>
                 <p className="text-xl mb-6">NZ$ 60.00</p>
                 <p className="text-xl mb-8 leading-relaxed">
                     A collection of one hoodie is still a collection.
