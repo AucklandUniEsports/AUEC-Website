@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const images = [
     "/merch-01.webp",
@@ -11,49 +11,57 @@ const images = [
 export function MerchClient() {
     const [entered, setEntered] = useState(false);
     const [currentImage, setCurrentImage] = useState(0);
+    const [autoPlay, setAutoPlay] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 6000);
+
+        return () => clearInterval(interval);
+    }, [autoPlay]);
 
     if (!entered) {
         return (
             <div
-                className="relative h-screen w-full bg-cover bg-center cursor-pointer flex items-center justify-center"
+                className="merch-page relative h-screen w-full bg-cover bg-center cursor-pointer flex items-center justify-center"
                 onClick={() => setEntered(true)}
                 style={{ backgroundImage: `url(/merch-01.webp)` }}
             >
                 <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-                    <h1
-                        className="text-white text-8xl text-center"
-                        style={{ fontFamily: "Times New Roman" }}
-                    >
-                        2026 F/W {" "}
+                    <h1 className="text-white text-8xl text-center">
+                        2026 F/W{" "}
                         <img
                             src="/auec_logo.svg"
                             alt="AUEC"
                             className="inline h-24"
-                        /> <br /> AUEC COLLECTION
+                        />{" "}
+                        <br /> AUEC COLLECTION
                     </h1>
-                    <p
-                        className="text-white text-5xl mt-4"
-                        style={{ fontFamily: "Times New Roman" }}
-                    >
-                        Tap to Enter.
-                    </p>
+                    <p className="text-white text-5xl mt-4">Tap to Enter.</p>
                 </div>
             </div>
         );
     }
 
     return (
-        <div className="flex h-screen">
-            <div className="relative w-1/2">
-                <img
-                    src={images[currentImage]}
-                    alt="merch"
-                    className="w-full h-full object-cover"
-                    onClick={() =>
-                        setCurrentImage((prev) => (prev + 1) % images.length)
-                    }
-                />
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="merch-page flex h-screen">
+            <div className="relative w-1/2 h-full overflow-hidden">
+                {images.map((src, index) => (
+                    <img
+                        key={src}
+                        src={src}
+                        alt="merch"
+                        className={`absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 ${index === currentImage ? "opacity-100" : "opacity-0"}`}
+                        onClick={() => {
+                            setCurrentImage(
+                                (prev) => (prev + 1) % images.length,
+                            );
+                            setAutoPlay((prev) => prev + 1);
+                        }}
+                    />
+                ))}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                     {images.map((_, index) => (
                         <button
                             key={index}
@@ -61,6 +69,7 @@ export function MerchClient() {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setCurrentImage(index);
+                                setAutoPlay((prev) => prev + 1);
                             }}
                         />
                     ))}
