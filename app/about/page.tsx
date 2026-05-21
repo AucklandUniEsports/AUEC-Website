@@ -18,21 +18,20 @@ export default function About() {
       <div className="about-bottom">
 
         <AboutSection
-          image="DSC01071.webp"
-          children="Our team at AUEC is focused on providing a platform where everyone can enjoy gaming to their heart's content. We are dedicated to providing quality events and opportunities for talent to compete in."
-          buttonTitle="Sign up to AUEC."
-          buttonColor="lime"
-          buttonLink="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
-        />
+        image="DSC01071.webp"
+        buttonTitle="Sign up to AUEC."
+        buttonColor="lime"
+        buttonLink="https://docs.google.com/forms/...">
+          Our team at AUEC is focused on providing a platform where everyone can enjoy gaming to their heart's content. We are dedicated to providing quality events and opportunities for talent to compete in.
+        </AboutSection>
 
         <AboutSection
-          image="DSC05901.webp"
-          children="Behind the scenes, our team puts a lot of effort into broadcast, creative design, and social media. As a club, we want to create an environment where our staff can have fun and develop their skills."
-          buttonTitle="Join the Team."
-          buttonColor="grey"
-          buttonLink="https://docs.google.com/forms/d/e/1FAIpQLSdH6UNDa-znBkfG59CON4PfIQDlxYsTX-M7f-j0BDnYhT4RMQ/viewform"
-        />
-
+        image="DSC05901.webp"
+        buttonTitle="Join the Team."
+        buttonColor="grey"
+        buttonLink="https://docs.google.com/forms/...">
+          Behind the scenes, our team puts a lot of effort into broadcast, creative design, and social media. As a club, we want to create an environment where our staff can have fun and develop their skills.
+        </AboutSection>
       </div>
 
     </section>
