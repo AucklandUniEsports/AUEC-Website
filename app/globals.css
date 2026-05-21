@@ -595,7 +595,8 @@ main {
     animation: fade 0.5s ease-in-out;
 }
 
-.merch-page,
-.merch-page * {
+.merch-page h1,
+.merch-page h2,
+.merch-page p {
     font-family: "Times New Roman", Times, serif !important;
 }

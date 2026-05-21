@@ -29,14 +29,14 @@ export function MerchClient() {
                 style={{ backgroundImage: `url(/merch-01.webp)` }}
             >
                 <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-                    <h1 className="text-white text-8xl text-center">
-                        2026 F/W{" "}
+                    <h1 className="text-white text-7xl text-center">
+                        2026 F/W
                         <img
                             src="/auec_logo.svg"
                             alt="AUEC"
-                            className="inline h-24"
+                            className="inline h-20"
                         />{" "}
-                        <br /> AUEC COLLECTION
+                        <br /> COLLECTION
                     </h1>
                     <p className="text-white text-5xl mt-4">Tap to Enter.</p>
                 </div>
@@ -75,14 +75,13 @@ export function MerchClient() {
                     ))}
                 </div>
             </div>
-            <div className="w-1/2 bg-white flex flex-col items-center justify-center p-16 text-center">
-                <p className="text-sm text-gray-500 mb-4">
-                    2026 Fall/Winter Drop
-                </p>
-                <h2 className="text-5xl font-bold mb-4">"The Collection"</h2>
-                <p className="text-base mb-6">NZ$ 60.00</p>
-                <p className="text-sm text-gray-600 mb-8 leading-relaxed">
+            <div className="leading-none w-1/2 bg-white flex flex-col items-center justify-center p-16 text-center">
+                <p className="text-xl mb-4">2026 Fall/Winter Drop</p>
+                <h2 className="text-6xl font-medium mb-4">"The Collection"</h2>
+                <p className="text-xl mb-6">NZ$ 60.00</p>
+                <p className="text-xl mb-8 leading-relaxed">
                     A collection of one hoodie is still a collection.
+                    <br />
                     <br />
                     All units made to order.
                     <br />
@@ -91,8 +90,7 @@ export function MerchClient() {
                 <a
                     href="https://docs.google.com/forms/d/16dwVLuVc16wdAlokWbxWuvpSWe2PMIcqYs_aHWAg6dA/"
                     target="_blank"
-                    className="bg-black text-white px-12 py-4
-                text-sm tracking-widest"
+                    className="text-base bg-black text-white px-24 py-4 tracking-widest"
                 >
                     ORDER NOW
                 </a>
