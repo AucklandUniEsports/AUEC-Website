@@ -26,6 +26,7 @@ export function MerchClient() {
             <div
                 className="merch-page relative h-screen w-full bg-cover bg-center cursor-pointer flex items-center justify-center"
                 onClick={() => setEntered(true)}
+                onTouchStart={() => setEntered(true)}
                 style={{ backgroundImage: `url(/merch-01.webp)` }}
             >
                 <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
@@ -48,7 +49,7 @@ export function MerchClient() {
 
     return (
         <div className="merch-page flex flex-col md:flex-row">
-            <div className="relative w-full h-[50vh] overflow-hidden md:hidden">
+            <div className="relative w-full h-[75vh] overflow-hidden md:hidden">
                 {images.map((src, index) => (
                     <img
                         key={src}
@@ -56,7 +57,9 @@ export function MerchClient() {
                         alt="merch"
                         className={`absolute inset-0 w-full h-full object-cover cursor-pointer transition-opacity duration-500 ${index === currentImage ? "opacity-100" : "opacity-0"}`}
                         onClick={() => {
-                            setCurrentImage((prev) => (prev + 1) % images.length);
+                            setCurrentImage(
+                                (prev) => (prev + 1) % images.length,
+                            );
                             setAutoPlay((prev) => prev + 1);
                         }}
                     />
@@ -83,10 +86,11 @@ export function MerchClient() {
                         src={src}
                         alt="merch"
                         className="w-full h-screen object-cover"
+                        loading="eager"
                     />
                 ))}
             </div>
-            
+
             <div className="w-full md:w-1/2 md:sticky md:top-0 md:h-screen bg-white flex flex-col items-center justify-center p-8 md:p-16 text-center">
                 <p className="text-xl mb-4">2026 Fall/Winter Drop</p>
                 <h2 className="text-4xl md:text-6xl font-medium mb-4">
