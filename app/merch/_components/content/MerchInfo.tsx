@@ -18,11 +18,11 @@ export default function MerchInfo({ orderLink }: MerchInfoProps) {
                 <br />
                 Ready to collect in semester two.
             </p>
-            
+            <a
                 href={orderLink}
                 target="_blank"
                 className="text-base bg-black text-white px-24 py-4 tracking-widest"
-            <a>
+            >
                 ORDER NOW
             </a>
         </div>
