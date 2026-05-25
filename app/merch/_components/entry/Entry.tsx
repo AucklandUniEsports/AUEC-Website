@@ -38,9 +38,12 @@ export function Entry({ onEnter }: EntryProps) {
             style={{ backgroundImage: `url(/merch-01.webp)` }}
         >
             <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
-                <h1 className="text-white text-4xl md:text-7xl text-center">
-                    2026 F/W{" "}
-                    <span className="relative inline-block h-25 md:h-20 w-30 md:w-32 translate-y-4">
+                <div className="relative">
+                    <h1 className="text-white text-4xl md:text-7xl text-left">
+                        2026 F/W
+                        <br /> COLLECTION
+                    </h1>
+                    <span className="absolute top-0 -right-16 w-40 md:w-56 h-16 md:h-24 -translate-y-2">
                         {logos.map((src, index) => (
                             <Image
                                 key={src}
@@ -51,9 +54,8 @@ export function Entry({ onEnter }: EntryProps) {
                                 className={`object-contain transition-opacity duration-500 ${index === currentLogo ? "opacity-100" : "opacity-0"}`}
                             />
                         ))}
-                    </span>{" "}
-                    <br /> COLLECTION
-                </h1>
+                    </span>
+                </div>
                 <p className="text-white text-2xl md:text-5xl mt-4">
                     Tap to Enter.
                 </p>
