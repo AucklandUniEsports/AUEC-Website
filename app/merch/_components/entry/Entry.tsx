@@ -43,7 +43,7 @@ export function Entry({ onEnter }: EntryProps) {
                         2026 F/W
                         <br /> COLLECTION
                     </h1>
-                    <span className="absolute top-0 -right-16 w-40 md:w-56 h-16 md:h-24 -translate-y-2">
+                    <span className="absolute top-0 -right-16 w-40 md:w-56 h-12 md:h-24 -translate-y-2">
                         {logos.map((src, index) => (
                             <Image
                                 key={src}
