@@ -26,7 +26,7 @@ export default function RotatingLogo() {
     }, []);
 
     return (
-        <span className="absolute -top-2 -right-16 w-40 md:w-56 h-12 md:h-24">
+        <span className="absolute -top-2 -right-16 w-40 lg:w-56 h-12 lg:h-24">
             {logos.map((src, index) => (
                 <Image
                     key={src}
@@ -34,7 +34,8 @@ export default function RotatingLogo() {
                     alt="AUEC"
                     fill
                     unoptimized
-                    className={`object-contain transition-opacity duration-500 ${index === currentLogo ? "opacity-100" : "opacity-0"}`}
+                    sizes="(max-width: 1024px) 160px, 224px"
+                    className={`object-contain transition-opacity duration-100 ${index === currentLogo ? "opacity-100" : "opacity-0"}`}
                 />
             ))}
         </span>

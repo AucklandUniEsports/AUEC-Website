@@ -27,7 +27,7 @@ export function Content() {
 
 
     return (
-        <div className="merch-page flex flex-col md:flex-row">
+        <div className="merch-page flex flex-col lg:flex-row">
             <ImageCarousel
                 images={images}
                 currentImage={currentImage}
@@ -37,6 +37,14 @@ export function Content() {
                 }}
                 onDotClick={(index) => {
                     setCurrentImage(index);
+                    setAutoPlay((prev) => prev + 1);
+                }}
+                onSwipe={(direction) => {
+                    setCurrentImage((prev) =>
+                        direction === "left"
+                            ? (prev + 1) % images.length
+                            : (prev - 1 + images.length) % images.length
+                    );
                     setAutoPlay((prev) => prev + 1);
                 }}
             />

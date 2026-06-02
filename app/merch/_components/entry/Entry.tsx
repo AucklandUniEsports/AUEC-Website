@@ -11,8 +11,7 @@ export function Entry({ onEnter }: EntryProps) {
         <div
             className="merch-page relative h-screen w-full bg-cover bg-center cursor-pointer flex items-center justify-center"
             onClick={onEnter}
-            onTouchStart={onEnter}
-            style={{ backgroundImage: `url(/merch-01.webp)` }}
+            style={{ backgroundImage: `url(/countdown.webp)` }}
         >
             <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
                 <EntryTitle />
