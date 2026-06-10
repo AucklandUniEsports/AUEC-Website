@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { BackgroundImage } from "./_components/BackgroundImage";
 import { CountdownTimer } from "./_components/CountdownTimer";
 
-const TARGET_DATE = new Date("2026-06-15T12:00:00");
+const TARGET_DATE = new Date(Date.UTC(2026, 5, 15, 0, 0, 0));
 
 export default function Countdown() {
     if (Date.now() >= TARGET_DATE.getTime()) {
