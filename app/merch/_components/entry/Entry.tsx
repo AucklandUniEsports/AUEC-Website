@@ -1,3 +1,7 @@
+"use client";
+import EntryTitle from "./EntryTitle";
+import EntrySubtitle from "./EntrySubtitle";
+
 interface EntryProps {
     onEnter: () => void;
 }
@@ -5,10 +9,14 @@ interface EntryProps {
 export function Entry({ onEnter }: EntryProps) {
     return (
         <div
-            className="flex h-screen items-center justify-center cursor-pointer"
+            className="merch-page relative h-screen w-full bg-cover bg-center cursor-pointer flex items-center justify-center"
             onClick={onEnter}
+            style={{ backgroundImage: `url(/countdown.webp)` }}
         >
-            <h1 className="text-4xl font-bold">Entry coming soon!</h1>
+            <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center">
+                <EntryTitle />
+                <EntrySubtitle />
+            </div>
         </div>
     );
 }

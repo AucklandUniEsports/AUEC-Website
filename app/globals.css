@@ -580,3 +580,23 @@ main {
         transform: scaleY(2.3);
     }
 }
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade {
+    animation: fade 0.5s ease-in-out;
+}
+
+.merch-page h1,
+.merch-page h2,
+.merch-page p {
+    font-family: "Times New Roman", Times, serif !important;
+}
