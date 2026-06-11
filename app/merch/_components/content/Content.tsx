@@ -9,6 +9,10 @@ const images = [
     "/merch-02.webp",
     "/merch-03.webp",
     "/merch-04.webp",
+    "/merch-05.webp",
+    "/merch-06.webp",
+    "/merch-07.webp",
+    "/merch-08.webp",
 ];
 
 const ORDER_LINK =
