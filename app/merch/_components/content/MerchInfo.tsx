@@ -9,7 +9,9 @@ export default function MerchInfo({ orderLink }: MerchInfoProps) {
             <h2 className="text-[2.625rem] lg:text-[5.25rem] font-normal mb-4 leading-none tracking-tight">
                 "The Collection"
             </h2>
-            <p className="text-xl mb-6 leading-none tracking-tight">NZ$ 60.00</p>
+            <p className="text-xl mb-6 leading-none tracking-tight">
+                NZ$ 75.00
+            </p>
             <p className="text-xl mb-8 leading-none tracking-tight">
                 A collection of one hoodie is still a collection.
                 <br />

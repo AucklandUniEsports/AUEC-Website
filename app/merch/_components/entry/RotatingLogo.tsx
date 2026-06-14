@@ -21,7 +21,7 @@ export default function RotatingLogo() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentLogo((prev) => (prev + 1) % logos.length);
-        }, 2000);
+        }, 500);
         return () => clearInterval(interval);
     }, []);
 
@@ -33,7 +33,6 @@ export default function RotatingLogo() {
                     src={src}
                     alt="AUEC"
                     fill
-                    unoptimized
                     sizes="(max-width: 1024px) 160px, 224px"
                     className={`object-contain transition-opacity duration-100 ${index === currentLogo ? "opacity-100" : "opacity-0"}`}
                 />

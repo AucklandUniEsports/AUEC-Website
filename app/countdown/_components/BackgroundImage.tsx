@@ -9,6 +9,8 @@ export function BackgroundImage() {
                 fill
                 className="object-cover"
                 priority
+                placeholder="blur"
+                blurDataURL="/countdown_blur.webp"
             />
             <div className="absolute inset-0 bg-black/50" />
         </>
