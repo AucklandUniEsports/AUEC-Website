@@ -129,7 +129,7 @@ main {
     position: fixed;
     top: 32px;
     width: calc(100% - 64px);
-    max-width: 1800px;
+    max-width: 2000px;
     box-sizing: border-box;
     z-index: 2;
 }
