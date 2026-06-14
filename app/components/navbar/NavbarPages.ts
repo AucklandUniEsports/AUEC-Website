@@ -14,6 +14,10 @@ const NavbarPages = [
         link: "/about",
     },
     {
+        title: "merch",
+        link: "/merch",
+    },
+    {
         title: "sponsors",
         link: "AUEC 2026 Sponsorship Deck.pdf",
     },
