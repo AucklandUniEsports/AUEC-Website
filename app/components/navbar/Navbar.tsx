@@ -24,6 +24,7 @@ export default function Navbar() {
         { href: "/", label: "HOME" },
         { href: "/events", label: "EVENTS" },
         { href: "/about", label: "ABOUT" },
+        { href: "/merch", label: "MERCH" },
     ];
 
     const isActiveLink = (href: string) => {

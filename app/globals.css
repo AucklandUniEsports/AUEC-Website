@@ -129,7 +129,6 @@ main {
     position: fixed;
     top: 32px;
     width: calc(100% - 64px);
-    max-width: 2000px;
     box-sizing: border-box;
     z-index: 2;
 }
@@ -778,6 +777,7 @@ main {
 
 .merch-page h1,
 .merch-page h2,
+.merch-page span,
 .merch-page p {
     font-family: "Times New Roman", Times, serif !important;
 }
