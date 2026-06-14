@@ -122,13 +122,15 @@ main {
     color: #e2ff00;
     display: flex;
     justify-content: space-between;
-    left: 32px;
+    left: 50%;
+    transform: translateX(-50%);
     margin: 0;
-    padding: 16px 32px;
+    padding: 8px 32px;
     position: fixed;
-    right: 32px;
     top: 32px;
-    width: auto;
+    width: calc(100% - 64px);
+    max-width: 1800px;
+    box-sizing: border-box;
     z-index: 2;
 }
 
@@ -160,13 +162,13 @@ main {
 
 .navbar-logo.navbar-socials {
     display: block;
-    height: 100px;
+    height: 85px;
     margin: 0;
     object-fit: contain;
     padding: 0;
     position: static;
     transform: none;
-    width: 60px;
+    width: 34px;
 }
 
 .navbar-link {
@@ -195,8 +197,8 @@ main {
 }
 
 .signup-button {
-    font-size: calc(8px + 0.5vw);
-    padding: 6px 35px !important;
+    font-size: calc(7px + 0.35vw);
+    padding: 4px 24px !important;
 }
 
 .signup-button::after {
@@ -283,28 +285,49 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0;
 }
-@media (width > 1400px) {
+@media (width >= 2560px) {
+    .navbar-logo.navbar-socials {
+        height: 120px;
+        width: 56px;
+    }
+    .navbar-right .signup-button {
+        font-size: calc(6px + 0.28vw) !important;
+        padding: 5px 18px !important;
+    }
+}
+@media (width > 425px) {
     .navbar {
-        height: calc(100% + 2vh);
-        max-height: 8vh;
+        height: auto;
     }
     .navbar-hamburger {
         display: none;
     }
     .navbar-link {
-        font-size: calc(10px + 0.75vw);
+        font-size: calc(8px + 0.5vw);
     }
     .navbar-logo {
-        height: 256px;
-        max-height: 6vh;
+        height: auto;
+        max-height: 32px;
     }
 
     .signup-button {
-        height: calc(100% + 1vh);
+        font-size: calc(7px + 0.38vw) !important;
+        padding: 6px 22px !important;
     }
 }
-@media (width < 1400px) {
+@media (max-width: 768px) {
+    .navbar-logo.navbar-socials {
+        display: none;
+    }
+}
+@media (max-width: 700px) {
+    .signup-button {
+        display: none;
+    }
+}
+@media (width <= 425px) {
     .navbar {
         height: calc(100% + 2vh);
         max-height: 8vh;
@@ -325,16 +348,6 @@ main {
 
     .signup-button {
         display: none;
-    }
-}
-@media (max-width: 700px) and (hover: none) {
-    .navbar {
-        min-height: 10vh;
-    }
-
-    .navbar-logo {
-        height: 6vh;
-        max-height: none;
     }
 }
 /* Layout Styles*/
@@ -708,10 +721,11 @@ main {
         height: fit-content;
         left: 16px;
         margin: 0;
-        padding: 16px;
+        padding: 8px 16px;
         right: 16px;
         top: 32px;
         width: auto;
+        transform: none;
     }
 
     .navbar-menu {
