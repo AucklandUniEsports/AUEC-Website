@@ -31,7 +31,7 @@ export default function HeroSection() {
                         A collection of one hoodie is still a collection.
                     </p>
 
-                    <div className="mt-3">
+                    <div className="mt-5">
                         <StandardButton
                             title="Explore Now"
                             color="grey"
