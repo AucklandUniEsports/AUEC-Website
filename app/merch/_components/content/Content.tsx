@@ -16,7 +16,7 @@ const images = [
 ];
 
 const ORDER_LINK =
-    "https://docs.google.com/forms/d/16dwVLuVc16wdAlokWbxWuvpSWe2PMIcqYs_aHWAg6dA/";
+    "https://docs.google.com/forms/d/16dwVLuVc16wdAlokWbxWuvpSWe2PMIcqYs_aHWAg6dA/viewform";
 
 export function Content() {
     const [currentImage, setCurrentImage] = useState(0);
@@ -28,7 +28,6 @@ export function Content() {
         }, 6000);
         return () => clearInterval(interval);
     }, [autoPlay]);
-
 
     return (
         <div className="merch-page flex flex-col lg:flex-row">
@@ -47,7 +46,7 @@ export function Content() {
                     setCurrentImage((prev) =>
                         direction === "left"
                             ? (prev + 1) % images.length
-                            : (prev - 1 + images.length) % images.length
+                            : (prev - 1 + images.length) % images.length,
                     );
                     setAutoPlay((prev) => prev + 1);
                 }}
