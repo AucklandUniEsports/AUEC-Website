@@ -35,7 +35,7 @@ export default function HeroSection() {
                         <StandardButton
                             title="Explore Now"
                             color="grey"
-                            link="https://docs.google.com/forms/d/16dwVLuVc16wdAlokWbxWuvpSWe2PMIcqYs_aHWAg6dA/edit"
+                            link="https://docs.google.com/forms/d/16dwVLuVc16wdAlokWbxWuvpSWe2PMIcqYs_aHWAg6dA/viewform"
                         />
                     </div>
                 </div>
