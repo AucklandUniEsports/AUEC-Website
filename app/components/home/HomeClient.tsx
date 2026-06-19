@@ -6,9 +6,10 @@ import Sponsors from "./Sponsors";
 
 interface HomeClientProps {
     events: any[];
+    sponsors: any[];
 }
 
-export default function HomeClient({ events }: HomeClientProps) {
+export default function HomeClient({ events, sponsors}: HomeClientProps) {
     return (
         <>
             <Hero />
@@ -16,7 +17,7 @@ export default function HomeClient({ events }: HomeClientProps) {
             <div className="divider"></div>
             <About />
             <div className="divider"></div>
-            <Sponsors />
+            <Sponsors sponsors={sponsors} />
         </>
     );
 }
