@@ -11,7 +11,7 @@ export default async function Home() {
     ]);
 
     const events = (await eventsRes.json()).data;
-    const sponsors = (await sponsorsRes.json()).data;
+    const sponsors = (await sponsorsRes.json()).data ?? [];
 
     return <HomeClient events={events} sponsors={sponsors} />;
 }

@@ -1,29 +1,10 @@
 import SponsorCard from "../SponsorCard";
 
-// const sponsors = [
-//     {
-//         link: "https://www.facebook.com/StandingFierce/",
-//         img: "standing-fierce.webp",
-//     },
-//     {
-//         link: "https://zowie.benq.com/en-au/index.html",
-//         img: "zowie.webp",
-//     },
-//     {
-//         link: "https://gameon.co.nz/",
-//         img: "game-on.webp",
-//     },
-//     {
-//         link: "https://www.auckland.ac.nz/en/on-campus/facilities-and-services/sport-and-recreation/sport/EsportsArena.html",
-//         img: "esports-arena.webp",
-//     },
-// ];
-
 interface Sponsor {
     id: number;
     name: string;
     link: string;
-    imageUrl: string;
+    thumbnailPath: string;
 }
 
 export default function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
@@ -43,7 +24,7 @@ export default function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
                 {sponsors.map((sponsor) => (
                     <SponsorCard
                         link={sponsor.link}
-                        img={sponsor.imageUrl}
+                        img={sponsor.thumbnailPath}
                         key={sponsor.id}
                     />
                 ))}
