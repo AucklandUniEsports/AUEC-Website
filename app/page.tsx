@@ -1,14 +1,17 @@
 import HomeClient from "./components/home/HomeClient";
 
 export default async function Home() {
-    const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/events/featured`,
-        {
+    const [eventsRes, sponsorsRes] = await Promise.all([
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/events/featured`, {
             cache: "no-store",
-        },
-    );
-    const json = await response.json();
-    const events = json.data;
+        }),
+        fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/sponsor`, {
+            cache: "no-store",
+        }),
+    ]);
 
-    return <HomeClient events={events} />;
+    const events = (await eventsRes.json()).data;
+    const sponsors = (await sponsorsRes.json()).data;
+
+    return <HomeClient events={events} sponsors={sponsors} />;
 }
