@@ -296,7 +296,7 @@ main {
         padding: 5px 18px !important;
     }
 }
-@media (width > 425px) {
+@media (width > 700px) {
     .navbar {
         height: auto;
     }
@@ -316,17 +316,12 @@ main {
         padding: 6px 22px !important;
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .navbar-logo.navbar-socials {
         display: none;
     }
 }
-@media (max-width: 700px) {
-    .signup-button {
-        display: none;
-    }
-}
-@media (width <= 425px) {
+@media (width <= 700px) {
     .navbar {
         height: calc(100% + 2vh);
         max-height: 8vh;
@@ -753,7 +748,6 @@ main {
     .button-standard {
         font-size: 16px;
         padding: 12px 12px;
-        transform: translateY(-30px);
     }
 
     .navbar-open-bottom {
