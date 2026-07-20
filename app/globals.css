@@ -105,6 +105,11 @@ main {
 
 .event-card-thumbnail {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    display: block;
 }
 
 .events-wrapper {
@@ -518,12 +523,14 @@ main {
     object-fit: cover;
     height: 100%;
     width: 100%;
+    background-color: #3a3a3a;
 }
 
 .home-c-img-right {
     object-fit: cover;
     height: 50%;
     width: 100%;
+    background-color: #3a3a3a;
 }
 
 .home-c-img-wrapper-outer {
