@@ -76,7 +76,9 @@ export default function ContactForm() {
             </div>
 
             <div className="form-group width-full mt-4">
-                <label className="mb-4" htmlFor="message">Message:</label>
+                <label className="mb-4" htmlFor="message">
+                    Message:
+                </label>
                 <textarea
                     className="border border-white rounded w-full mt-2"
                     id="message"

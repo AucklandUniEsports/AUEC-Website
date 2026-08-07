@@ -1,5 +1,5 @@
 import { Resend } from "resend";
-import { EmailTemplate } from "@/app/components/contact/EmailTemplate";
+import { EmailTemplate } from "@/app/(frontend)/contact/_components/EmailTemplate";
 import * as React from "react";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -15,7 +15,7 @@ async function verifyTurnstile(token: string): Promise<boolean> {
                     secret: process.env.TURNSTILE_SECRET_KEY,
                     response: token,
                 }),
-            }
+            },
         );
         const data = await response.json();
         return data.success;
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         if (website) {
             return Response.json(
                 { success: true, message: "Message sent!" },
-                { status: 200 }
+                { status: 200 },
             );
         }
 
@@ -42,7 +42,7 @@ export async function POST(request: Request) {
         if (!isValidToken) {
             return Response.json(
                 { error: "Turnstile verification failed" },
-                { status: 403 }
+                { status: 403 },
             );
         }
 
