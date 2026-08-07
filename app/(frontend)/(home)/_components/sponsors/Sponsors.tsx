@@ -1,4 +1,4 @@
-import SponsorCard from "../SponsorCard";
+import SponsorCard from "../../../_components/SponsorCard";
 
 interface Sponsor {
     id: number;

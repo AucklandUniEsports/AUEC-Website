@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Switzer from "next/font/local";
 import Syne from "next/font/local";
-import "./globals.css";
-import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
+import "./(frontend)/globals.css";
+import Navbar from "./(frontend)/_components/navbar/Navbar";
+import Footer from "./(frontend)/_components/footer/Footer";
 import { ReactLenis } from "lenis/react";
 
 const switzer = Switzer({
