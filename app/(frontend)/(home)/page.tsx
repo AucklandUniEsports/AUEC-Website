@@ -1,7 +1,7 @@
-import Hero from "@/app/(frontend)/(home)/_components/Hero";
-import FeaturedEvents from "@/app/(frontend)/(home)/_components/FeaturedEvents";
-import About from "@/app/(frontend)/(home)/_components/About";
-import Sponsors from "@/app/(frontend)/(home)/_components/Sponsors";
+import Hero from "@/app/(frontend)/(home)/_components/hero/Hero";
+import FeaturedEvents from "@/app/(frontend)/(home)/_components/featured-events/FeaturedEvents";
+import About from "@/app/(frontend)/(home)/_components/meet-esports-club/MeetEsportsClub";
+import Sponsors from "@/app/(frontend)/(home)/_components/sponsors/Sponsors";
 
 export default async function Home() {
     const [eventsRes, sponsorsRes] = await Promise.all([
