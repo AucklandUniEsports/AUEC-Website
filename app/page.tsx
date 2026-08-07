@@ -5,10 +5,6 @@ import StandardButton from "./components/StandardButton";
 import FeaturedEventsServer from "./components/home/FeaturedEventsServer";
 import SponsorsServer from "./components/home/SponsorsServer";
 
-// Rendered per-request: the page self-fetches its own API routes, which aren't
-// reachable during `next build`, so it can't be statically prerendered. The
-// fetches still use the Data Cache (revalidate: 60), so repeated requests are
-// served from cache rather than hitting the DB every time.
 export const dynamic = "force-dynamic";
 
 function SponsorsFallback() {
