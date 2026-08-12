@@ -455,6 +455,21 @@ main {
     user-select: none;
     white-space: nowrap;
     z-index: 0;
+    animation: neon-flicker 6s infinite;
+}
+
+@keyframes neon-flicker {
+    0%,
+    88%,
+    100% {
+        -webkit-text-stroke-color: rgba(168, 85, 247, 0.32);
+        opacity: 1;
+    }
+
+    91% {
+        -webkit-text-stroke-color: rgba(168, 85, 247, 0.05);
+        opacity: 0.35;
+    }
 }
 
 .home-b {
@@ -684,6 +699,13 @@ main {
         font-size: 64px;
     }
 
+    .home-a-watermark {
+        font-size: clamp(160px, 30vw, 320px);
+        left: 2vw;
+        top: auto;
+        bottom: 6vh;
+    }
+
     .events-wrapper {
         grid-template-columns: auto;
     }
@@ -765,6 +787,24 @@ main {
         margin: 0 0 48px;
         margin-top: 70px;
         width: 100%;
+    }
+
+    .home-a {
+        gap: 48px;
+        justify-content: flex-start;
+        padding: 160px 32px 64px;
+    }
+
+    .home-a-watermark {
+        animation: neon-flicker 6s infinite;
+        display: block;
+        font-size: 25vw;
+        left: auto;
+        margin: 0 -32px;
+        padding: 0 12px;
+        position: static;
+        top: auto;
+        transform: none;
     }
 
     .events {
