@@ -180,6 +180,7 @@ main {
 .navbar-link.active {
     color: white;
 }
+
 .navbar-link.active::after {
     width: 100%;
 }
@@ -286,26 +287,32 @@ main {
     justify-content: center;
     gap: 0;
 }
-@media (width >= 2560px) {
+
+@media (width >=2560px) {
     .navbar-logo.navbar-socials {
         height: 120px;
         width: 56px;
     }
+
     .navbar-right .signup-button {
         font-size: calc(6px + 0.28vw) !important;
         padding: 5px 18px !important;
     }
 }
+
 @media (width > 700px) {
     .navbar {
         height: auto;
     }
+
     .navbar-hamburger {
         display: none;
     }
+
     .navbar-link {
         font-size: calc(8px + 0.5vw);
     }
+
     .navbar-logo {
         height: auto;
         max-height: 32px;
@@ -316,26 +323,32 @@ main {
         padding: 6px 22px !important;
     }
 }
+
 @media (max-width: 900px) {
     .navbar-logo.navbar-socials {
         display: none;
     }
 }
-@media (width <= 700px) {
+
+@media (width <=700px) {
     .navbar {
         height: calc(100% + 2vh);
         max-height: 8vh;
     }
+
     .navbar-link {
         display: none;
     }
+
     .navbar-items {
         display: none;
     }
+
     .navbar-logo {
         height: calc(30px + 1vh);
         max-height: 80px;
     }
+
     .navbar-logo.navbar-socials {
         display: none;
     }
@@ -344,6 +357,7 @@ main {
         display: none;
     }
 }
+
 /* Layout Styles*/
 
 .nav-item-title {
@@ -434,7 +448,7 @@ main {
 }
 
 .home-a-button {
-    margin-top: 16px;
+    margin-top: 10px;
 }
 
 .home-a-watermark {
@@ -460,6 +474,7 @@ main {
 }
 
 @keyframes neon-flicker {
+
     0%,
     89%,
     100% {
@@ -738,6 +753,7 @@ main {
         letter-spacing: 1.8px;
         margin: 0;
     }
+
     .nav-item-index {
         color: white;
         font-size: 16px;
