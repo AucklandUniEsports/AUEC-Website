@@ -438,10 +438,10 @@ main {
 
 .home-a-watermark {
     color: transparent;
-    -webkit-text-stroke: 1.5px rgba(168, 85, 247, 0.32);
-    font-family: var(--font-syne);
+    -webkit-text-stroke: 1.5px rgba(156, 114, 255, 0.32);
+    font-family: var(--font-switzer);
     font-size: clamp(260px, 30vw, 620px);
-    font-weight: 700;
+    font-weight: 500;
     left: 13vw;
     letter-spacing: -0.1em;
     line-height: 0.8;
@@ -460,15 +460,25 @@ main {
 
 @keyframes neon-flicker {
     0%,
-    88%,
+    89%,
     100% {
-        -webkit-text-stroke-color: rgba(168, 85, 247, 0.32);
-        opacity: 1;
+        -webkit-text-stroke-color: rgba(156, 114, 255, 0.32);
     }
 
-    91% {
-        -webkit-text-stroke-color: rgba(168, 85, 247, 0.05);
-        opacity: 0.35;
+    89.5%,
+    90.3%,
+    91.1% {
+        -webkit-text-stroke-color: rgba(156, 114, 255, 1);
+    }
+
+    89.8%,
+    90.6%,
+    91.4% {
+        -webkit-text-stroke-color: rgba(156, 114, 255, 0.15);
+    }
+
+    91.8% {
+        -webkit-text-stroke-color: rgba(156, 114, 255, 1);
     }
 }
 
