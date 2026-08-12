@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 * {
-    font-family: "Switzer";
+    font-family: var(--font-switzer);
     list-style: none;
 }
 
@@ -75,7 +75,7 @@ main {
 .event-card-countdown {
     color: #aaa;
     text-align: right;
-    font-family: "Switzer";
+    font-family: var(--font-switzer);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +85,7 @@ main {
 
 .event-card-info {
     color: #aaa;
-    font-family: "Switzer";
+    font-family: var(--font-switzer);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -95,7 +95,7 @@ main {
 
 .event-card-title {
     color: white;
-    font-family: "Switzer";
+    font-family: var(--font-switzer);
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -347,7 +347,7 @@ main {
 /* Layout Styles*/
 
 .nav-item-title {
-    font-family: Syne;
+    font-family: var(--font-syne);
     font-size: 150px;
     font-style: normal;
     font-weight: 500;
@@ -371,7 +371,7 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: "Switzer";
+    font-family: var(--font-switzer);
     font-size: 20px;
     font-weight: 500;
     height: fit-content;
@@ -404,7 +404,7 @@ main {
 
 .home-title {
     color: #fff;
-    font-family: Syne;
+    font-family: var(--font-syne);
     font-size: 100px;
     font-style: normal;
     font-weight: 500;
@@ -434,7 +434,7 @@ main {
 
 .section-title {
     color: #fff;
-    font-family: Syne;
+    font-family: var(--font-syne);
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -445,7 +445,7 @@ main {
 
 .standard-text {
     color: #fff;
-    font-family: "Switzer";
+    font-family: var(--font-switzer);
     font-size: 24px;
     font-style: normal;
     font-weight: 400;

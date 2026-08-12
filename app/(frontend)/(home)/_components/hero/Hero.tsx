@@ -3,23 +3,26 @@ import StandardButton from "../../../_components/StandardButton";
 export default function HeroSection() {
     return (
         <section className="home-a atf-section">
+            <span className="home-a-watermark" aria-hidden="true">
+                AUEC
+            </span>
             <div className="home-a-content">
                 <h1 className="home-title">
                     For The Love <br /> of The Game.
                 </h1>
-                <p className="standard-text">
+                <p className="standard-text home-a-subtitle">
                     Auckland University Esports Club (AUEC) is New Zealand's
-                    biggest student e-sports organization, empowering players to
-                    compete and enjoy gaming with their peers.
+                    <br /> biggest student e-sports organization, empowering
+                    players <br /> to compete and enjoy gaming alongside their peers.
                 </p>
+                <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
+                    target="_blank"
+                    className="button-standard button-lime home-a-button"
+                >
+                    Sign up to <em>AUEC.</em>
+                </a>
             </div>
-            <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
-                target="_blank"
-                className="button-standard button-lime"
-            >
-                Sign up to AUEC.
-            </a>
         </section>
     );
 }
