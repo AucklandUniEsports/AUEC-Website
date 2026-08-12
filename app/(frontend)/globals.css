@@ -436,6 +436,27 @@ main {
     margin-top: 16px;
 }
 
+.home-a-watermark {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(168, 85, 247, 0.32);
+    font-family: var(--font-syne);
+    font-size: clamp(260px, 30vw, 620px);
+    font-weight: 700;
+    left: 13vw;
+    letter-spacing: -0.1em;
+    line-height: 0.8;
+    pointer-events: none;
+    position: absolute;
+    text-align: left;
+    text-transform: uppercase;
+    top: 40vh;
+    transform: skewX(-11deg);
+    transform-origin: top left;
+    user-select: none;
+    white-space: nowrap;
+    z-index: 0;
+}
+
 .home-b {
     display: flex;
     flex-direction: column;
