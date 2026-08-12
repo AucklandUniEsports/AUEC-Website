@@ -432,6 +432,10 @@ main {
     font-size: 22px;
 }
 
+.home-a-button {
+    margin-top: 16px;
+}
+
 .home-b {
     display: flex;
     flex-direction: column;
