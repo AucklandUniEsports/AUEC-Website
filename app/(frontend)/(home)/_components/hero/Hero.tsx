@@ -8,12 +8,15 @@ export default function HeroSection() {
             </span>
             <div className="home-a-content">
                 <h1 className="home-title">
-                    For The Love <br /> of The Game.
+                    For The Love <br className="desktop-line-break" /> of The
+                    Game.
                 </h1>
                 <p className="standard-text home-a-subtitle">
                     Auckland University Esports Club (AUEC) is New Zealand's
-                    <br /> biggest student e-sports organization, empowering
-                    players <br /> to compete and enjoy gaming alongside their peers.
+                    <br className="desktop-line-break" /> biggest student
+                    e-sports organization, empowering players{" "}
+                    <br className="desktop-line-break" /> to compete and enjoy
+                    gaming alongside their peers.
                 </p>
                 <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"

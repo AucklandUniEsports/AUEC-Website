@@ -782,6 +782,10 @@ main {
 }
 
 @media (width < 700px) {
+    .desktop-line-break {
+        display: none;
+    }
+
     .navbar {
         height: fit-content;
         left: 16px;
@@ -801,21 +805,37 @@ main {
     }
 
     .home-a {
-        gap: 48px;
         justify-content: flex-start;
         padding: 160px 32px 64px;
     }
 
+    .home-a-content {
+        margin-top: 30px;
+    }
+
+    .home-title {
+        font-size: 45px;
+    }
+
+    .standard-text.home-a-subtitle {
+        font-size: 14px;
+    }
+
+    .button-standard.home-a-button {
+        font-size: 18px;
+        margin-top: -10px;
+        padding: 12px 18px;
+    }
+
     .home-a-watermark {
-        animation: neon-flicker 6s infinite;
         display: block;
-        font-size: 25vw;
-        left: auto;
-        margin: 0 -32px;
+        font-size: 70vw;
+        left: none;
+        margin: 0 -32px 0 -100px;
         padding: 0 12px;
         position: static;
         top: auto;
-        transform: none;
+        transform: skewX(-11deg);
     }
 
     .events {
@@ -843,6 +863,7 @@ main {
         bottom: 16px;
     }
 }
+
 
 @keyframes fade {
     from {
