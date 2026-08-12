@@ -395,11 +395,16 @@ main {
 }
 
 .home-a {
-    background-image: url(../../public/background.webp);
+    background-image: url(../../public/hero-background.webp);
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-height: 100vh;
+    overflow: hidden;
     padding: 160px 64px 64px;
+    position: relative;
 }
 
 .home-title {
