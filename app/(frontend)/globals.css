@@ -430,6 +430,7 @@ main {
 .standard-text.home-a-subtitle {
     font-style: italic;
     font-size: 22px;
+    font-weight: 300;
 }
 
 .home-a-button {

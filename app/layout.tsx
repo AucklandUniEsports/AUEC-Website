@@ -10,6 +10,21 @@ const switzer = Switzer({
     variable: "--font-switzer",
     src: [
         {
+            path: "../public/Switzer-Thin.woff2",
+            weight: "100",
+            style: "normal",
+        },
+        {
+            path: "../public/Switzer-Extralight.woff2",
+            weight: "200",
+            style: "normal",
+        },
+        {
+            path: "../public/Switzer-Light.woff2",
+            weight: "300",
+            style: "normal",
+        },
+        {
             path: "../public/Switzer-Regular.woff2",
             weight: "400",
             style: "normal",
