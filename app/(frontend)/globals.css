@@ -422,6 +422,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    position: relative;
+    z-index: 1;
+    margin-top: 60px;
+}
+
+.standard-text.home-a-subtitle {
+    font-style: italic;
+    font-size: 22px;
 }
 
 .home-b {
