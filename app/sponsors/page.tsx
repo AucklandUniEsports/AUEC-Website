@@ -32,10 +32,12 @@ export default function Sponsors() {
                     <h1 className="text-[32px] sm:text-[48px] md:text-[72px] lg:text-[96px] text-white font-['Syne'] font-bold tracking-widest sm:tracking-[0.15em] uppercase text-center mx-6 sm:mx-8 md:mx-12 lg:mx-16">
                         Sponsorships
                     </h1>
-                    <p className="text-[18px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px] text-center max-w-xl">
-                        Proud to be supported by blah blah lots of sponsors very
-                        cool give us all your money, showcasing sponsors and
-                        trying to get new sponsors from this page lol.
+                    <p className="text-[18px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px] text-center max-w-xl mx-6 md:mx-0">
+                        Be a part of the AUEC 2026 journey and support the next
+                        generation of esports enthusiasts. Our sponsorship
+                        opportunities offer a unique platform to showcase your
+                        brand to a diverse and engaged audience, while
+                        contributing to the growth of the esports community.
                     </p>
                 </div>
             </div>
@@ -61,10 +63,15 @@ export default function Sponsors() {
                 Why work with us?
             </h1>
 
-            <p className="text-[18px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px] text-center max-w-[36rem] mx-auto mt-4 font-stretched-extra-expanded">
-                Proud to be supported by blah blah lots of sponsors very cool
-                give us all your money, showcasing sponsors and trying to get
-                new sponsors from this page lol.
+            <p className="text-[18px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px] text-center max-w-[36rem] mx-6 md:mx-auto mt-4 font-stretched-extra-expanded">
+                Partnering with AUEC 2026 means aligning your brand with a
+                rapidly growing esports community. Our events bring in a wide
+                range of people, ranging from casual audiences to industry
+                professionals, providing an excellent platform for brand
+                exposure and engagement. By sponsoring our club, you'll have the
+                opportunity to showcase your products or services to a highly
+                targeted demographic, while also supporting the growth of
+                esports in New Zealand. 
             </p>
             <a
                 href="/AUEC-2026-Sponsorship-Deck.pdf"
