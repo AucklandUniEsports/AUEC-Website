@@ -24,6 +24,8 @@ export default function Navbar() {
         { href: "/", label: "HOME" },
         { href: "/events", label: "EVENTS" },
         { href: "/about", label: "ABOUT" },
+        { href: "/sponsors", label: "SPONSORS" },
+        { href: "/contact", label: "CONTACT" },
     ];
 
     const isActiveLink = (href: string) => {
@@ -41,7 +43,7 @@ export default function Navbar() {
                     <Link href="/" onClick={() => setOpen(false)}>
                         <img
                             className="navbar-logo"
-                            src="auec_logo_no_text.svg"
+                            src="/auec_logo_no_text.svg"
                             alt="AUEC logo"
                         />
                     </Link>
@@ -58,22 +60,6 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-
-                        <a
-                            href="AUEC 2026 Sponsorship Deck.pdf"
-                            className="navbar-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SPONSORS
-                        </a>
-
-                        <a
-                            href="mailto:uoaesports@gmail.com"
-                            className="navbar-link"
-                        >
-                            CONTACT
-                        </a>
                     </nav>
 
                     <div className="navbar-right">
@@ -85,7 +71,7 @@ export default function Navbar() {
                             >
                                 <img
                                     className="navbar-logo navbar-socials"
-                                    src="discord.svg"
+                                    src="/discord.svg"
                                     alt="Discord"
                                 />
                             </a>
@@ -97,7 +83,7 @@ export default function Navbar() {
                             >
                                 <img
                                     className="navbar-logo navbar-socials"
-                                    src="instagram.svg"
+                                    src="/instagram.svg"
                                     alt="Instagram"
                                 />
                             </a>
@@ -109,7 +95,7 @@ export default function Navbar() {
                             >
                                 <img
                                     className="navbar-logo navbar-socials"
-                                    src="twitch.svg"
+                                    src="/twitch.svg"
                                     alt="Twitch"
                                 />
                             </a>

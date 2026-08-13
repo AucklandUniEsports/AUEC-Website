@@ -13,7 +13,7 @@ export default function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
             <div className="home-b-top">
                 <h2 className="section-title">Community Partners</h2>
                 <a
-                    href="AUEC 2026 Sponsorship Deck.pdf"
+                    href="/AUEC-2026-Sponsorship-Deck.pdf"
                     target="_blank"
                     className="button-standard button-grey"
                 >

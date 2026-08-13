@@ -7,19 +7,19 @@ export default function AboutSection() {
                 <div className="home-c-img-wrapper-left">
                     <img
                         className="home-c-img-left"
-                        src="DSC00032.webp"
+                        src="/DSC00032.webp"
                         alt=""
                     />
                 </div>
                 <div className="home-c-img-wrapper-right">
                     <img
                         className="home-c-img-right"
-                        src="DSC07430.webp"
+                        src="/DSC07430.webp"
                         alt=""
                     />
                     <img
                         className="home-c-img-right"
-                        src="DSC00276.webp"
+                        src="/DSC00276.webp"
                         alt=""
                     />
                 </div>

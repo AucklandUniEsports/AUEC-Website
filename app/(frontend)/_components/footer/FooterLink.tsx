@@ -1,12 +1,14 @@
 type FooterLinkProps = {
-    title: string
-    link: string
-}
+    title: string;
+    link: string;
+};
 
-export default function FooterLink({title, link} : FooterLinkProps){
-    return(
+export default function FooterLink({ title, link }: FooterLinkProps) {
+    return (
         <li>
-            <a className="footer-link" href={link} target="_blank">{title}</a>
+            <a className="footer-link" href={link} target="_blank">
+                {title}
+            </a>
         </li>
-    )
+    );
 }
