@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 * {
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     list-style: none;
 }
 
@@ -75,7 +75,7 @@ main {
 .event-card-countdown {
     color: #aaa;
     text-align: right;
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +85,7 @@ main {
 
 .event-card-info {
     color: #aaa;
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -95,7 +95,7 @@ main {
 
 .event-card-title {
     color: white;
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -361,7 +361,7 @@ main {
 /* Layout Styles*/
 
 .nav-item-title {
-    font-family: var(--font-syne);
+    font-family: Syne;
     font-size: 150px;
     font-style: normal;
     font-weight: 500;
@@ -385,7 +385,7 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     font-size: 20px;
     font-weight: 500;
     height: fit-content;
@@ -423,7 +423,7 @@ main {
 
 .home-title {
     color: #fff;
-    font-family: var(--font-syne);
+    font-family: Syne;
     font-size: 100px;
     font-style: normal;
     font-weight: 500;
@@ -454,7 +454,7 @@ main {
 .home-a-watermark {
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(156, 114, 255, 0.32);
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     font-size: clamp(260px, 30vw, 620px);
     font-weight: 500;
     left: 13vw;
@@ -513,7 +513,7 @@ main {
 
 .section-title {
     color: #fff;
-    font-family: var(--font-syne);
+    font-family: Syne;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -524,7 +524,7 @@ main {
 
 .standard-text {
     color: #fff;
-    font-family: var(--font-switzer);
+    font-family: "Switzer";
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
