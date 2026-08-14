@@ -24,17 +24,17 @@ export default function AboutSection() {
                     />
                 </div>
             </div>
-            <h2 className="home-title">
-                Meet the <br /> Esports Club.
+            <h2 className="home-title -mt-22">
+                MEET THE <br /> ESPORTS CLUB.
             </h2>
-            <p className="standard-text">
+            <p className="standard-text opacity-80">
                 From fighting game locals to interclub tournaments, our team
                 runs a bunch of events for the community and puts a lot of work
                 into our broadcasts for the folks at home. Whether you want to
                 grind matches or get involved behind the scenes, AUEC has a
                 place for you.
             </p>
-            <StandardButton title="Learn More." color="grey" link="/about" />
+            <StandardButton title="Find Out More." color="lime" link="/about" />
         </section>
     );
 }
