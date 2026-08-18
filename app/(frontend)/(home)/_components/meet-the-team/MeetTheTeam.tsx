@@ -2,13 +2,26 @@ import Link from "next/link";
 
 export default function TeamSection() {
     return (
-        <section className="relative flex h-[100svh] items-center justify-center text-center">
+        <section className="relative flex h-[100svh] items-center justify-center text-center overflow-hidden">
             <img
                 className="absolute h-full object-cover"
                 src="DSC00858.webp"
                 alt=""
             />
-            <div className="relative flex max-w-[720px] flex-col items-center gap-5">
+            <span
+                aria-hidden="true"
+                className="absolute top-1/2 left-1/2 z-[2] -translate-x-1/2 -translate-y-1/2
+                 font-['Syne'] font-medium tracking-tight
+                text-transparent [-webkit-text-stroke:2px_rgba(156,114,255,0.8)]
+                text-[clamp(180px,32vw,520px)] select-none"
+            >
+                <i>AUEC</i>
+            </span>
+            <div
+                className="absolute inset-0 z-[1] opacity-20
+                bg-[linear-gradient(180deg,#4700ED_0%,#000000_100%)]"
+            />
+            <div className="relative z-[2] flex max-w-[720px] flex-col items-center gap-5">
                 <h2 className="font-['Syne'] text-[72px] font-medium leading-[80%] text-white ">
                     MEET THE TEAM.
                 </h2>
