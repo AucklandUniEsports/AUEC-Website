@@ -2,7 +2,7 @@ import StandardButton from "../../../_components/StandardButton";
 
 export default function AboutSection() {
     return (
-        <section className="flex flex-col pt-8 px-16 pb-12 gap-4">
+        <section className="flex flex-col pt-8 pb-12 gap-4">
             <div className="flex gap-4 object-cover h-[50vh] w-full">
                 <div className="w-[55%]">
                     <img
@@ -24,7 +24,7 @@ export default function AboutSection() {
                     />
                 </div>
             </div>
-            <div className="pl-10 flex flex-col gap-4 -mt-24">
+            <div className="pl-16 flex flex-col gap-4 -mt-24">
                 <h2 className="text-white font-['Syne'] text-[100px] scale-y-70 font-medium not-italic leading-[0.8] tracking-[1.2px] uppercase text-5xl">
                     MEET THE ESPORTS <br /> CLUB.
                 </h2>
