@@ -3,22 +3,22 @@ import StandardButton from "../../../_components/StandardButton";
 export default function AboutSection() {
     return (
         <section className="flex flex-col px-7 md:px-0 pt-8 pb-12 gap-4">
-            <div className="flex gap-4 object-cover h-[30vh] md:h-[45vh] lg:h-[65vh] w-full">
-                <div className="w-full md:w-[55%]">
+            <div className="grid grid-cols-1 md:brightness-75 md:grid-cols-[11fr_9fr] grid-rows-1 gap-4 h-[30vh] md:h-[45vh] lg:h-[65vh] w-full">
+                <div className="h-full">
                     <img
                         className="object-cover h-full w-full"
                         src="DSC00276.webp"
                         alt=""
                     />
                 </div>
-                <div className="hidden md:flex flex-col gap-4 w-[45%]">
+                <div className="hidden md:grid grid-rows-2 gap-4 h-full">
                     <img
-                        className="object-cover h-1/2 w-full"
+                        className="object-cover h-full w-full"
                         src="DSC00032.webp"
                         alt=""
                     />
                     <img
-                        className="object-cover h-1/2 w-full"
+                        className="object-cover h-full w-full"
                         src="DSC07430.webp"
                         alt=""
                     />
