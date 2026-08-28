@@ -1,11 +1,10 @@
 import StandardButton from "../../../_components/StandardButton";
+import Watermark from "./Watermark";
 
 export default function HeroSection() {
     return (
         <section className="home-a atf-section">
-            <span className="home-a-watermark" aria-hidden="true">
-                AUEC
-            </span>
+            <Watermark />
             <div className="home-a-content">
                 <h1 className="home-title">
                     For The Love <br className="desktop-line-break" /> of The
