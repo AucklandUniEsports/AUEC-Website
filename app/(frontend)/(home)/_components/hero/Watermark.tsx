@@ -61,7 +61,7 @@ export default function Watermark() {
         <span
             ref={ref}
             aria-hidden="true"
-            className="pointer-events-none absolute top-[40vh] left-[13vw] z-0 origin-top-left -skew-x-[11deg] [font-family:Switzer] text-[clamp(260px,30vw,620px)] leading-[0.8] font-medium tracking-[-0.1em] whitespace-nowrap text-transparent uppercase select-none [-webkit-text-stroke:1.5px_rgba(156,114,255,1)] max-[950px]:top-auto max-[950px]:bottom-[6vh] max-[950px]:left-[2vw] max-[950px]:text-[clamp(160px,30vw,320px)] max-[700px]:static max-[700px]:mx-[-100px] max-[700px]:mt-0 max-[700px]:mr-[-32px] max-[700px]:mb-0 max-[700px]:block max-[700px]:px-3 max-[700px]:py-0 max-[700px]:text-[70vw]"
+            className="pointer-events-none absolute top-[40vh] left-[13vw] z-0 origin-top-left -skew-x-[11deg] [font-family:Switzer] text-[clamp(260px,30vw,900px)] leading-[0.8] font-medium tracking-[-0.1em] whitespace-nowrap text-transparent uppercase select-none [-webkit-text-stroke:1.5px_rgba(156,114,255,1)] max-[950px]:top-auto max-[950px]:bottom-[6vh] max-[950px]:left-[2vw] max-[950px]:text-[clamp(160px,30vw,320px)] max-[700px]:static max-[700px]:mx-[-100px] max-[700px]:mt-0 max-[700px]:mr-[-32px] max-[700px]:mb-0 max-[700px]:block max-[700px]:px-3 max-[700px]:py-0 max-[700px]:text-[70vw]"
         >
             AUEC
         </span>

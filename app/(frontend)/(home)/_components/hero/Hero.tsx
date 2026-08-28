@@ -5,7 +5,7 @@ export default function HeroSection() {
         <section className="relative flex min-h-screen flex-col justify-between overflow-hidden bg-[url('/hero-background.webp')] bg-cover bg-center px-16 pt-40 pb-16 max-[950px]:px-8 max-[700px]:justify-start">
             <Watermark />
             <div className="relative z-1 mt-[60px] flex flex-col gap-2 max-[700px]:mt-[30px]">
-                <h1 className="font-[Syne] text-[100px] leading-[80%] font-medium tracking-[1.2px] text-white uppercase max-[950px]:text-[64px] max-[700px]:text-[45px]">
+                <h1 className="font-[Syne] text-[100px] leading-[80%] font-medium tracking-[1.2px] text-white uppercase max-[950px]:text-[64px] max-[700px]:text-[45px] min-[2560px]:text-[140px]">
                     For The Love <br className="max-[700px]:hidden" /> of The
                     Game.
                 </h1>
