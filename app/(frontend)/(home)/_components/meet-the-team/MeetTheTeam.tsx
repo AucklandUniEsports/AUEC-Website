@@ -2,9 +2,9 @@ import Link from "next/link";
 
 export default function TeamSection() {
     return (
-        <section className="relative flex h-[100svh] items-center justify-center text-center overflow-hidden">
+        <section className="relative flex h-[80svh] items-center justify-center text-center overflow-hidden">
             <img
-                className="absolute h-full object-cover"
+                className="absolute h-full w-full object-cover"
                 src="DSC00858.webp"
                 alt=""
             />
