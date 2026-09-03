@@ -23,11 +23,11 @@ export default function TeamSection() {
                 bg-[linear-gradient(180deg,#4700ED_0%,#000000_100%)]"
             />
             <div className="relative z-[2] flex max-w-[720px] flex-col items-center gap-5">
-                <h2 className="font-['Syne'] text-[72px] font-medium leading-[80%] text-white ">
+                <h2 className="font-['Syne'] text-[72px] font-medium leading-[130%] scale-x-[1.3] text-white ">
                     MEET THE TEAM.
                 </h2>
 
-                <p className="max-w-[560px] font-['Syne'] text-[24px] leading-none tracking-[-0.7px] text-white">
+                <p className="max-w-[560px] font-['Syne'] text-[24px] leading-none tracking-[-0.7px] scale-x-[1.2] text-[#cfced2]">
                     The execs, game reps, broadcast crew and volunteers who keep
                     AUEC running. Built by students, for students. Meet the
                     people behind the matches.
