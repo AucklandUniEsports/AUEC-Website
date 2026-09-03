@@ -14,7 +14,8 @@ export default function TeamSection() {
                 -translate-y-1/2 -translate-x-[3vw] text-center
                 font-['Syne'] font-medium tracking-tight whitespace-nowrap
                 text-transparent [-webkit-text-stroke:2px_rgba(156,114,255,0.8)]
-                text-[clamp(220px,40vw,650px)] select-none"
+                
+                text-[35vw] select-none"
             >
                 <i>AUEC</i>
             </span>
@@ -22,12 +23,12 @@ export default function TeamSection() {
                 className="absolute inset-0 z-[1] opacity-20
                 bg-[linear-gradient(180deg,#4700ED_0%,#000000_100%)]"
             />
-            <div className="relative z-[2] flex max-w-[720px] flex-col items-center gap-5">
-                <h2 className="font-['Syne'] text-[72px] font-medium leading-[130%] scale-x-[1.3] text-white ">
+            <div className="relative z-[2] flex max-w-[720px] flex-col items-start gap-5 px-5 text-left md:items-center md:px-0 md:text-center">
+                <h2 className="mt-10 md:mt-0 font-['Syne'] text-[56px] md:text-[72px] font-medium leading-[130%] md:scale-x-[1.3] text-white">
                     MEET THE TEAM.
                 </h2>
 
-                <p className="max-w-[560px] font-['Syne'] text-[24px] leading-none tracking-[-0.7px] scale-x-[1.2] text-[#cfced2]">
+                <p className="mt-25 md:mt-0 max-w-[560px] font-['Syne'] text-[18px] md:text-[24px] tracking-[-0.3px] md:tracking-[-0.7px]md:scale-x-[1.2] text-[#cfced2]">
                     The execs, game reps, broadcast crew and volunteers who keep
                     AUEC running. Built by students, for students. Meet the
                     people behind the matches.
