@@ -10,10 +10,11 @@ export default function TeamSection() {
             />
             <span
                 aria-hidden="true"
-                className="absolute top-1/2 left-1/2 z-[2] -translate-x-1/2 -translate-y-1/2
-                 font-['Syne'] font-medium tracking-tight
+                className="absolute inset-x-0 top-1/2 z-[2]
+                -translate-y-1/2 -translate-x-[3vw] text-center
+                font-['Syne'] font-medium tracking-tight whitespace-nowrap
                 text-transparent [-webkit-text-stroke:2px_rgba(156,114,255,0.8)]
-                text-[clamp(180px,32vw,520px)] select-none"
+                text-[clamp(220px,40vw,650px)] select-none"
             >
                 <i>AUEC</i>
             </span>
