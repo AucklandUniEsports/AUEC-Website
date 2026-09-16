@@ -20,9 +20,9 @@ main {
 }
 
 .divider {
-    width: calc(100% - 64px);
+    width: 100%;
     border-top: solid 1px #888888;
-    margin: 0 32px;
+    margin: 0;
 }
 
 .divider-bottom {
