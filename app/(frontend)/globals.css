@@ -180,6 +180,7 @@ main {
 .navbar-link.active {
     color: white;
 }
+
 .navbar-link.active::after {
     width: 100%;
 }
@@ -286,26 +287,32 @@ main {
     justify-content: center;
     gap: 0;
 }
-@media (width >= 2560px) {
+
+@media (width >=2560px) {
     .navbar-logo.navbar-socials {
         height: 120px;
         width: 56px;
     }
+
     .navbar-right .signup-button {
         font-size: calc(6px + 0.28vw) !important;
         padding: 5px 18px !important;
     }
 }
+
 @media (width > 700px) {
     .navbar {
         height: auto;
     }
+
     .navbar-hamburger {
         display: none;
     }
+
     .navbar-link {
         font-size: calc(8px + 0.5vw);
     }
+
     .navbar-logo {
         height: auto;
         max-height: 32px;
@@ -316,26 +323,32 @@ main {
         padding: 6px 22px !important;
     }
 }
+
 @media (max-width: 900px) {
     .navbar-logo.navbar-socials {
         display: none;
     }
 }
-@media (width <= 700px) {
+
+@media (width <=700px) {
     .navbar {
         height: calc(100% + 2vh);
         max-height: 8vh;
     }
+
     .navbar-link {
         display: none;
     }
+
     .navbar-items {
         display: none;
     }
+
     .navbar-logo {
         height: calc(30px + 1vh);
         max-height: 80px;
     }
+
     .navbar-logo.navbar-socials {
         display: none;
     }
@@ -344,6 +357,7 @@ main {
         display: none;
     }
 }
+
 /* Layout Styles*/
 
 .nav-item-title {
@@ -392,31 +406,6 @@ main {
 .button-red {
     background-color: #df5f5f;
     color: white;
-}
-
-.home-a {
-    background-image: url(../../public/background.webp);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 160px 64px 64px;
-}
-
-.home-title {
-    color: #fff;
-    font-family: Syne;
-    font-size: 100px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 80%;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-}
-
-.home-a-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
 .home-b {
@@ -630,20 +619,12 @@ main {
 }
 
 @media (width < 950px) {
-    .home-a {
-        padding: 160px 32px 64px;
-    }
-
     .home-b {
         padding: 32px 32px 48px;
     }
 
     .home-c {
         padding: 32px 32px 48px;
-    }
-
-    .home-title {
-        font-size: 64px;
     }
 
     .events-wrapper {
@@ -667,6 +648,7 @@ main {
         letter-spacing: 1.8px;
         margin: 0;
     }
+
     .nav-item-index {
         color: white;
         font-size: 16px;
@@ -754,6 +736,7 @@ main {
         bottom: 16px;
     }
 }
+
 
 @keyframes fade {
     from {
