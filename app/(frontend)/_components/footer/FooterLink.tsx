@@ -4,9 +4,15 @@ type FooterLinkProps = {
 }
 
 export default function FooterLink({title, link} : FooterLinkProps){
-    return(
+    return (
         <li>
-            <a className="footer-link" href={link} target="_blank">{title}</a>
+            <a
+                className="text-white text-base font-medium leading-none tracking-[-1px]"
+                href={link}
+                target="_blank"
+            >
+                {title}
+            </a>
         </li>
-    )
+    );
 }

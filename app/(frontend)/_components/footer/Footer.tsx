@@ -17,35 +17,45 @@ const FooterLinks = [
 ];
 
 export default function Footer(){
-    return(
-        <footer className="footer">
-                <div className="footer-main">
+    return (
+        <footer className="flex h-fit flex-col items-center justify-center gap-4 bg-[#272727] p-8 text-white">
+            <div className="flex items-center justify-center gap-16">
+                <div>
+                    <img className="w-[300px]" src="auec_logo.svg" alt="" />
+                    <SocialMediaLinkBar />
+                </div>
+                <div className="flex gap-8">
                     <div>
-                        <img className="footer-logo" src="auec_logo.svg" alt="" />
-                        <SocialMediaLinkBar/>
+                        <p>Information</p>
+                        <ul className="flex flex-col gap-0.5">
+                            {FooterLinks.map((link, index) => (
+                                <FooterLink
+                                    title={link.title}
+                                    key={index}
+                                    link={link.link}
+                                />
+                            ))}
+                        </ul>
                     </div>
-                    <div className="footer-links">
-                        <div>
-                            <p>Information</p>
-                            <ul className="footer-li">
-                                {
-                                    FooterLinks.map((link, index) =>
-                                        <FooterLink title={link.title} key={index} link={link.link}/>
-                                    )
-                                }
-                            </ul>
-                        </div>
-                        <div>
-                            <p>Contact</p>
-                            <FooterLink title={"Address: 11 Symonds Street, Auckland 1010, New Zealand"} link="https://maps.app.goo.gl/j8eVGiy8MUAXRWra8"/>
-                            <FooterLink title={"Email: uoaesports@gmail.com"} link="mailto:uoaesports@gmail.com"/>
-                        </div>
+                    <div>
+                        <p>Contact</p>
+                        <FooterLink
+                            title={
+                                "Address: 11 Symonds Street, Auckland 1010, New Zealand"
+                            }
+                            link="https://maps.app.goo.gl/j8eVGiy8MUAXRWra8"
+                        />
+                        <FooterLink
+                            title={"Email: uoaesports@gmail.com"}
+                            link="mailto:uoaesports@gmail.com"
+                        />
                     </div>
                 </div>
-                <div className="footer-bottom">
-                    <div className="divider-bottom"></div>
-                    <p>©2025 Auckland University Esports Club</p>
-                </div>
+            </div>
+            <div className="footer-bottom">
+                <div className="w-full border-t border-solid border-[#6b6b6b]"></div>
+                <p>©2025 Auckland University Esports Club</p>
+            </div>
         </footer>
     );
 }
