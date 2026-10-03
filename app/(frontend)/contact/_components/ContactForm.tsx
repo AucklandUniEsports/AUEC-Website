@@ -96,7 +96,7 @@ export default function ContactForm() {
             </div>
 
             <button
-                className="text-black bg-[#e2ff00] w-full rounded py-2 mb-4 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
+                className="text-black bg-neon-green w-full rounded py-2 mb-4 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
                 type="submit"
                 disabled={status === "Sending..."}
             >
