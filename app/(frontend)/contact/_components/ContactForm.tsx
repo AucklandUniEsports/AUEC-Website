@@ -1,17 +1,31 @@
 "use client";
 
-import { useState } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { useRef, useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import FormField from "./FormField";
+import CategoryField from "./CategoryField";
+
+type Status = "idle" | "sending" | "sent" | "error";
 
 export default function ContactForm() {
-    const [status, setStatus] = useState<string>("");
+    const [status, setStatus] = useState<Status>("idle");
+    const [statusMessage, setStatusMessage] = useState<string>("");
     const [turnstileToken, setTurnstileToken] = useState<string>("");
+    const turnstileRef = useRef<TurnstileInstance>(undefined);
 
-    const handleSubmit = async (e: React.ChangeEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setStatus("Sending...");
-        const formData = new FormData(e.currentTarget);
+        const form = e.currentTarget;
+
+        if (!turnstileToken) {
+            setStatus("error");
+            setStatusMessage("Please complete the verification check first.");
+            return;
+        }
+
+        setStatus("sending");
+        setStatusMessage("");
+        const formData = new FormData(form);
         const payload = {
             ...Object.fromEntries(formData.entries()),
             turnstileToken,
@@ -25,85 +39,92 @@ export default function ContactForm() {
             });
 
             if (response.ok) {
-                setStatus("Message sent successfully!");
-                (e.target as HTMLFormElement).reset();
+                setStatus("sent");
+                setStatusMessage("Message sent! We'll get back to you soon.");
+                form.reset();
             } else {
-                setStatus("Failed to send message. Please try again.");
+                setStatus("error");
+                setStatusMessage("Failed to send message. Please try again.");
             }
         } catch (error) {
             console.error(error);
-            setStatus("An error occurred. Please try again later.");
+            setStatus("error");
+            setStatusMessage("An error occurred. Please try again later.");
+        } finally {
+            // Turnstile tokens are single-use, so grab a fresh one for the next send
+            setTurnstileToken("");
+            turnstileRef.current?.reset();
         }
     };
 
     return (
-        <form onSubmit={handleSubmit} className="contact-form text-white ">
+        <form onSubmit={handleSubmit} className="relative flex flex-col gap-6">
+            {/* Honeypot: hidden from people, the API silently drops anything that fills it in */}
             <input
+                className="absolute -top-[9999px] -left-[9999px] opacity-0"
                 type="text"
                 name="website"
                 tabIndex={-1}
                 autoComplete="off"
-                style={{
-                    position: "absolute",
-                    opacity: 0,
-                    top: "-9999px",
-                    left: "-9999px",
-                }}
+                aria-hidden="true"
             />
 
-            <FormField label="Name:" id="name" type="text" required />
-            <FormField label="Email:" id="email" type="email" required />
-
-            <div className="mt-4">
-                <label className="mr-4" htmlFor="category">
-                    Inquiry Category
-                </label>
-                <select
-                    className="border border-white rounded p-1"
-                    id="category"
-                    name="category"
+            <div className="grid gap-6 md:grid-cols-2">
+                <FormField
+                    label="Name"
+                    id="name"
+                    placeholder="Your name"
+                    autoComplete="name"
                     required
-                    defaultValue=""
+                />
+                <FormField
+                    label="Email"
+                    id="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autoComplete="email"
+                    required
+                />
+            </div>
+
+            <CategoryField />
+
+            <FormField
+                label="Message"
+                id="message"
+                placeholder="What's on your mind?"
+                multiline
+                required
+            />
+
+            <div>
+                <div className="flex flex-wrap items-end gap-x-6 gap-y-4">
+                    <Turnstile
+                        ref={turnstileRef}
+                        className="min-h-[65px]"
+                        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                        options={{ theme: "dark" }}
+                        onSuccess={(token) => setTurnstileToken(token)}
+                        onExpire={() => setTurnstileToken("")}
+                    />
+
+                    <button
+                        className="ml-auto w-full cursor-pointer rounded-[5px] bg-[#e2ff00] px-4 py-3 text-base font-medium text-black transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50 sm:w-fit min-[700px]:text-xl"
+                        type="submit"
+                        disabled={status === "sending"}
+                    >
+                        {status === "sending" ? "Sending..." : "Send Message."}
+                    </button>
+                </div>
+
+                <p
+                    className={`mt-4 empty:mt-0 sm:text-right ${status === "error" ? "text-[#df5f5f]" : "text-[#e2ff00]"}`}
+                    role="status"
+                    aria-live="polite"
                 >
-                    <option value="" disabled>
-                        Select a category...
-                    </option>
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Sponsorship">Sponsorship</option>
-                    <option value="Feedback">Feedback</option>
-                    <option value="Membership">Membership</option>
-                </select>
+                    {statusMessage}
+                </p>
             </div>
-
-            <div className="form-group width-full mt-4">
-                <label className="mb-4" htmlFor="message">
-                    Message:
-                </label>
-                <textarea
-                    className="border border-white rounded w-full mt-2"
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                />
-            </div>
-
-            <div style={{ margin: "1rem 0" }}>
-                <Turnstile
-                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
-                    onSuccess={(token) => setTurnstileToken(token)}
-                />
-            </div>
-
-            <button
-                className="text-black bg-[#e2ff00] w-full rounded py-2 mb-4 disabled:opacity-50 cursor-pointer disabled:cursor-not-allowed"
-                type="submit"
-                disabled={status === "Sending..."}
-            >
-                {status === "Sending..." ? "Sending..." : "Send Message"}
-            </button>
-
-            {status && <p className="form-status mt-1 p-4">{status}</p>}
         </form>
     );
 }

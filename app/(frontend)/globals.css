@@ -574,6 +574,7 @@ main {
 .social-media-link-wrapper {
     display: flex;
     justify-content: space-between;
+    max-width: 100%;
     width: 300px;
 }
 

@@ -60,11 +60,13 @@ export async function POST(request: Request) {
         });
 
         if (error) {
+            console.error("Resend failed to send contact email:", error);
             return Response.json({ error }, { status: 500 });
         }
 
         return Response.json(data);
     } catch (error) {
+        console.error("Contact form submission failed:", error);
         return Response.json({ error }, { status: 500 });
     }
 }
