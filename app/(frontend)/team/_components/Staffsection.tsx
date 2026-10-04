@@ -36,23 +36,30 @@ export function StaffSection() {
 
     return (
         <div className="h-dvh">
-            <div className="font-syne uppercase tracking-wider scale-y-80 pt-28">
-                <h2 className="text-neon-green text-xl">The Staff Committee</h2>
-                <h1 className="text-white text-5xl">Departments</h1>
-            </div>
+            {/* w-fit makes this wrapper exactly as wide as the row of cards, so the heading starts at the first card */}
+            <div className="w-fit mx-auto">
+                <div className="font-syne uppercase tracking-wider scale-y-80 pt-28">
+                    <h2 className="text-neon-green text-xl">
+                        The Staff Committee
+                    </h2>
+                    <h1 className="text-white text-5xl">Departments</h1>
+                </div>
 
-            {/* Gap between cards; the active one still sits on top so its shadow falls over the others */}
-            <div className="flex justify-center gap-4 h-[753px] mt-12">
-                {departments.map((department, i) => (
-                    <DepartmentCard
-                        key={department.name}
-                        department={department}
-                        isActive={i === activeIndex}
-                        // Cards closer to the active one stack above those further away
-                        zIndex={departments.length - Math.abs(i - activeIndex)}
-                        onSelect={() => setActiveIndex(i)}
-                    />
-                ))}
+                {/* Gap between cards; the active one still sits on top so its shadow falls over the others */}
+                <div className="flex gap-4 h-[753px] mt-12">
+                    {departments.map((department, i) => (
+                        <DepartmentCard
+                            key={department.name}
+                            department={department}
+                            isActive={i === activeIndex}
+                            // Cards closer to the active one stack above those further away
+                            zIndex={
+                                departments.length - Math.abs(i - activeIndex)
+                            }
+                            onSelect={() => setActiveIndex(i)}
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     );

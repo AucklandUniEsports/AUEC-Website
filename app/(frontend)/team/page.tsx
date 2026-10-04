@@ -7,7 +7,7 @@ export default function Team() {
         <div>
             <TeamHero />
             <ExecBoard />
-            {/* <StaffSection /> */}
+            <StaffSection />
         </div>
     );
 }
