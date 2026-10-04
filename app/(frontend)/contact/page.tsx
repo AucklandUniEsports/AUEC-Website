@@ -1,6 +1,7 @@
 import ContactForm from "./_components/ContactForm";
 import ContactDetail from "./_components/ContactDetail";
 import SocialMediaLinkBar from "../_components/SocialMediaLinkBar";
+import SponsorshipBanner from "./_components/SponsorshipBanner";
 
 const ContactDetails = [
     {
@@ -56,6 +57,8 @@ export default function Contact() {
                     </div>
                 </aside>
             </div>
+
+            <SponsorshipBanner />
         </section>
     );
 }
