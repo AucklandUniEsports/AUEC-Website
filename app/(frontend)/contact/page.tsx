@@ -3,10 +3,10 @@ import ContactForm from "./_components/ContactForm";
 export default function Contact() {
     return (
         <div className="mt-36 ml-16">
-            <h1 className="text-[100px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px] uppercase">
+            <h1 className="text-[100px] text-white font-syne font-medium leading-0.8 tracking-[1.2px] uppercase">
                 Contact
             </h1>
-            <h2 className="text-[48px] text-white font-['Syne'] font-medium leading-0.8 tracking-[1.2px]">
+            <h2 className="text-[48px] text-white font-syne font-medium leading-0.8 tracking-[1.2px]">
                 Get In Touch
             </h2>
             <div className="grid grid-cols-3 lg:grid-cols-2 gap-12 mt-8">
