@@ -3,11 +3,10 @@ import Image from "next/image";
 export default function SponsorshipBanner() {
     return (
         <section className="relative overflow-hidden rounded-2xl border border-[#272727] bg-linear-to-b from-[#141414] to-[#1c1631] px-6 py-8 lg:py-9">
-            {/* On desktop the outer columns share the spare space, keeping the text and button centred while the emblem hangs off the left */}
             <div className="flex flex-col items-start gap-6 lg:grid lg:grid-cols-[1fr_auto_auto_1fr] lg:items-center lg:gap-0">
-                <div className="lg:relative lg:mr-7 lg:w-[126px] lg:self-stretch lg:justify-self-end xl:w-[155px]">
+                <div className="lg:relative lg:mr-7 lg:w-31.5 lg:self-stretch lg:justify-self-end xl:w-38.75">
                     <Image
-                        className="h-14 w-auto lg:absolute lg:right-0 lg:-bottom-9 lg:h-32 xl:h-[157px]"
+                        className="h-14 w-auto lg:absolute lg:right-0 lg:-bottom-9 lg:h-32 xl:h-39.25"
                         src="/star_emblem.svg"
                         alt=""
                         width={131}
@@ -16,7 +15,6 @@ export default function SponsorshipBanner() {
                 </div>
 
                 <div className="flex max-w-md flex-col gap-3 lg:mr-12">
-                    {/* Needs the ! so Syne beats the global `* { font-family: Switzer }` rule, which sits outside Tailwind's layers */}
                     <h2 className="font-['Syne']! text-[32px] leading-[0.8] font-medium tracking-[1.2px] text-white sm:text-[40px]">
                         Interested in a sponsorship?
                     </h2>

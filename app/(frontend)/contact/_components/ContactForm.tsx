@@ -51,7 +51,6 @@ export default function ContactForm() {
             setStatus("error");
             setStatusMessage("An error occurred. Please try again later.");
         } finally {
-            // Turnstile tokens are single-use, so grab a fresh one for the next send
             setTurnstileToken("");
             turnstileRef.current?.reset();
         }
@@ -59,9 +58,8 @@ export default function ContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="relative flex flex-col gap-6">
-            {/* Honeypot: hidden from people, the API silently drops anything that fills it in */}
             <input
-                className="absolute -top-[9999px] -left-[9999px] opacity-0"
+                className="absolute -top-2499.75 -left-2499.75 opacity-0"
                 type="text"
                 name="website"
                 tabIndex={-1}
@@ -101,7 +99,7 @@ export default function ContactForm() {
                 <div className="flex flex-wrap items-end gap-x-6 gap-y-4">
                     <Turnstile
                         ref={turnstileRef}
-                        className="min-h-[65px]"
+                        className="min-h-16.25"
                         siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                         options={{ theme: "dark" }}
                         onSuccess={(token) => setTurnstileToken(token)}

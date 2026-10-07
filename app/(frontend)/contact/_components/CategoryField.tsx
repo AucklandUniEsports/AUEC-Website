@@ -17,7 +17,7 @@ export default function CategoryField() {
                             value={category}
                             required
                         />
-                        <span className="block rounded-[4px] px-3 py-2 text-sm tracking-[-0.6px] text-[#aaaaaa] outline-2 outline-[#aaaaaa] transition-colors select-none hover:text-white hover:outline-white peer-checked:bg-[#e2ff00] peer-checked:text-black peer-checked:outline-[#e2ff00] peer-checked:hover:text-black peer-checked:hover:outline-[#e2ff00] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white">
+                        <span className="block rounded-sm px-3 py-2 text-sm tracking-[-0.6px] text-[#aaaaaa] outline-2 outline-[#aaaaaa] transition-colors select-none hover:text-white hover:outline-white peer-checked:bg-[#e2ff00] peer-checked:text-black peer-checked:outline-[#e2ff00] peer-checked:hover:text-black peer-checked:hover:outline-[#e2ff00] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-white">
                             {category}
                         </span>
                     </label>

@@ -31,12 +31,10 @@ export default function Contact() {
             />
             <section className="flex flex-col gap-8 px-8 pt-12 pb-16 min-[950px]:px-16">
                 <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-stretch">
-                    {/* No card on phones: Turnstile is a fixed 300px and won't fit inside the padding */}
                     <div className="sm:rounded-[5px] sm:bg-[#272727] sm:p-6 md:p-8">
                         <ContactForm />
                     </div>
 
-                    {/* On desktop the cards grow to fill the form's height */}
                     <aside className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:flex lg:flex-col lg:*:flex-1">
                         {ContactDetails.map((detail) => (
                             <ContactDetail
