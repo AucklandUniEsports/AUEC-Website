@@ -1,3 +1,4 @@
+import PageHero from "../_components/PageHero";
 import EventClient from "./_components/EventClient";
 
 export default async function Events() {
@@ -11,11 +12,18 @@ export default async function Events() {
     const events = json.data;
 
     return (
-        <section className="events">
-            <div className="home-b-top">
-                <h2 className="section-title">Explore Events</h2>
-            </div>
-            <EventClient events={events} />
-        </section>
+        <>
+            <PageHero
+                title="Events"
+                subtitle="Explore AUEC's newest events"
+                backgroundImage="/background.webp"
+            />
+            <section className="events pt-12! max-[950px]:pt-12!">
+                <div className="home-b-top">
+                    <h2 className="section-title">Explore Events</h2>
+                </div>
+                <EventClient events={events} />
+            </section>
+        </>
     );
 }
