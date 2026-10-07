@@ -14,9 +14,9 @@ export default async function Events() {
     return (
         <>
             <PageHero
-                title="Events"
-                subtitle="Explore AUEC's newest events"
-                backgroundImage="/background.webp"
+                title="Events."
+                subtitle="AUEC hosts tournaments, social nights, and collaborations with other clubs throughout the semester. Browse what's coming up and see what we've been up to."
+                backgroundImage="/auec-banner.webp"
             />
             <section className="events pt-12! max-[950px]:pt-12!">
                 <div className="home-b-top">

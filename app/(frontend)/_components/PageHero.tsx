@@ -18,19 +18,19 @@ export default function PageHero({
     const sizeClasses =
         size === "full"
             ? "min-h-screen justify-between"
-            : "min-h-[420px] justify-end max-[950px]:min-h-[320px]";
+            : "h-[538px] justify-end max-[950px]:h-[400px]";
 
     return (
         <section
-            className={`flex flex-col gap-6 bg-cover bg-center px-16 pt-40 pb-16 max-[950px]:px-8 max-[950px]:pb-12 ${sizeClasses}`}
+            className={`flex flex-col gap-6 bg-cover bg-center px-16 pt-40 pb-14 max-[950px]:px-8 max-[950px]:pb-10 ${sizeClasses}`}
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-            <div className="flex flex-col gap-2">
-                <h1 className="font-[Syne] text-[80px] leading-[80%] font-medium tracking-[1.2px] text-white uppercase max-[950px]:text-[64px]">
+            <div className="flex flex-col gap-6 max-[950px]:gap-4">
+                <h1 className="font-[Syne] scale-y-80 tracking-wider text-[80px] leading-[80%] font-medium text-white uppercase max-[950px]:text-[48px]">
                     {title}
                 </h1>
                 {subtitle && (
-                    <p className="font-[Switzer] text-2xl leading-none tracking-[-0.7px] text-white">
+                    <p className="max-w-187.5 font-[Syne] text-lg leading-[1.15] tracking-wider text-white">
                         {subtitle}
                     </p>
                 )}
