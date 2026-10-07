@@ -68,12 +68,14 @@ export default function Navbar() {
                             SPONSORS
                         </a>
 
-                        <a
-                            href="mailto:uoaesports@gmail.com"
-                            className="navbar-link"
+                        <Link
+                            href="/contact"
+                            className={`navbar-link ${
+                                isActiveLink("/contact") ? "active" : ""
+                            }`}
                         >
                             CONTACT
-                        </a>
+                        </Link>
                     </nav>
 
                     <div className="navbar-right">
