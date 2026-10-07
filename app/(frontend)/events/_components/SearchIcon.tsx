@@ -1,7 +1,7 @@
 export default function SearchIcon() {
     return (
-        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#aaaaaa] pointer-events-none">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8a8a8a] pointer-events-none transition-colors duration-200 group-focus-within:text-[#9C72FF]">
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none">
                 <circle
                     cx="6.5"
                     cy="6.5"
