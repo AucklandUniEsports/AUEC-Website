@@ -1,4 +1,3 @@
-// Values end up in the email subject line, so keep them human readable
 const Categories = ["General Inquiry", "Sponsorship", "Feedback", "Membership"];
 
 export default function CategoryField() {
