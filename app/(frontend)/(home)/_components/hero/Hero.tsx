@@ -20,7 +20,7 @@ export default function HeroSection() {
                 <a
                     href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
                     target="_blank"
-                    className="button-standard button-lime mt-2.5 max-[700px]:-mt-2.5 max-[700px]:px-[18px] max-[700px]:py-3 max-[700px]:text-[18px]"
+                    className="mt-2.5 w-fit cursor-pointer rounded-[5px] bg-[#e2ff00] px-4 py-3 font-[Switzer] text-[20px] font-medium text-black max-[700px]:-mt-2.5 max-[700px]:px-[18px] max-[700px]:text-[18px]"
                 >
                     Sign up to <em>AUEC.</em>
                 </a>
