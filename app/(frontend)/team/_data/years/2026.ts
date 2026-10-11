@@ -6,6 +6,7 @@ import type { TeamYear } from "../types";
 // ─────────────────────────────────────────────────────────────
 
 const team2026: TeamYear = {
+    // Shown in this order on the page
     execs: [
         {
             name: "Matthew Shing",
@@ -34,6 +35,7 @@ const team2026: TeamYear = {
         },
     ],
 
+    // Each department becomes a tab, in this order
     departments: [
         {
             name: "Broadcast",
@@ -42,16 +44,16 @@ const team2026: TeamYear = {
             image: "/TeamPage/2026/departments/broadcast.webp",
             members: [
                 { name: "Caleb Cole-Baker", role: "Broadcast Lead" },
-                { name: "Tony", role: "Broadcast" },
-                { name: "Sean", role: "Broadcast" },
+                { name: "Tony Dang Tran", role: "Broadcast" },
+                { name: "Sean Lester", role: "Broadcast" },
                 { name: "Benrachum Ruritan", role: "Broadcast" },
-                { name: "Jonathan", role: "Broadcast" },
+                { name: "Jonathan Chu", role: "Broadcast" },
                 { name: "Jinhoo Jeon", role: "Broadcast" },
                 { name: "Ben Reynolds", role: "Broadcast" },
-                { name: "Chloe", role: "Broadcast" },
-                { name: "Justin", role: "Broadcast" },
-                { name: "Twistsy", role: "Broadcast" },
-                { name: "Bay", role: "Broadcast" },
+                { name: "Chloe Lim", role: "Broadcast" },
+                { name: "Justin Bueno", role: "Broadcast" },
+                { name: "Zavier Alexanda Bly", role: "Broadcast" },
+                { name: "Bay Lindop Couper", role: "Broadcast" },
             ],
         },
         {
@@ -60,11 +62,11 @@ const team2026: TeamYear = {
                 "Plans and runs our tournaments, locals and social nights, from booking venues to running brackets on the day.",
             image: "/TeamPage/2026/departments/events.webp",
             members: [
-                { name: "Jack", role: "Social / Content" },
-                { name: "Luobin", role: "Social / Content" },
-                { name: "Aysha", role: "Events" },
-                { name: "Vanessa", role: "Social / Content" },
-                { name: "Elliot", role: "Events" },
+                { name: "Jack Adlam", role: "Social / Content" },
+                { name: "Luobin Chen", role: "Social / Content" },
+                { name: "Aysha Jayne Iqbal", role: "Events" },
+                { name: "Vanessa Dang", role: "Social / Content" },
+                { name: "Jackson Elliot Shillito", role: "Events" },
             ],
         },
         {
@@ -77,10 +79,10 @@ const team2026: TeamYear = {
                 { name: "Scott He", role: "Social / Content" },
                 { name: "Bryan Binuraj", role: "Social / Content" },
                 { name: "Jay Chen", role: "Design" },
-                { name: "Jessie", role: "Design" },
-                { name: "Brandon", role: "Social Media" },
-                { name: "Luo", role: "Social Media" },
-                { name: "Shrihan", role: "Editor" },
+                { name: "Jessie Sia Lim", role: "Design" },
+                { name: "Brandon Fung", role: "Social Media" },
+                { name: "Luo Wang", role: "Social Media" },
+                { name: "Shrihan Bobbala", role: "Editor" },
             ],
         },
         {
@@ -91,13 +93,13 @@ const team2026: TeamYear = {
             members: [
                 { name: "Lawrence Li", role: "Tech Lead" },
                 { name: "Treyson Tsen", role: "Tech Lead" },
-                { name: "Ayush Kumar", role: "Design / Dev" },
+                { name: "Ayush Kumar", role: "UI Designer / Developer" },
                 { name: "Brody Brownlee", role: "Developer" },
                 { name: "Stephen Wu", role: "Developer" },
                 { name: "Violet Chen", role: "Developer" },
                 { name: "Nick Tran", role: "Developer" },
+                { name: "Tony Dang Tran", role: "Developer" },
                 { name: "Sean Lester", role: "Developer" },
-                { name: "Tony Tran", role: "Developer" },
             ],
         },
     ],
