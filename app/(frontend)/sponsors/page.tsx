@@ -89,9 +89,7 @@ export default async function Sponsors() {
                             <SponsorCard
                                 key={sponsor.id}
                                 link={sponsor.link}
-                                img={sponsor.thumbnailPath}
-                                name={sponsor.name}
-                            />
+                                img={sponsor.thumbnailPath}                            />
                         ))}
                     </div>
                 )}
