@@ -61,24 +61,6 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-
-                        <a
-                            href="AUEC 2026 Sponsorship Deck.pdf"
-                            className="navbar-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SPONSORS
-                        </a>
-
-                        <Link
-                            href="/contact"
-                            className={`navbar-link ${
-                                isActiveLink("/contact") ? "active" : ""
-                            }`}
-                        >
-                            CONTACT
-                        </Link>
                     </nav>
 
                     <div className="navbar-right">
