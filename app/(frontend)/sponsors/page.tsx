@@ -83,16 +83,15 @@ export default async function Sponsors() {
                     Our 2026 Community Partners
                 </h2>
 
-                {sponsors.length > 0 && (
-                    <div className="grid w-full max-w-[1304px] grid-cols-1 gap-[29px] sm:grid-cols-2 lg:grid-cols-4">
-                        {sponsors.map((sponsor) => (
-                            <SponsorCard
-                                key={sponsor.id}
-                                link={sponsor.link}
-                                img={sponsor.thumbnailPath}                            />
-                        ))}
-                    </div>
-                )}
+                <div className="sponsor-wrapper w-full">
+                    {sponsors.map((sponsor) => (
+                        <SponsorCard
+                            key={sponsor.id}
+                            link={sponsor.link}
+                            img={sponsor.thumbnailPath}
+                        />
+                    ))}
+                </div>
             </section>
         </div>
     );
