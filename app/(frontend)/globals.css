@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-* {
-    font-family: "Switzer";
-    list-style: none;
+@layer base {
+    * {
+        font-family: "Switzer";
+        list-style: none;
+    }
 }
 
 a {
