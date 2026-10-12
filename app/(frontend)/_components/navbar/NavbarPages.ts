@@ -14,8 +14,8 @@ const NavbarPages = [
         link: "/about",
     },
     {
-        title: "merch",
-        link: "/merch",
+        title: "team",
+        link: "/team",
     },
     {
         title: "sponsors",

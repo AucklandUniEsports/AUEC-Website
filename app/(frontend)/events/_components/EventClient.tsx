@@ -51,12 +51,23 @@ export default function EventClient({ events }: { events: Events[] }) {
         <>
             <SearchBar input={input} handleChange={handleChange} />
             {input.trim() ? (
-                <div className="events-wrapper">
-                    {suggestion &&
-                        suggestion.map((event, index) => (
+                suggestion.length > 0 ? (
+                    <div className="events-wrapper">
+                        {suggestion.map((event, index) => (
                             <EventCard event={event} key={index} />
                         ))}
-                </div>
+                    </div>
+                ) : (
+                    <div className="flex flex-col items-center gap-2 py-16 text-center">
+                        <p className="font-[Syne] text-2xl font-medium tracking-[1.2px] text-white uppercase">
+                            No events found
+                        </p>
+                        <p className="font-[Syne] text-[#777777]">
+                            Nothing matches &ldquo;{input.trim()}&rdquo;. Try a
+                            different search.
+                        </p>
+                    </div>
+                )
             ) : (
                 <div className="events-wrapper">
                     {sortedEvents.map((event, index) => (
