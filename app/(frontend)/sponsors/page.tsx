@@ -1,3 +1,4 @@
+import PageHero from "../_components/PageHero";
 import SponsorCard from "../_components/SponsorCard";
 
 interface Sponsor {
@@ -21,45 +22,30 @@ export default async function Sponsors() {
     const sponsors: Sponsor[] = (await sponsorsRes.json()).data ?? [];
 
     return (
-        <div className="flex flex-col gap-12">
-            <section className="relative flex h-[320px] w-full flex-col items-center justify-center sm:h-[380px] lg:h-[458px]">
-                <img
-                    src="/purple_lawson.webp"
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover"
-                />
-                <div className="from-dark-purple/75 absolute inset-0 bg-gradient-to-b to-black/75" />
+        <div className="flex flex-col gap-24 pb-24 max-[950px]:gap-16 max-[950px]:pb-16">
+            <PageHero
+                title="Sponsorships."
+                subtitle="Be part of AUEC's 2026 journey. Sponsoring us puts your brand in front of a diverse, engaged audience while helping grow the next generation of New Zealand esports."
+                backgroundImage="/purple_lawson.webp"
+            />
 
-                <div className="relative z-10 flex flex-col items-center gap-4 px-6">
-                    <h1 className="font-syne text-center text-[32px] leading-[0.8] font-semibold tracking-[0.05em] text-white uppercase sm:text-[48px] md:text-[72px] lg:text-[96px]">
-                        Sponsorships
-                    </h1>
-
-                    <p className="font-syne max-w-[542px] text-center text-[18px] leading-[1] font-normal tracking-[0.04em] text-white">
-                        Be part of AUEC&apos;s 2026 journey. Sponsoring us puts
-                        your brand in front of a diverse, engaged audience while
-                        helping grow the next generation of New Zealand esports.
-                    </p>
-                </div>
-            </section>
-
-            <section className="mx-auto grid w-full max-w-[1026px] grid-cols-1 gap-[21px] px-6 sm:grid-cols-2 lg:grid-cols-3">
+            <section className="grid w-full grid-cols-3 gap-6 px-16 max-[950px]:grid-cols-1 max-[950px]:px-8">
                 {eventPhotos.map((photo) => (
                     <img
                         key={photo.src}
                         src={photo.src}
                         alt={photo.alt}
-                        className="aspect-9/5 w-full object-cover"
+                        className="aspect-4/3 w-full rounded-[5px] object-cover"
                     />
                 ))}
             </section>
 
-            <section className="flex flex-col items-center gap-4 px-6">
-                <h2 className="font-syne text-center text-[32px] leading-[0.8] font-bold tracking-[0.05em] text-white uppercase md:text-[48px]">
+            <section className="flex flex-col items-center gap-8 px-16 text-center max-[950px]:px-8">
+                <h2 className="font-syne text-[clamp(32px,3.5vw,64px)] leading-[1.1] font-medium tracking-wider text-white uppercase">
                     Why work with us?
                 </h2>
 
-                <p className="font-syne max-w-[542px] text-center text-[18px] leading-[1] font-normal tracking-[0.04em] text-white">
+                <p className="font-syne max-w-190 text-[clamp(16px,1.2vw,20px)] leading-[1.6] font-normal text-white/85">
                     Our events draw everyone from casual players to industry
                     professionals. Sponsors get brand exposure across our
                     broadcasts and socials, hands-on product placement at
@@ -69,17 +55,17 @@ export default async function Sponsors() {
                 </p>
 
                 <a
-                    href="/AUEC 2026 Sponsorship Deck.pdf"
+                    href="/AUEC-2026-Sponsorship-Deck.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-neon-green font-syne mt-2 flex h-[40px] w-[161px] items-center justify-center rounded-[5px] text-[20px] leading-[1] font-bold tracking-[-0.05em] text-black"
+                    className="bg-neon-green font-syne flex h-11 w-42.75 items-center justify-center rounded-[5px] text-[20px] leading-none font-bold tracking-tighter text-black"
                 >
                     Learn More
                 </a>
             </section>
 
-            <section className="flex flex-col items-center gap-8 px-6 pb-8">
-                <h2 className="font-syne text-center text-[28px] leading-[0.8] font-bold tracking-[0.05em] text-white uppercase md:text-[40px]">
+            <section className="flex flex-col items-center gap-10 px-16 max-[950px]:px-8">
+                <h2 className="font-syne text-center text-[clamp(28px,3vw,52px)] leading-[1.1] font-medium tracking-wider text-white uppercase">
                     Our 2026 Community Partners
                 </h2>
 

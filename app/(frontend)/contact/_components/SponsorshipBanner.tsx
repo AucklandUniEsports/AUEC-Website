@@ -26,7 +26,7 @@ export default function SponsorshipBanner() {
 
                 <a
                     className="rounded-[5px] bg-[#e2ff00] px-8 py-1 text-lg font-medium tracking-[-0.7px] whitespace-nowrap text-black"
-                    href="/AUEC 2026 Sponsorship Deck.pdf"
+                    href="/AUEC-2026-Sponsorship-Deck.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
