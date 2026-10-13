@@ -19,7 +19,7 @@ export default function TeamSection() {
                 alt=""
                 width={837}
                 height={234}
-                className="absolute top-1/2 left-[-20vw] h-auto w-[260vw] max-w-none -translate-y-1/2 select-none md:left-1/2 md:w-[95%] md:-translate-x-1/2"
+                className="absolute top-1/2 left-[-20vw] h-auto w-[260vw] max-w-none -translate-y-1/2 select-none opacity-30 md:left-1/2 md:w-[95%] md:-translate-x-1/2"
             />
 
             <div className="relative flex flex-col items-start gap-4 md:max-w-180 md:items-center md:gap-5 md:text-center">
@@ -33,7 +33,11 @@ export default function TeamSection() {
                     people behind the matches.
                 </p>
 
-                <StandardButton title="Learn More." color="lime" link="/about" />
+                <StandardButton
+                    title="Learn More."
+                    color="lime"
+                    link="/about"
+                />
             </div>
         </section>
     );
