@@ -1,5 +1,7 @@
 import PageHero from "../_components/PageHero";
+import PhotoSlider from "../_components/PhotoSlider";
 import SponsorCard from "../_components/SponsorCard";
+import { eventPhotos } from "./photos";
 
 interface Sponsor {
     id: number;
@@ -7,12 +9,6 @@ interface Sponsor {
     link: string;
     thumbnailPath: string;
 }
-
-const eventPhotos = [
-    { src: "/DSC00276.webp", alt: "AUEC members at a tournament" },
-    { src: "/DSC00032.webp", alt: "AUEC members socialising at an event" },
-    { src: "/DSC07430.webp", alt: "AUEC members at a community night" },
-];
 
 export default async function Sponsors() {
     const sponsorsRes = await fetch(
@@ -29,19 +25,15 @@ export default async function Sponsors() {
                 backgroundImage="/purple_lawson.webp"
             />
 
-            <section className="grid w-full grid-cols-3 gap-6 px-16 max-[950px]:grid-cols-1 max-[950px]:px-8">
-                {eventPhotos.map((photo) => (
-                    <img
-                        key={photo.src}
-                        src={photo.src}
-                        alt={photo.alt}
-                        className="aspect-4/3 w-full rounded-[5px] object-cover"
-                    />
-                ))}
+            <section className="-mt-16 max-[950px]:-mt-8">
+                <PhotoSlider
+                    photos={eventPhotos}
+                    className="h-[30vh] md:h-[45vh]"
+                />
             </section>
 
             <section className="flex flex-col items-center gap-8 px-16 text-center max-[950px]:px-8">
-                <h2 className="font-syne text-[clamp(32px,3.5vw,64px)] leading-[1.1] font-medium tracking-wider text-white uppercase">
+                <h2 className="font-syne text-[clamp(32px,3.5vw,64px)] leading-[1.1] scale-y-80 font-bold tracking-wider text-white uppercase">
                     Why work with us?
                 </h2>
 

@@ -1,5 +1,5 @@
 import StandardButton from "../../../_components/StandardButton";
-import PhotoSlider from "./PhotoSlider";
+import PhotoSlider from "../../../_components/PhotoSlider";
 import { photos } from "./photos";
 
 export default function AboutSection() {

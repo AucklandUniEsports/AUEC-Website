@@ -1,4 +1,4 @@
-import type { Photo } from "./PhotoSlider";
+import type { Photo } from "../../../_components/PhotoSlider";
 
 export const photos: Photo[] = [
     { src: "/DSC00276.webp", width: 2336, height: 3504 },

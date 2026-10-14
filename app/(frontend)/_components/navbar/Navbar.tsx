@@ -24,9 +24,9 @@ export default function Navbar() {
         { href: "/", label: "HOME" },
         { href: "/events", label: "EVENTS" },
         { href: "/about", label: "ABOUT" },
+        { href: "/team", label: "TEAM" },
         { href: "/sponsors", label: "SPONSORS" },
         { href: "/contact", label: "CONTACT" },
-        { href: "/team", label: "TEAM" },
     ];
 
     const isActiveLink = (href: string) => {
