@@ -9,6 +9,14 @@
     --color-neon-green: #e2ff00;
     --color-neon-purple: #9c72ff;
     --color-dark-purple: #4700ed;
+
+    --animate-marquee: marquee 60s linear infinite;
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
 }
 
 @layer base {
@@ -33,9 +41,9 @@ main {
 }
 
 .divider {
-    width: calc(100% - 64px);
+    width: 100%;
     border-top: solid 1px #888888;
-    margin: 0 32px;
+    margin: 0;
 }
 
 .divider-bottom {
