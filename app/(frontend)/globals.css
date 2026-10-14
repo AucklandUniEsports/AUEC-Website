@@ -17,6 +17,23 @@
             transform: translateX(-50%);
         }
     }
+
+    --animate-fade-up: fade-up 0.8s ease-out both;
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            translate: 0 1rem;
+        }
+    }
+
+    --animate-fade-in: fade-in 1s ease-out both;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+    }
 }
 
 @layer base {

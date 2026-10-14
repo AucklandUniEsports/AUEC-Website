@@ -12,10 +12,10 @@ export default function AboutHero() {
                 className="pointer-events-none object-cover object-center select-none"
             />
             <div className="relative z-1 flex max-w-175 flex-col gap-4">
-                <h1 className="font-syne text-[5rem] leading-[0.8] font-bold scale-y-80 tracking-[0.075rem] text-white uppercase">
+                <h1 className="animate-fade-up motion-reduce:animate-none font-syne text-[5rem] leading-[0.8] font-bold scale-y-80 tracking-[0.075rem] text-white uppercase">
                     ABOUT AUEC.
                 </h1>
-                <p className="max-w-150 text-[clamp(1rem,1.4vw,1.375rem)] leading-[1.4] tracking-[-0.01875rem] text-white">
+                <p className="animate-fade-up [animation-delay:0.15s] motion-reduce:animate-none max-w-150 text-[clamp(1rem,1.4vw,1.375rem)] leading-[1.4] tracking-[-0.01875rem] text-white">
                     The Auckland University Esports Club is a student
                     association operated by students studying at the University
                     of Auckland, aiming to cultivate a thriving community of

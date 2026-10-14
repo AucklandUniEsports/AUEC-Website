@@ -1,5 +1,6 @@
 import StandardButton from "../../../_components/StandardButton";
 import PhotoSlider from "../../../_components/PhotoSlider";
+import FadeIn from "../../../_components/FadeIn";
 import { photos } from "./photos";
 
 export default function AboutSection() {
@@ -13,21 +14,30 @@ export default function AboutSection() {
                 <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a] to-transparent to-50%" />
             </div>
             <div className="@container relative pl-3 md:pl-5 lg:pl-16 flex flex-col gap-4 -mt-10 md:-mt-24">
-                <h2 className="text-white font-syne text-[9.3cqw] scale-y-80 md:text-[min(4.5rem,7cqw)] font-normal md:font-medium not-italic leading-[0.9] md:leading-[0.8] tracking-[0.075rem] uppercase">
+                <FadeIn
+                    as="h2"
+                    className="text-white font-syne text-[9.3cqw] scale-y-80 md:text-[min(4.5rem,7cqw)] font-normal md:font-medium not-italic leading-[0.9] md:leading-[0.8] tracking-[0.075rem] uppercase"
+                >
                     MEET THE ESPORTS CLUB.
-                </h2>
-                <p className="text-white font-syne text-[0.9375rem] md:text-[1.375rem] font-normal not-italic leading-none tracking-[0.0125rem] opacity-80 md:max-w-[60%] mb-5">
+                </FadeIn>
+                <FadeIn
+                    as="p"
+                    delay={0.15}
+                    className="text-white/80 font-syne text-[0.9375rem] md:text-[1.375rem] font-normal not-italic leading-none tracking-[0.0125rem] md:max-w-[60%] mb-5"
+                >
                     From fighting game locals to interclub tournaments, our team
                     runs a bunch of events for the community and puts a lot of
                     work into our broadcasts for the folks at home. Whether you
                     want to grind matches or get involved behind the scenes,
                     AUEC has a place for you.
-                </p>
-                <StandardButton
-                    title="Find Out More."
-                    color="lime"
-                    link="/about"
-                />
+                </FadeIn>
+                <FadeIn delay={0.3}>
+                    <StandardButton
+                        title="Find Out More."
+                        color="lime"
+                        link="/about"
+                    />
+                </FadeIn>
             </div>
         </section>
     );

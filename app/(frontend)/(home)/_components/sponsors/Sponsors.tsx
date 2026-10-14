@@ -16,8 +16,7 @@ export default function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
                 <StandardButton
                     title="About Sponsorships."
                     color="grey"
-                    link="/AUEC-2026-Sponsorship-Deck.pdf"
-                    external
+                    link="/sponsors"
                 />
             </div>
             <div className="sponsor-wrapper">
