@@ -2,6 +2,7 @@ import PageHero from "../_components/PageHero";
 import PhotoSlider from "../_components/PhotoSlider";
 import SponsorCard from "../_components/SponsorCard";
 import { eventPhotos } from "./photos";
+import Link from "next/link";
 
 interface Sponsor {
     id: number;
@@ -46,14 +47,14 @@ export default async function Sponsors() {
                     advertising one.
                 </p>
 
-                <a
+                <Link
                     href="/AUEC-2026-Sponsorship-Deck.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-neon-green font-syne flex h-11 w-42.75 items-center justify-center rounded-[5px] text-[20px] leading-none font-bold tracking-tighter text-black"
                 >
                     Learn More
-                </a>
+                </Link>
             </section>
 
             <section className="flex flex-col items-center gap-10 px-16 max-[950px]:px-8">
