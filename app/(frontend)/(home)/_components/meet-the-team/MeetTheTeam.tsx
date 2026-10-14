@@ -23,7 +23,7 @@ export default function TeamSection() {
             />
 
             <div className="relative flex flex-col items-start gap-4 md:max-w-180 md:items-center md:gap-5 md:text-center">
-                <h2 className="font-syne text-[36px] font-medium leading-[0.9] text-white md:text-[72px] md:leading-[1.3]">
+                <h2 className="font-syne scale-y-80 text-[36px] font-medium leading-[0.9] text-white md:text-[72px] md:leading-[1.3]">
                     MEET THE TEAM.
                 </h2>
 
