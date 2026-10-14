@@ -19,11 +19,11 @@ export default function PageHero({
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <div className="flex flex-col gap-4">
-                <h1 className="origin-bottom scale-y-80 font-syne text-[clamp(24px,calc((100vw-64px)/9.6),48px)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] font-bold tracking-normal text-white uppercase">
+                <h1 className="animate-fade-up motion-reduce:animate-none origin-bottom scale-y-80 font-syne text-[clamp(24px,calc((100vw-64px)/9.6),48px)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] font-bold tracking-normal text-white uppercase">
                     {title}
                 </h1>
                 {subtitle && (
-                    <p className="max-w-[50vw] font-syne text-[clamp(16px,1.3vw,26px)] leading-[1.2] font-normal tracking-normal text-white max-[950px]:max-w-full">
+                    <p className="animate-fade-up [animation-delay:0.15s] motion-reduce:animate-none max-w-[50vw] font-syne text-[clamp(16px,1.3vw,26px)] leading-[1.2] font-normal tracking-normal text-white max-[950px]:max-w-full">
                         {subtitle}
                     </p>
                 )}

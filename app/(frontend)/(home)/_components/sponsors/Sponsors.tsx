@@ -1,4 +1,5 @@
 import SponsorCard from "../../../_components/SponsorCard";
+import StandardButton from "../../../_components/StandardButton";
 
 interface Sponsor {
     id: number;
@@ -9,16 +10,14 @@ interface Sponsor {
 
 export default function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
     return (
-        <section className="home-b">
+        <section className="home-b pb-24! md:pb-32!">
             <div className="home-b-top">
                 <h2 className="section-title">Community Partners</h2>
-                <a
-                    href="/AUEC-2026-Sponsorship-Deck.pdf"
-                    target="_blank"
-                    className="button-standard button-grey"
-                >
-                    About Sponsorships.
-                </a>
+                <StandardButton
+                    title="About Sponsorships."
+                    color="grey"
+                    link="/sponsors"
+                />
             </div>
             <div className="sponsor-wrapper">
                 {sponsors.map((sponsor) => (

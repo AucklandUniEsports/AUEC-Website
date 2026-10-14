@@ -5,6 +5,7 @@ import "./(frontend)/globals.css";
 import Navbar from "./(frontend)/_components/navbar/Navbar";
 import Footer from "./(frontend)/_components/footer/Footer";
 import { ReactLenis } from "lenis/react";
+import LenisScrollReset from "./(frontend)/_components/LenisScrollReset";
 
 const switzer = Switzer({
     variable: "--font-switzer-local",
@@ -77,6 +78,7 @@ export default function RootLayout({
         <html lang="en">
             <ReactLenis root />
             <body className={`${switzer.variable} ${syne.variable}`}>
+                <LenisScrollReset />
                 <Navbar />
                 <main>{children}</main>
                 <Footer />
