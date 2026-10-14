@@ -33,11 +33,7 @@ export default function TeamSection() {
                     people behind the matches.
                 </p>
 
-                <StandardButton
-                    title="Learn More."
-                    color="lime"
-                    link="/about"
-                />
+                <StandardButton title="Learn More." color="lime" link="/team" />
             </div>
         </section>
     );

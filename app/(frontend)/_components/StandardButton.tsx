@@ -25,8 +25,14 @@ type StandardButtonProps = CommonProps &
       }
   );
 
+const hoverByColor: Record<string, string> = {
+  lime: "not-disabled:hover:shadow-[0_0_1.25rem_rgb(226_255_0/0.45)]",
+  grey: "not-disabled:hover:brightness-125",
+  red: "not-disabled:hover:brightness-110",
+};
+
 export default function StandardButton(props: StandardButtonProps) {
-  const className = `button-standard button-${props.color} inline-block -skew-x-12 ${props.className ?? ""}`;
+  const className = `button-standard button-${props.color} inline-block -skew-x-12 transition-[filter,box-shadow] duration-200 ease-out focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none ${hoverByColor[props.color] ?? ""} ${props.className ?? ""}`;
   const label = <span className="inline-block skew-x-12">{props.title}</span>;
 
   if (props.link && props.external) {

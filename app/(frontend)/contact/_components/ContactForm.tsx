@@ -114,7 +114,7 @@ export default function ContactForm() {
                         color="lime"
                         type="submit"
                         disabled={status === "sending"}
-                        className="ml-auto w-full! transition-opacity hover:opacity-85 disabled:cursor-not-allowed! disabled:opacity-50 sm:w-fit!"
+                        className="ml-auto w-full! disabled:cursor-not-allowed! disabled:opacity-50 sm:w-fit!"
                     />
                 </div>
 

@@ -88,7 +88,7 @@ export default function FeatureScroll() {
                         {feature.button && (
                             <StandardButton
                                 title={feature.button.title}
-                                color="grey"
+                                color="lime"
                                 link={feature.button.link}
                             />
                         )}
