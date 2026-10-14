@@ -41,8 +41,23 @@ const syne = Syne({
     variable: "--font-syne-local",
     src: [
         {
+            path: "../public/Syne-Regular.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
             path: "../public/Syne-Medium.woff2",
             weight: "500",
+            style: "normal",
+        },
+        {
+            path: "../public/Syne-SemiBold.woff2",
+            weight: "600",
+            style: "normal",
+        },
+        {
+            path: "../public/Syne-Bold.woff2",
+            weight: "700",
             style: "normal",
         },
     ],
