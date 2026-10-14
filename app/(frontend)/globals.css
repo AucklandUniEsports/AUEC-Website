@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
-* {
-    font-family: "Switzer";
-    list-style: none;
+@theme inline {
+    --font-syne: var(--font-syne-local);
+    --font-switzer: var(--font-switzer-local);
+}
+
+@theme {
+    --color-neon-green: #e2ff00;
+    --color-neon-purple: #9c72ff;
+    --color-dark-purple: #4700ed;
+
+    --animate-marquee: marquee 60s linear infinite;
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@layer base {
+    * {
+        font-family: var(--font-switzer-local), sans-serif;
+        list-style: none;
+    }
 }
 
 a {
@@ -20,9 +41,9 @@ main {
 }
 
 .divider {
-    width: calc(100% - 64px);
+    width: 100%;
     border-top: solid 1px #888888;
-    margin: 0 32px;
+    margin: 0;
 }
 
 .divider-bottom {
@@ -75,7 +96,7 @@ main {
 .event-card-countdown {
     color: #aaa;
     text-align: right;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +106,7 @@ main {
 
 .event-card-info {
     color: #aaa;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -95,7 +116,7 @@ main {
 
 .event-card-title {
     color: white;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -361,7 +382,7 @@ main {
 /* Layout Styles*/
 
 .nav-item-title {
-    font-family: Syne;
+    font-family: var(--font-syne-local), sans-serif;
     font-size: 150px;
     font-style: normal;
     font-weight: 500;
@@ -385,7 +406,7 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 20px;
     font-weight: 500;
     height: fit-content;
@@ -408,6 +429,17 @@ main {
     color: white;
 }
 
+.home-title {
+    color: #fff;
+    font-family: var(--font-syne-local), sans-serif;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 80%;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
 .home-b {
     display: flex;
     flex-direction: column;
@@ -423,7 +455,7 @@ main {
 
 .section-title {
     color: #fff;
-    font-family: Syne;
+    font-family: var(--font-syne-local), sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -434,7 +466,7 @@ main {
 
 .standard-text {
     color: #fff;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
