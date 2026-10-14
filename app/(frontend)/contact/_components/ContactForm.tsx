@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import FormField from "./FormField";
 import CategoryField from "./CategoryField";
+import StandardButton from "../../_components/StandardButton";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -106,13 +107,15 @@ export default function ContactForm() {
                         onExpire={() => setTurnstileToken("")}
                     />
 
-                    <button
-                        className="ml-auto w-full cursor-pointer rounded-[5px] bg-[#e2ff00] px-4 py-3 text-base font-medium text-black transition-opacity hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-50 sm:w-fit min-[700px]:text-xl"
+                    <StandardButton
+                        title={
+                            status === "sending" ? "Sending..." : "Send Message."
+                        }
+                        color="lime"
                         type="submit"
                         disabled={status === "sending"}
-                    >
-                        {status === "sending" ? "Sending..." : "Send Message."}
-                    </button>
+                        className="ml-auto w-full! transition-opacity hover:opacity-85 disabled:cursor-not-allowed! disabled:opacity-50 sm:w-fit!"
+                    />
                 </div>
 
                 <p

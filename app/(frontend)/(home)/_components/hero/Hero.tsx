@@ -1,3 +1,4 @@
+import StandardButton from "../../../_components/StandardButton";
 import Watermark from "./Watermark";
 
 export default function HeroSection() {
@@ -17,13 +18,17 @@ export default function HeroSection() {
                     <br className="max-[700px]:hidden" /> to compete and enjoy
                     gaming alongside their peers.
                 </p>
-                <a
-                    href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
-                    target="_blank"
-                    className="mt-2.5 w-fit cursor-pointer rounded-[5px] bg-[#e2ff00] px-4 py-3 font-[Switzer] text-[20px] font-medium text-black max-[700px]:mt-3 max-[700px]:py-2.5 max-[700px]:text-lg"
-                >
-                    Sign up to <em>AUEC.</em>
-                </a>
+                <StandardButton
+                    title={
+                        <>
+                            Sign up to <em>AUEC.</em>
+                        </>
+                    }
+                    color="lime"
+                    link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
+                    external
+                    className="mt-2.5 max-[700px]:mt-3"
+                />
             </div>
         </section>
     );

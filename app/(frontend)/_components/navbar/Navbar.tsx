@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import NavbarPages from "./NavbarPages";
 import NavItem from "./NavItem";
 import SocialMediaLinkBar from "../SocialMediaLinkBar";
+import StandardButton from "../StandardButton";
 
 export default function Navbar() {
     const [isOpen, setOpen] = useState(false);
@@ -102,16 +103,17 @@ export default function Navbar() {
                             </a>
                         </div>
 
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
-                            className="button-standard button-lime signup-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <em>
-                                <strong>SIGN UP</strong>
-                            </em>
-                        </a>
+                        <StandardButton
+                            title={
+                                <em>
+                                    <strong>SIGN UP</strong>
+                                </em>
+                            }
+                            color="lime"
+                            link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
+                            external
+                            className="signup-button"
+                        />
                     </div>
 
                     <div className="navbar-hamburger">
@@ -137,18 +139,20 @@ export default function Navbar() {
                         </ul>
 
                         <div className="navbar-open-bottom">
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="button-standard button-lime"
+                            <StandardButton
+                                title={
+                                    <>
+                                        Sign up to{" "}
+                                        <em>
+                                            <strong>AUEC.</strong>
+                                        </em>
+                                    </>
+                                }
+                                color="lime"
+                                link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
+                                external
                                 onClick={() => setOpen(false)}
-                            >
-                                Sign up to{" "}
-                                <em>
-                                    <strong>AUEC.</strong>
-                                </em>
-                            </a>
+                            />
 
                             <SocialMediaLinkBar />
                         </div>

@@ -12,7 +12,6 @@ type PhotoSliderProps = {
     className?: string;
 };
 
-// Short lists are repeated so one set is always wider than the screen
 const MIN_PHOTOS_PER_SET = 8;
 
 export default function PhotoSlider({
