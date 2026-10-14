@@ -7,7 +7,23 @@ import Footer from "./(frontend)/_components/footer/Footer";
 import { ReactLenis } from "lenis/react";
 
 const switzer = Switzer({
+    variable: "--font-switzer-local",
     src: [
+        {
+            path: "../public/Switzer-Thin.woff2",
+            weight: "100",
+            style: "normal",
+        },
+        {
+            path: "../public/Switzer-Extralight.woff2",
+            weight: "200",
+            style: "normal",
+        },
+        {
+            path: "../public/Switzer-Light.woff2",
+            weight: "300",
+            style: "normal",
+        },
         {
             path: "../public/Switzer-Regular.woff2",
             weight: "400",
@@ -22,10 +38,26 @@ const switzer = Switzer({
 });
 
 const syne = Syne({
+    variable: "--font-syne-local",
     src: [
+        {
+            path: "../public/Syne-Regular.woff2",
+            weight: "400",
+            style: "normal",
+        },
         {
             path: "../public/Syne-Medium.woff2",
             weight: "500",
+            style: "normal",
+        },
+        {
+            path: "../public/Syne-SemiBold.woff2",
+            weight: "600",
+            style: "normal",
+        },
+        {
+            path: "../public/Syne-Bold.woff2",
+            weight: "700",
             style: "normal",
         },
     ],
@@ -44,7 +76,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <ReactLenis root />
-            <body className={`${switzer} ${syne}`}>
+            <body className={`${switzer.variable} ${syne.variable}`}>
                 <Navbar />
                 <main>{children}</main>
                 <Footer />

@@ -1,8 +1,29 @@
 @import "tailwindcss";
 
-* {
-    font-family: "Switzer";
-    list-style: none;
+@theme inline {
+    --font-syne: var(--font-syne-local);
+    --font-switzer: var(--font-switzer-local);
+}
+
+@theme {
+    --color-neon-green: #e2ff00;
+    --color-neon-purple: #9c72ff;
+    --color-dark-purple: #4700ed;
+
+    --animate-marquee: marquee 60s linear infinite;
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+}
+
+@layer base {
+    * {
+        font-family: var(--font-switzer-local), sans-serif;
+        list-style: none;
+    }
 }
 
 a {
@@ -20,9 +41,9 @@ main {
 }
 
 .divider {
-    width: calc(100% - 64px);
+    width: 100%;
     border-top: solid 1px #888888;
-    margin: 0 32px;
+    margin: 0;
 }
 
 .divider-bottom {
@@ -75,7 +96,7 @@ main {
 .event-card-countdown {
     color: #aaa;
     text-align: right;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -85,7 +106,7 @@ main {
 
 .event-card-info {
     color: #aaa;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -95,7 +116,7 @@ main {
 
 .event-card-title {
     color: white;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -180,6 +201,7 @@ main {
 .navbar-link.active {
     color: white;
 }
+
 .navbar-link.active::after {
     width: 100%;
 }
@@ -286,26 +308,32 @@ main {
     justify-content: center;
     gap: 0;
 }
-@media (width >= 2560px) {
+
+@media (width >=2560px) {
     .navbar-logo.navbar-socials {
         height: 120px;
         width: 56px;
     }
+
     .navbar-right .signup-button {
         font-size: calc(6px + 0.28vw) !important;
         padding: 5px 18px !important;
     }
 }
+
 @media (width > 700px) {
     .navbar {
         height: auto;
     }
+
     .navbar-hamburger {
         display: none;
     }
+
     .navbar-link {
         font-size: calc(8px + 0.5vw);
     }
+
     .navbar-logo {
         height: auto;
         max-height: 32px;
@@ -316,26 +344,32 @@ main {
         padding: 6px 22px !important;
     }
 }
+
 @media (max-width: 900px) {
     .navbar-logo.navbar-socials {
         display: none;
     }
 }
-@media (width <= 700px) {
+
+@media (width <=700px) {
     .navbar {
         height: calc(100% + 2vh);
         max-height: 8vh;
     }
+
     .navbar-link {
         display: none;
     }
+
     .navbar-items {
         display: none;
     }
+
     .navbar-logo {
         height: calc(30px + 1vh);
         max-height: 80px;
     }
+
     .navbar-logo.navbar-socials {
         display: none;
     }
@@ -344,10 +378,11 @@ main {
         display: none;
     }
 }
+
 /* Layout Styles*/
 
 .nav-item-title {
-    font-family: Syne;
+    font-family: var(--font-syne-local), sans-serif;
     font-size: 150px;
     font-style: normal;
     font-weight: 500;
@@ -371,7 +406,7 @@ main {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 20px;
     font-weight: 500;
     height: fit-content;
@@ -394,29 +429,15 @@ main {
     color: white;
 }
 
-.home-a {
-    background-image: url(../../public/background.webp);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 160px 64px 64px;
-}
-
 .home-title {
     color: #fff;
-    font-family: Syne;
+    font-family: var(--font-syne-local), sans-serif;
     font-size: 100px;
     font-style: normal;
     font-weight: 500;
     line-height: 80%;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-}
-
-.home-a-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
 }
 
 .home-b {
@@ -434,7 +455,7 @@ main {
 
 .section-title {
     color: #fff;
-    font-family: Syne;
+    font-family: var(--font-syne-local), sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 500;
@@ -445,7 +466,7 @@ main {
 
 .standard-text {
     color: #fff;
-    font-family: "Switzer";
+    font-family: var(--font-switzer-local), sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
@@ -574,6 +595,7 @@ main {
 .social-media-link-wrapper {
     display: flex;
     justify-content: space-between;
+    max-width: 100%;
     width: 300px;
 }
 
@@ -799,7 +821,9 @@ main {
         font-size: 28px;
     }
 }
-
+.partners-bg {
+    background-color: #272727;
+}
 @media (width < 1400px) {
     .events-wrapper {
         grid-template-columns: auto auto;
@@ -811,20 +835,12 @@ main {
 }
 
 @media (width < 950px) {
-    .home-a {
-        padding: 160px 32px 64px;
-    }
-
     .home-b {
         padding: 32px 32px 48px;
     }
 
     .home-c {
         padding: 32px 32px 48px;
-    }
-
-    .home-title {
-        font-size: 64px;
     }
 
     .events-wrapper {
@@ -848,6 +864,7 @@ main {
         letter-spacing: 1.8px;
         margin: 0;
     }
+
     .nav-item-index {
         color: white;
         font-size: 16px;
@@ -927,6 +944,7 @@ main {
         bottom: 16px;
     }
 }
+
 
 @keyframes fade {
     from {
