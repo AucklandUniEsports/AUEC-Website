@@ -61,7 +61,7 @@ export default function FeatureScroll() {
                         ref={(el) => {
                             sectionRefs.current[i] = el;
                         }}
-                        className={`flex min-h-[80vh] flex-col justify-center gap-4 border-t border-[#333] transition-opacity duration-500 max-[950px]:min-h-0 max-[950px]:border-t-0 max-[950px]:pb-12 max-[950px]:opacity-100 ${i === active ? "opacity-100" : "opacity-40"}`}
+                        className={`@container flex min-h-[80vh] flex-col justify-center gap-4 border-t border-[#333] transition-opacity duration-500 max-[950px]:min-h-0 max-[950px]:border-t-0 max-[950px]:pb-12 max-[950px]:opacity-100 ${i === active ? "opacity-100" : "opacity-40"}`}
                     >
                         <div className="relative -mx-8 -mb-12 hidden max-[950px]:block">
                             <video
@@ -79,7 +79,7 @@ export default function FeatureScroll() {
                                 playsInline
                             />{" "}
                         </div>
-                        <h2 className="relative font-syne text-[clamp(1.75rem,2.5vw,2.5rem)] leading-[0.9] font-medium tracking-[0.075rem] text-white uppercase">
+                        <h2 className="relative font-syne text-[clamp(2rem,8.8cqw,3rem)] leading-[0.9] font-medium tracking-[0.075rem] text-white uppercase">
                             {feature.title}
                         </h2>
                         <p className="max-w-120 text-[clamp(1rem,1.15vw,1.25rem)] leading-[1.4] text-white/80">

@@ -10,7 +10,7 @@ interface Sponsor {
 
 export default function SponsorsSection({ sponsors }: { sponsors: Sponsor[] }) {
     return (
-        <section className="home-b">
+        <section className="home-b pb-24! md:pb-32!">
             <div className="home-b-top">
                 <h2 className="section-title">Community Partners</h2>
                 <StandardButton
