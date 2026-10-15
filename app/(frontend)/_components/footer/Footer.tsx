@@ -19,12 +19,12 @@ const FooterLinks = [
 export default function Footer(){
     return (
         <footer className="flex flex-col items-center justify-center gap-4 border-y border-[#8b5cf6] bg-gradient-to-b from-[#161616] from-65% to-[#1e1245] p-8 text-white">
-            <div className="flex items-center justify-center gap-16">
+            <div className="flex items-center justify-center gap-4 md:gap-16 lg:gap-38">
                 <div>
                     <img className="w-[300px]" src="auec_logo.svg" alt="" />
                     <SocialMediaLinkBar />
                 </div>
-                <div className="flex gap-8">
+                <div className="flex gap-4 md:gap-16 lg:gap-38">
                     <div>
                         <p>Information</p>
                         <ul className="flex flex-col gap-0.5">
