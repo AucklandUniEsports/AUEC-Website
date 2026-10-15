@@ -9,6 +9,31 @@
     --color-neon-green: #e2ff00;
     --color-neon-purple: #9c72ff;
     --color-dark-purple: #4700ed;
+
+    --animate-marquee: marquee 60s linear infinite;
+
+    @keyframes marquee {
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    --animate-fade-up: fade-up 0.8s ease-out both;
+
+    @keyframes fade-up {
+        from {
+            opacity: 0;
+            translate: 0 1rem;
+        }
+    }
+
+    --animate-fade-in: fade-in 1s ease-out both;
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+    }
 }
 
 @layer base {
@@ -33,9 +58,9 @@ main {
 }
 
 .divider {
-    width: calc(100% - 64px);
+    width: 100%;
     border-top: solid 1px #888888;
-    margin: 0 32px;
+    margin: 0;
 }
 
 .divider-bottom {
@@ -193,6 +218,7 @@ main {
 .navbar-link.active {
     color: white;
 }
+
 .navbar-link.active::after {
     width: 100%;
 }
@@ -299,26 +325,32 @@ main {
     justify-content: center;
     gap: 0;
 }
-@media (width >= 2560px) {
+
+@media (width >=2560px) {
     .navbar-logo.navbar-socials {
         height: 120px;
         width: 56px;
     }
+
     .navbar-right .signup-button {
         font-size: calc(6px + 0.28vw) !important;
         padding: 5px 18px !important;
     }
 }
+
 @media (width > 700px) {
     .navbar {
         height: auto;
     }
+
     .navbar-hamburger {
         display: none;
     }
+
     .navbar-link {
         font-size: calc(8px + 0.5vw);
     }
+
     .navbar-logo {
         height: auto;
         max-height: 32px;
@@ -329,26 +361,32 @@ main {
         padding: 6px 22px !important;
     }
 }
+
 @media (max-width: 900px) {
     .navbar-logo.navbar-socials {
         display: none;
     }
 }
-@media (width <= 700px) {
+
+@media (width <=700px) {
     .navbar {
         height: calc(100% + 2vh);
         max-height: 8vh;
     }
+
     .navbar-link {
         display: none;
     }
+
     .navbar-items {
         display: none;
     }
+
     .navbar-logo {
         height: calc(30px + 1vh);
         max-height: 80px;
     }
+
     .navbar-logo.navbar-socials {
         display: none;
     }
@@ -357,6 +395,7 @@ main {
         display: none;
     }
 }
+
 /* Layout Styles*/
 
 .nav-item-title {
@@ -407,31 +446,6 @@ main {
     color: white;
 }
 
-.home-a {
-    background-image: url(../../public/background.webp);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 160px 64px 64px;
-}
-
-.home-title {
-    color: #fff;
-    font-family: var(--font-syne-local), sans-serif;
-    font-size: 100px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 80%;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-}
-
-.home-a-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .home-b {
     display: flex;
     flex-direction: column;
@@ -454,17 +468,6 @@ main {
     line-height: 80%;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-}
-
-.standard-text {
-    color: #fff;
-    font-family: var(--font-switzer-local), sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 100%;
-    letter-spacing: -0.7px;
-    margin: 0 0 16px;
 }
 
 .footer {
@@ -595,44 +598,9 @@ main {
     width: 52px;
 }
 
-/* About Styles */
-
-.about {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding: 160px 64px 64px;
+.partners-bg {
+    background-color: #272727;
 }
-
-.about-img {
-    object-fit: cover;
-    height: 512px;
-    width: 100%;
-    margin: 0 0 8px;
-}
-
-.about-top {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.about-bottom {
-    display: flex;
-    gap: 32px;
-}
-
-.about-bottom-section {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.about-buttons {
-    display: flex;
-    gap: 16px;
-}
-
 @media (width < 1400px) {
     .events-wrapper {
         grid-template-columns: auto auto;
@@ -644,20 +612,12 @@ main {
 }
 
 @media (width < 950px) {
-    .home-a {
-        padding: 160px 32px 64px;
-    }
-
     .home-b {
         padding: 32px 32px 48px;
     }
 
     .home-c {
         padding: 32px 32px 48px;
-    }
-
-    .home-title {
-        font-size: 64px;
     }
 
     .events-wrapper {
@@ -681,6 +641,7 @@ main {
         letter-spacing: 1.8px;
         margin: 0;
     }
+
     .nav-item-index {
         color: white;
         font-size: 16px;
@@ -694,14 +655,6 @@ main {
         align-items: center;
         flex-direction: column;
         gap: 16px;
-    }
-
-    .about {
-        padding: 160px 32px 64px;
-    }
-
-    .about-bottom {
-        flex-direction: column;
     }
 
     .footer {
@@ -768,6 +721,7 @@ main {
         bottom: 16px;
     }
 }
+
 
 @keyframes fade {
     from {

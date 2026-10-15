@@ -1,7 +1,7 @@
 type FooterLinkProps = {
-    title: string
-    link: string
-}
+    title: string;
+    link: string;
+};
 
 export default function FooterLink({title, link} : FooterLinkProps){
     return (

@@ -4,16 +4,16 @@ import SocialMediaLinkBar from "../SocialMediaLinkBar";
 const FooterLinks = [
     {
         title: "Brand Kit",
-        link: "https://drive.google.com/drive/folders/1OHntE402jAApx0g-LOMj0Q6p1Pinmh8i?usp=sharing"
+        link: "https://drive.google.com/drive/folders/1OHntE402jAApx0g-LOMj0Q6p1Pinmh8i?usp=sharing",
     },
     {
         title: "Club Constitution",
-        link: "https://docs.google.com/document/d/1y3Gi6v5fEPRcjT7t76X0sTmYh6dcyaDc2lDCk3_h1VI/edit?usp=sharing"
+        link: "https://docs.google.com/document/d/1y3Gi6v5fEPRcjT7t76X0sTmYh6dcyaDc2lDCk3_h1VI/edit?usp=sharing",
     },
-        {
+    {
         title: "Sponsorship Deck",
-        link: "AUEC 2026 Sponsorship Deck.pdf"
-    }
+        link: "/AUEC-2026-Sponsorship-Deck.pdf",
+    },
 ];
 
 export default function Footer(){

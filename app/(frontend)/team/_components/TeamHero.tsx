@@ -15,7 +15,7 @@ export function TeamHero() {
                 <div className="absolute inset-0 bg-linear-to-t from-[#1a1a1a] to-transparent to-40%" />
 
                 <div className="absolute bottom-6 md:-bottom-10 left-0 right-0 px-7 md:px-16 tracking-wider">
-                    <h1 className="font-syne text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap leading-[0.95] font-bold uppercase scale-y-80 origin-bottom-left">
+                    <h1 className="animate-fade-up motion-reduce:animate-none font-syne text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl whitespace-nowrap leading-[0.95] font-bold uppercase scale-y-80 origin-bottom-left">
                         Meet the Team.
                     </h1>
                 </div>

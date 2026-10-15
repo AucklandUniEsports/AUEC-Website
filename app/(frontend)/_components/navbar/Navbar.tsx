@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import NavbarPages from "./NavbarPages";
 import NavItem from "./NavItem";
 import SocialMediaLinkBar from "../SocialMediaLinkBar";
+import StandardButton from "../StandardButton";
 
 export default function Navbar() {
     const [isOpen, setOpen] = useState(false);
@@ -25,6 +26,8 @@ export default function Navbar() {
         { href: "/events", label: "EVENTS" },
         { href: "/about", label: "ABOUT" },
         { href: "/team", label: "TEAM" },
+        { href: "/sponsors", label: "SPONSORS" },
+        { href: "/contact", label: "CONTACT" },
     ];
 
     const isActiveLink = (href: string) => {
@@ -42,7 +45,7 @@ export default function Navbar() {
                     <Link href="/" onClick={() => setOpen(false)}>
                         <img
                             className="navbar-logo"
-                            src="auec_logo_no_text.svg"
+                            src="/auec_logo_no_text.svg"
                             alt="AUEC logo"
                         />
                     </Link>
@@ -59,24 +62,6 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
-
-                        <a
-                            href="AUEC 2026 Sponsorship Deck.pdf"
-                            className="navbar-link"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            SPONSORS
-                        </a>
-
-                        <Link
-                            href="/contact"
-                            className={`navbar-link ${
-                                isActiveLink("/contact") ? "active" : ""
-                            }`}
-                        >
-                            CONTACT
-                        </Link>
                     </nav>
 
                     <div className="navbar-right">
@@ -88,7 +73,7 @@ export default function Navbar() {
                             >
                                 <img
                                     className="navbar-logo navbar-socials"
-                                    src="discord.svg"
+                                    src="/discord.svg"
                                     alt="Discord"
                                 />
                             </a>
@@ -100,7 +85,7 @@ export default function Navbar() {
                             >
                                 <img
                                     className="navbar-logo navbar-socials"
-                                    src="instagram.svg"
+                                    src="/instagram.svg"
                                     alt="Instagram"
                                 />
                             </a>
@@ -112,22 +97,23 @@ export default function Navbar() {
                             >
                                 <img
                                     className="navbar-logo navbar-socials"
-                                    src="twitch.svg"
+                                    src="/twitch.svg"
                                     alt="Twitch"
                                 />
                             </a>
                         </div>
 
-                        <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
-                            className="button-standard button-lime signup-button"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <em>
-                                <strong>SIGN UP</strong>
-                            </em>
-                        </a>
+                        <StandardButton
+                            title={
+                                <em>
+                                    <strong>SIGN UP</strong>
+                                </em>
+                            }
+                            color="lime"
+                            link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
+                            external
+                            className="signup-button"
+                        />
                     </div>
 
                     <div className="navbar-hamburger">
@@ -153,18 +139,20 @@ export default function Navbar() {
                         </ul>
 
                         <div className="navbar-open-bottom">
-                            <a
-                                href="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="button-standard button-lime"
+                            <StandardButton
+                                title={
+                                    <>
+                                        Sign up to{" "}
+                                        <em>
+                                            <strong>AUEC.</strong>
+                                        </em>
+                                    </>
+                                }
+                                color="lime"
+                                link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
+                                external
                                 onClick={() => setOpen(false)}
-                            >
-                                Sign up to{" "}
-                                <em>
-                                    <strong>AUEC.</strong>
-                                </em>
-                            </a>
+                            />
 
                             <SocialMediaLinkBar />
                         </div>

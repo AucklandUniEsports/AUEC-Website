@@ -1,4 +1,5 @@
 import Image from "next/image";
+import StandardButton from "../../_components/StandardButton";
 
 export default function SponsorshipBanner() {
     return (
@@ -24,14 +25,13 @@ export default function SponsorshipBanner() {
                     </p>
                 </div>
 
-                <a
-                    className="rounded-[5px] bg-[#e2ff00] px-8 py-1 text-lg font-medium tracking-[-0.7px] whitespace-nowrap text-black"
-                    href="/AUEC 2026 Sponsorship Deck.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    About Sponsorships
-                </a>
+                <StandardButton
+                    title="About Sponsorships."
+                    color="lime"
+                    link="/AUEC-2026-Sponsorship-Deck.pdf"
+                    external
+                    className="whitespace-nowrap"
+                />
             </div>
         </section>
     );
