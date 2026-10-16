@@ -52,9 +52,9 @@ export default function Footer(){
                     </div>
                 </div>
             </div>
-            <div className="footer-bottom">
-                <div className="w-full border-t border-solid border-[#6b6b6b]"></div>
-                <p>©2025 Auckland University Esports Club</p>
+            <div className="flex w-full max-w-[900px] flex-col items-center justify-center gap-2 text-[#AAAAAA]">
+                <div className="w-full border-t border-solid border-[#AAAAAA]"></div>
+                <p className="text-sm">©2025 Auckland University Esports Club</p>
             </div>
         </footer>
     );
