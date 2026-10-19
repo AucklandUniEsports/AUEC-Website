@@ -1,6 +1,5 @@
 "use client";
 
-import CategoryTag from "../../_components/CategoryTag";
 import { useState } from "react";
 
 interface EventCardProps {
@@ -76,46 +75,68 @@ export default function EventCard({ event }: EventCardProps) {
     const displayDate = new Date(
         Date.UTC(eventParts.year, eventParts.month - 1, eventParts.day),
     ).toLocaleDateString("en-NZ", {
-        weekday: "long",
+        weekday: "short",
         year: "numeric",
-        month: "long",
+        month: "short",
         day: "numeric",
         timeZone: "UTC", // already midnight UTC so render as-is
     });
 
+    const badgeColor =
+        daysUntil === 0
+            ? "bg-[#ff3b3b] text-white"
+            : daysUntil > 0
+              ? "bg-neon-green text-black"
+              : "bg-black/70 text-white/70";
+
     return (
         <a
-            className="flex cursor-pointer flex-col rounded-[5px] bg-[#272727] px-3 pt-3 pb-5 transition-shadow duration-200 ease-out hover:shadow-[0_0_1.5rem_rgb(170_170_170/0.35)] hover:ring-[0.03125rem] hover:ring-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
+            className="group flex cursor-pointer flex-col overflow-hidden bg-[#232323] transition-[box-shadow] duration-200 ease-out hover:shadow-[0_0_1.5rem_rgb(170_170_170/0.35)] hover:ring-[0.03125rem] hover:ring-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
             href={event.link}
         >
-            <div className="mb-3 flex items-center justify-between gap-3">
-                <ul className="flex flex-wrap gap-2">
-                    {event.CategoriesOnEvents.map(({ Category }) => (
-                        <CategoryTag key={Category.id} name={Category.name} />
-                    ))}
-                </ul>
-                <p className="flex shrink-0 items-center gap-2 font-syne text-xs tracking-[0.1em] text-white">
-                    {daysUntil === 0 && (
-                        <span className="size-1.5 rounded-full bg-[#ff3b3b] motion-safe:animate-pulse" />
-                    )}
-                    {getEventDateText(daysUntil)}
+            <div className="relative aspect-video overflow-hidden bg-black">
+                <img
+                    className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
+                    src={
+                        "https://hizvklozfaxggijszcab.supabase.co/storage/v1/object/public/event_thumbnails/" +
+                        event.thumbnailPath
+                    }
+                    alt=""
+                />
+                <span
+                    className={`absolute top-3 left-3 -skew-x-12 px-2.5 py-1 ${badgeColor}`}
+                >
+                    <span className="flex skew-x-12 items-center gap-1.5 font-syne text-[11px] leading-none tracking-widest uppercase">
+                        {daysUntil === 0 && (
+                            <span className="size-1.5 rounded-full bg-white motion-safe:animate-pulse" />
+                        )}
+                        {getEventDateText(daysUntil)}
+                    </span>
+                </span>
+            </div>
+
+            <div className="flex flex-1 flex-col gap-3 p-4">
+                {event.CategoriesOnEvents.length > 0 && (
+                    <ul className="flex flex-wrap gap-1.5">
+                        {event.CategoriesOnEvents.map(({ Category }) => (
+                            <li
+                                key={Category.id}
+                                className="bg-white/6 px-2 py-1 font-syne text-[10px] leading-none tracking-widest text-white/60 uppercase"
+                            >
+                                {Category.name}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+                <h3 className="line-clamp-2 font-syne text-lg leading-tight font-medium text-white">
+                    {event.name}
+                </h3>
+                <p className="mt-auto flex flex-wrap items-center gap-x-2 text-xs text-white/50">
+                    {displayDate}
+                    <span className="size-1 rounded-full bg-white/30" />
+                    Esports Arena
                 </p>
             </div>
-            <img
-                className="aspect-video w-full object-cover"
-                src={
-                    "https://hizvklozfaxggijszcab.supabase.co/storage/v1/object/public/event_thumbnails/" +
-                    event.thumbnailPath
-                }
-                alt=""
-            />
-            <p className="mt-2 text-center text-xs tracking-[-0.02em] text-[#aaa]">
-                {displayDate} |{" "}
-                <span className="text-[#5aa9ff]">Esports Arena</span>
-            </p>
-            <p className="mt-2 text-center text-base leading-tight font-semibold tracking-[-0.03em] text-white">
-                {event.name}
-            </p>
         </a>
     );
 }

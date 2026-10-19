@@ -16,13 +16,13 @@ export default function FeaturedEvents({ events }: FeaturedEventsProps) {
                     link="/events"
                 />
             </div>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="events-wrapper">
                 {events.length ? (
                     events.map((event, index) => (
                         <EventCard event={event} key={index} />
                     ))
                 ) : (
-                    <p className="placeholder-text col-span-full">
+                    <p className="placeholder-text">
                         No featured events for now. Stay tuned!
                     </p>
                 )}
