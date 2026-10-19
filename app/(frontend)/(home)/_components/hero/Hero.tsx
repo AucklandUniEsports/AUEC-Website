@@ -27,7 +27,7 @@ export default function HeroSection() {
                     color="lime"
                     link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform?usp=header"
                     external
-                    className="mt-2.5 max-[700px]:mt-3 animate-fade-up [animation-delay:0.3s] motion-reduce:animate-none"
+                    className="mt-2.5 ml-1 max-[700px]:mt-3 animate-fade-up [animation-delay:0.3s] motion-reduce:animate-none"
                 />
             </div>
         </section>

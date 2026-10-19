@@ -87,7 +87,7 @@ export default function EventCard({ event }: EventCardProps) {
             ? "bg-[#ff3b3b] text-white"
             : daysUntil > 0
               ? "bg-neon-green text-black"
-              : "bg-black/70 text-white/70";
+              : "bg-black/70 text-white";
 
     return (
         <a
@@ -121,7 +121,7 @@ export default function EventCard({ event }: EventCardProps) {
                         {event.CategoriesOnEvents.map(({ Category }) => (
                             <li
                                 key={Category.id}
-                                className="bg-white/6 px-2 py-1 font-syne text-[10px] leading-none tracking-widest text-white/60 uppercase"
+                                className="bg-white/6 px-2 py-1 font-syne text-[10px] leading-none tracking-widest text-white uppercase"
                             >
                                 {Category.name}
                             </li>
@@ -131,10 +131,9 @@ export default function EventCard({ event }: EventCardProps) {
                 <h3 className="line-clamp-2 font-syne text-lg leading-tight font-medium text-white">
                     {event.name}
                 </h3>
-                <p className="mt-auto flex flex-wrap items-center gap-x-2 text-xs text-white/50">
+                <p className="mt-auto flex flex-wrap items-center gap-x-2 text-xs text-white">
                     {displayDate}
-                    <span className="size-1 rounded-full bg-white/30" />
-                    Esports Arena
+                    <span>Esports Arena</span>
                 </p>
             </div>
         </a>
