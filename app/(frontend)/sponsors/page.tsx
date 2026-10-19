@@ -60,7 +60,7 @@ export default async function Sponsors() {
                     Our 2026 Community Partners
                 </h2>
 
-                <div className="sponsor-wrapper w-full">
+                <div className="grid w-full grid-cols-2 gap-2.5 md:gap-4 min-[950px]:grid-cols-3">
                     {sponsors.map((sponsor) => (
                         <SponsorCard
                             key={sponsor.id}

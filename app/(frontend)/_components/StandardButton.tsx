@@ -36,7 +36,7 @@ const colorClasses: Record<string, string> = {
 };
 
 const sizeClasses = {
-    default: "px-6 text-base tracking-[0.15em] md:px-8 md:text-lg",
+    default: "px-5 text-sm tracking-widest md:px-8 md:text-lg md:tracking-[0.15em]",
     small: "px-5 text-sm tracking-widest md:px-7 md:text-base",
 };
 
