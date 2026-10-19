@@ -22,7 +22,7 @@ export async function GET() {
                     new Date(b.date).getTime() - new Date(a.date).getTime(),
             );
 
-        const featured = [...upcoming, ...past].slice(0, 3);
+        const featured = [...upcoming, ...past].slice(0, 4);
 
         return NextResponse.json(
             { message: "Fetched featured events", data: featured },

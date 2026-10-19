@@ -23,11 +23,11 @@ interface EventCardProps {
 }
 
 function getEventDateText(daysUntil: number): string {
-    if (daysUntil > 1) return `IN ${daysUntil} DAYS`;
-    if (daysUntil === 1) return "TOMORROW";
-    if (daysUntil === 0) return "TODAY";
-    if (daysUntil === -1) return "YESTERDAY";
-    return `${Math.abs(daysUntil)} DAYS AGO`;
+    if (daysUntil > 1) return `In ${daysUntil} days`;
+    if (daysUntil === 1) return "Tomorrow";
+    if (daysUntil === 0) return "LIVE NOW!";
+    if (daysUntil === -1) return "Yesterday";
+    return `${Math.abs(daysUntil)} days ago`;
 }
 
 function parseDateParts(date: Date | string): {
@@ -85,31 +85,37 @@ export default function EventCard({ event }: EventCardProps) {
 
     return (
         <a
-            className="event-card transition-shadow duration-200 ease-out hover:shadow-[0_0_1.5rem_rgb(170_170_170/0.35)] hover:ring-[0.03125rem] hover:ring-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
+            className="flex cursor-pointer flex-col rounded-[5px] bg-[#272727] px-3 pt-3 pb-5 transition-shadow duration-200 ease-out hover:shadow-[0_0_1.5rem_rgb(170_170_170/0.35)] hover:ring-[0.03125rem] hover:ring-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
             href={event.link}
         >
-            <div className="event-card-top">
-                <div className="category-wrapper">
+            <div className="mb-3 flex items-center justify-between gap-3">
+                <ul className="flex flex-wrap gap-2">
                     {event.CategoriesOnEvents.map(({ Category }) => (
                         <CategoryTag key={Category.id} name={Category.name} />
                     ))}
-                </div>
-                <p className="event-card-countdown">
+                </ul>
+                <p className="flex shrink-0 items-center gap-2 font-syne text-xs tracking-[0.1em] text-white">
+                    {daysUntil === 0 && (
+                        <span className="size-1.5 rounded-full bg-[#ff3b3b] motion-safe:animate-pulse" />
+                    )}
                     {getEventDateText(daysUntil)}
                 </p>
             </div>
             <img
-                className="event-card-thumbnail"
+                className="aspect-video w-full object-cover"
                 src={
                     "https://hizvklozfaxggijszcab.supabase.co/storage/v1/object/public/event_thumbnails/" +
                     event.thumbnailPath
                 }
                 alt=""
             />
-            <p className="event-card-info">
-                {displayDate} | <span>Esports Arena</span>
+            <p className="mt-2 text-center text-xs tracking-[-0.02em] text-[#aaa]">
+                {displayDate} |{" "}
+                <span className="text-[#5aa9ff]">Esports Arena</span>
             </p>
-            <p className="event-card-title">{event.name}</p>
+            <p className="mt-2 text-center text-base leading-tight font-semibold tracking-[-0.03em] text-white">
+                {event.name}
+            </p>
         </a>
     );
 }

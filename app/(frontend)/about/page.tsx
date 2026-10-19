@@ -93,7 +93,7 @@ export default function About() {
                             playsInline
                         />
                         <p
-                            className="pointer-events-none absolute bottom-6 left-8 origin-bottom-left scale-y-80 font-syne text-[clamp(1.5rem,4.2vw,3.75rem)] leading-none font-medium tracking-[0.075rem] text-white uppercase max-[950px]:bottom-4 max-[950px]:left-5"
+                            className="pointer-events-none absolute right-8 bottom-6 left-8 origin-bottom-left scale-y-80 font-syne text-[clamp(1.5rem,4.2vw,3.75rem)] leading-none font-medium tracking-[0.075rem] text-white uppercase max-[950px]:right-5 max-[950px]:bottom-4 max-[950px]:left-5"
                             style={{
                                 opacity: captionProgress,
                                 transform: `translateY(${(1 - captionProgress) * 1.5}rem)`,
