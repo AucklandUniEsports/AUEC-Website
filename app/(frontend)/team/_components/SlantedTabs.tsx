@@ -1,3 +1,5 @@
+import StandardButton from "../../_components/StandardButton";
+
 export function SlantedTabs<T extends string | number>({
     options,
     value,
@@ -25,23 +27,14 @@ export function SlantedTabs<T extends string | number>({
             {options.map((option) => {
                 const isSelected = option === value;
                 return (
-                    <button
+                    <StandardButton
                         key={option}
-                        type="button"
+                        title={option}
+                        color={isSelected ? "lime" : "dark"}
+                        size={size}
                         onClick={() => onChange(option)}
-                        aria-pressed={isSelected}
-                        className={`-skew-x-12 ${size === "small" ? "px-5 md:px-7" : "px-8 md:px-12"} py-1 md:py-2 cursor-pointer transition-colors duration-300 ${
-                            isSelected
-                                ? "bg-neon-green text-black"
-                                : "bg-[#272727] text-white hover:bg-[#333333]"
-                        }`}
-                    >
-                        <span
-                            className={`block skew-x-12 font-syne uppercase ${size === "small" ? "text-sm md:text-base tracking-[0.1em]" : "text-base md:text-lg tracking-[0.15em]"}`}
-                        >
-                            {option}
-                        </span>
-                    </button>
+                        pressed={isSelected}
+                    />
                 );
             })}
         </div>
