@@ -16,7 +16,7 @@ export default function AboutSection() {
             <div className="@container relative pl-3 md:pl-5 lg:pl-16 flex flex-col gap-4 -mt-10 md:-mt-24">
                 <FadeIn
                     as="h2"
-                    className="text-white font-syne text-[9.3cqw] scale-y-80 md:text-[min(4.5rem,7cqw)] font-normal md:font-medium not-italic leading-[0.9] md:leading-[0.8] tracking-[0.075rem] uppercase"
+                    className="text-white font-syne text-[36px] scale-y-80 md:text-[min(4.5rem,7cqw)] font-medium not-italic leading-[0.9] md:leading-[0.8] md:tracking-[0.075rem] uppercase"
                 >
                     MEET THE ESPORTS CLUB.
                 </FadeIn>

@@ -8,7 +8,7 @@ interface FeaturedEventsProps {
 export default function FeaturedEvents({ events }: FeaturedEventsProps) {
     return (
         <section className="home-b">
-            <div className="home-b-top">
+            <div className="home-b-top flex-wrap gap-x-4 gap-y-3">
                 <h2 className="section-title">Featured Events</h2>
                 <StandardButton
                     title="Explore Events."

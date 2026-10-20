@@ -4,7 +4,7 @@ import FadeIn from "../../../_components/FadeIn";
 
 export default function TeamSection() {
     return (
-        <section className="relative flex h-[80svh] overflow-hidden pt-[43svh] pr-16 pl-8 md:items-center md:justify-center md:p-0">
+        <section className="relative flex h-[80svh] md:h-svh overflow-hidden pt-[43svh] pr-16 pl-8 md:items-center md:justify-center md:p-0">
             <Image
                 src="/DSC00858.webp"
                 alt=""

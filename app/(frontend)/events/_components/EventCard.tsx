@@ -1,6 +1,5 @@
 "use client";
 
-import CategoryTag from "../../_components/CategoryTag";
 import { useState } from "react";
 
 interface EventCardProps {
@@ -23,11 +22,11 @@ interface EventCardProps {
 }
 
 function getEventDateText(daysUntil: number): string {
-    if (daysUntil > 1) return `IN ${daysUntil} DAYS`;
-    if (daysUntil === 1) return "TOMORROW";
-    if (daysUntil === 0) return "TODAY";
-    if (daysUntil === -1) return "YESTERDAY";
-    return `${Math.abs(daysUntil)} DAYS AGO`;
+    if (daysUntil > 1) return `In ${daysUntil} days`;
+    if (daysUntil === 1) return "Tomorrow";
+    if (daysUntil === 0) return "LIVE NOW!";
+    if (daysUntil === -1) return "Yesterday";
+    return `${Math.abs(daysUntil)} days ago`;
 }
 
 function parseDateParts(date: Date | string): {
@@ -76,40 +75,67 @@ export default function EventCard({ event }: EventCardProps) {
     const displayDate = new Date(
         Date.UTC(eventParts.year, eventParts.month - 1, eventParts.day),
     ).toLocaleDateString("en-NZ", {
-        weekday: "long",
+        weekday: "short",
         year: "numeric",
-        month: "long",
+        month: "short",
         day: "numeric",
         timeZone: "UTC", // already midnight UTC so render as-is
     });
 
+    const badgeColor =
+        daysUntil === 0
+            ? "bg-[#ff3b3b] text-white"
+            : daysUntil > 0
+              ? "bg-neon-green text-black"
+              : "bg-black/70 text-white";
+
     return (
         <a
-            className="event-card transition-shadow duration-200 ease-out hover:shadow-[0_0_1.5rem_rgb(170_170_170/0.35)] hover:ring-[0.03125rem] hover:ring-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
+            className="group flex cursor-pointer flex-col overflow-hidden bg-[#232323] transition-[box-shadow] duration-200 ease-out hover:shadow-[0_0_1.5rem_rgb(170_170_170/0.35)] hover:ring-[0.03125rem] hover:ring-white/25 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white motion-reduce:transition-none"
             href={event.link}
         >
-            <div className="event-card-top">
-                <div className="category-wrapper">
-                    {event.CategoriesOnEvents.map(({ Category }) => (
-                        <CategoryTag key={Category.id} name={Category.name} />
-                    ))}
-                </div>
-                <p className="event-card-countdown">
-                    {getEventDateText(daysUntil)}
+            <div className="relative aspect-video overflow-hidden bg-black">
+                <img
+                    className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none"
+                    src={
+                        "https://hizvklozfaxggijszcab.supabase.co/storage/v1/object/public/event_thumbnails/" +
+                        event.thumbnailPath
+                    }
+                    alt=""
+                />
+                <span
+                    className={`absolute top-3 left-3 -skew-x-12 px-2.5 py-1 ${badgeColor}`}
+                >
+                    <span className="flex skew-x-12 items-center gap-1.5 font-syne text-[11px] leading-none tracking-widest uppercase">
+                        {daysUntil === 0 && (
+                            <span className="size-1.5 rounded-full bg-white motion-safe:animate-pulse" />
+                        )}
+                        {getEventDateText(daysUntil)}
+                    </span>
+                </span>
+            </div>
+
+            <div className="flex flex-1 flex-col gap-3 p-4">
+                {event.CategoriesOnEvents.length > 0 && (
+                    <ul className="flex flex-wrap gap-1.5">
+                        {event.CategoriesOnEvents.map(({ Category }) => (
+                            <li
+                                key={Category.id}
+                                className="bg-white/6 px-2 py-1 font-syne text-[10px] leading-none tracking-widest text-white uppercase"
+                            >
+                                {Category.name}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+                <h3 className="line-clamp-2 font-syne text-lg leading-tight font-medium text-white">
+                    {event.name}
+                </h3>
+                <p className="mt-auto flex flex-wrap items-center gap-x-2 text-xs text-white">
+                    {displayDate}
+                    <span>Esports Arena</span>
                 </p>
             </div>
-            <img
-                className="event-card-thumbnail"
-                src={
-                    "https://hizvklozfaxggijszcab.supabase.co/storage/v1/object/public/event_thumbnails/" +
-                    event.thumbnailPath
-                }
-                alt=""
-            />
-            <p className="event-card-info">
-                {displayDate} | <span>Esports Arena</span>
-            </p>
-            <p className="event-card-title">{event.name}</p>
         </a>
     );
 }
