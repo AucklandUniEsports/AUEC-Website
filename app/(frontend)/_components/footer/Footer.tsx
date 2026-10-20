@@ -61,7 +61,7 @@ export default function Footer(){
                 </div>
             </div>
             <div className="flex w-full max-w-[900px] flex-col items-center justify-center gap-2 text-[#AAAAAA]">
-                <div className="w-full border-t border-solid border-[#AAAAAA]"></div>
+                <div className="mt-5 w-full border-t border-solid border-[#AAAAAA]"></div>
                 <div className="md:hidden">
                     <SocialMediaLinkBar />
                 </div>
