@@ -18,11 +18,13 @@ const FooterLinks = [
 
 export default function Footer(){
     return (
-        <footer className="flex flex-col items-center justify-center gap-4 border-y border-[#8b5cf6] bg-gradient-to-b from-[#161616] from-65% to-[#1e1245] p-8 text-white">
-            <div className="flex items-center justify-center gap-4 md:gap-16 lg:gap-38">
-                <div>
-                    <img className="w-[300px]" src="auec_logo.svg" alt="" />
-                    <SocialMediaLinkBar />
+        <footer className="flex w-full flex-col items-center justify-center gap-4 border-y border-[#8b5cf6] bg-gradient-to-b from-[#161616] from-65% to-[#1e1245] p-8 text-white">
+            <div className="flex w-full flex-col items-center justify-center gap-4 md:w-auto md:flex-row md:gap-16 lg:gap-38">
+                <div className="self-start md:self-auto">
+                    <img className="w-[200px] md:w-[300px]" src="auec_logo.svg" alt="" />
+                    <div className="hidden md:block">
+                        <SocialMediaLinkBar />
+                    </div>
                 </div>
                 <div className="flex gap-4 md:gap-16 lg:gap-38">
                     <div>
@@ -54,7 +56,12 @@ export default function Footer(){
             </div>
             <div className="flex w-full max-w-[900px] flex-col items-center justify-center gap-2 text-[#AAAAAA]">
                 <div className="w-full border-t border-solid border-[#AAAAAA]"></div>
-                <p className="text-sm">©2025 Auckland University Esports Club</p>
+                <div className="md:hidden">
+                    <SocialMediaLinkBar />
+                </div>
+                <p className="text-sm">
+                    ©2025 Auckland University Esports Club
+                </p>
             </div>
         </footer>
     );
