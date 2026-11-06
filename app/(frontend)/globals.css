@@ -17,23 +17,6 @@
             transform: translateX(-50%);
         }
     }
-
-    --animate-fade-up: fade-up 0.8s ease-out both;
-
-    @keyframes fade-up {
-        from {
-            opacity: 0;
-            translate: 0 1rem;
-        }
-    }
-
-    --animate-fade-in: fade-in 1s ease-out both;
-
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-    }
 }
 
 @layer base {
@@ -161,7 +144,7 @@ main {
     display: flex;
     justify-content: space-between;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) skewX(-12deg);
     margin: 0;
     padding: 8px 32px;
     position: fixed;
@@ -169,6 +152,18 @@ main {
     width: calc(100% - 64px);
     box-sizing: border-box;
     z-index: 2;
+}
+
+/* the whole bar is slanted, so straighten its contents back up */
+.navbar > a,
+.navbar-socials-wrapper,
+.navbar-hamburger {
+    transform: skewX(12deg);
+}
+
+/* already inside the slanted bar, so drop the button's own slant to keep it parallel */
+.navbar .signup-button {
+    transform: none;
 }
 
 .navbar.menu-open .navbar-hamburger {
@@ -190,7 +185,7 @@ main {
     gap: 2vw;
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) skewX(12deg);
 }
 
 .navbar-logo {
@@ -686,7 +681,7 @@ main {
         right: 16px;
         top: 32px;
         width: auto;
-        transform: none;
+        transform: skewX(-12deg);
     }
 
     .navbar-menu {
@@ -720,21 +715,6 @@ main {
     .navbar-open-bottom {
         bottom: 16px;
     }
-}
-
-
-@keyframes fade {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.animate-fade {
-    animation: fade 0.5s ease-in-out;
 }
 
 .merch-page h1,

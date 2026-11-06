@@ -1,4 +1,5 @@
 import PageHero from "../_components/PageHero";
+import FadeIn from "../_components/FadeIn";
 import PhotoSlider from "../_components/PhotoSlider";
 import SponsorCard from "../_components/SponsorCard";
 import StandardButton from "../_components/StandardButton";
@@ -34,39 +35,48 @@ export default async function Sponsors() {
             </section>
 
             <section className="flex flex-col items-center gap-8 px-16 text-center max-[950px]:px-8">
-                <h2 className="font-syne text-[clamp(32px,3.5vw,64px)] leading-[1.1] scale-y-80 font-bold tracking-wider text-white uppercase">
-                    Why work with us?
-                </h2>
+                <FadeIn>
+                    <h2 className="font-syne text-[clamp(32px,3.5vw,64px)] leading-[1.1] scale-y-80 font-bold tracking-wider text-white uppercase">
+                        Why work with us?
+                    </h2>
+                </FadeIn>
 
-                <p className="font-syne max-w-190 text-[clamp(16px,1.2vw,20px)] leading-[1.6] font-normal text-white/85">
-                    Our events draw everyone from casual players to industry
-                    professionals. Sponsors get brand exposure across our
-                    broadcasts and socials, hands-on product placement at
-                    events, and access to students from every faculty. That
-                    makes us a strong recruiting channel as well as an
-                    advertising one.
-                </p>
+                <FadeIn delay={0.2}>
+                    <p className="font-syne max-w-190 text-[clamp(16px,1.2vw,20px)] leading-[1.6] font-normal text-white/85">
+                        Our events draw everyone from casual players to
+                        industry professionals. Sponsors get brand exposure
+                        across our broadcasts and socials, hands-on product
+                        placement at events, and access to students from every
+                        faculty. That makes us a strong recruiting channel as
+                        well as an advertising one.
+                    </p>
+                </FadeIn>
 
-                <StandardButton
-                    title="Learn More."
-                    color="lime"
-                    link="/AUEC-2026-Sponsorship-Deck.pdf"
-                    external
-                />
+                <FadeIn delay={0.4}>
+                    <StandardButton
+                        title="Learn More."
+                        color="lime"
+                        link="/AUEC-2026-Sponsorship-Deck.pdf"
+                        external
+                    />
+                </FadeIn>
             </section>
 
             <section className="flex flex-col items-center gap-10 px-16 max-[950px]:px-8">
-                <h2 className="font-syne text-center text-[clamp(28px,3vw,52px)] leading-[1.1] font-medium tracking-wider text-white uppercase">
-                    Our 2026 Community Partners
-                </h2>
+                <FadeIn>
+                    <h2 className="font-syne text-center text-[clamp(28px,3vw,52px)] leading-[1.1] font-medium tracking-wider text-white uppercase">
+                        Our 2026 Community Partners
+                    </h2>
+                </FadeIn>
 
                 <div className="grid w-full grid-cols-2 gap-2.5 md:gap-4 min-[950px]:grid-cols-3">
-                    {sponsors.map((sponsor) => (
-                        <SponsorCard
-                            key={sponsor.id}
-                            link={sponsor.link}
-                            img={sponsor.thumbnailPath}
-                        />
+                    {sponsors.map((sponsor, index) => (
+                        <FadeIn key={sponsor.id} delay={(index % 3) * 0.14}>
+                            <SponsorCard
+                                link={sponsor.link}
+                                img={sponsor.thumbnailPath}
+                            />
+                        </FadeIn>
                     ))}
                 </div>
             </section>
