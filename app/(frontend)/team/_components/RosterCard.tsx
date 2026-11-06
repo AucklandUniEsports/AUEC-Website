@@ -1,15 +1,24 @@
 import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
 import type { Exec } from "../_data/team";
 
 export function RosterCard({
     exec,
     stackedPosition,
+    delay,
 }: {
     exec: Exec;
     stackedPosition: number;
+    delay: number;
 }) {
+    const reduceMotion = useReducedMotion();
+
     return (
-        <article
+        <motion.article
+            initial={reduceMotion ? false : { opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, delay, ease: "easeOut" }}
             data-exec-card
             style={
                 { "--stacked-position": stackedPosition } as React.CSSProperties
@@ -37,6 +46,6 @@ export function RosterCard({
                     </p>
                 </div>
             </div>
-        </article>
+        </motion.article>
     );
 }

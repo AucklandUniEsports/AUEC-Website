@@ -15,41 +15,34 @@ export default function TeamSection() {
 
             <div className="absolute inset-0 bg-linear-to-b from-dark-purple to-black opacity-20" />
 
-            <FadeIn
-                variant="in"
-                triggerAt="0%"
-                className="pointer-events-none absolute top-1/2 left-[-20vw] w-[260vw] max-w-none -translate-y-1/2 md:left-1/2 md:w-[95%] md:-translate-x-1/2"
-            >
-                <Image
-                    src="/auec-outline.svg"
-                    alt=""
-                    width={837}
-                    height={234}
-                    className="h-auto w-full select-none opacity-30"
-                />
-            </FadeIn>
+            <div className="pointer-events-none absolute top-1/2 left-[-20vw] w-[260vw] max-w-none -translate-y-1/2 md:left-1/2 md:w-[95%] md:-translate-x-1/2">
+                <FadeIn>
+                    <Image
+                        src="/auec-outline.svg"
+                        alt=""
+                        width={837}
+                        height={234}
+                        className="h-auto w-full select-none opacity-30"
+                    />
+                </FadeIn>
+            </div>
 
             <div className="relative flex flex-col items-start gap-4 md:max-w-180 md:items-center md:gap-5 md:text-center">
-                <FadeIn
-                    as="h2"
-                    triggerAt="35%"
-                    className="font-syne scale-y-80 text-[36px] font-medium leading-[0.9] text-white md:text-[72px] md:leading-[1.3]"
-                >
-                    MEET THE TEAM.
+                <FadeIn>
+                    <h2 className="font-syne scale-y-80 text-[36px] font-medium leading-[0.9] text-white md:text-[72px] md:leading-[1.3]">
+                        MEET THE TEAM.
+                    </h2>
                 </FadeIn>
 
-                <FadeIn
-                    as="p"
-                    delay={0.15}
-                    triggerAt="35%"
-                    className="max-w-137.5 font-syne text-[13px] leading-[1.05] tracking-[0.9px] text-[#cfced2] md:text-[20px] md:leading-normal md:tracking-[0.7px]"
-                >
-                    The execs, game reps, broadcast crew and volunteers who keep
-                    AUEC running. Built by students, for students. Meet the
-                    people behind the matches.
+                <FadeIn delay={0.2}>
+                    <p className="max-w-137.5 font-syne text-[13px] leading-[1.05] tracking-[0.9px] text-[#cfced2] md:text-[20px] md:leading-normal md:tracking-[0.7px]">
+                        The execs, game reps, broadcast crew and volunteers who
+                        keep AUEC running. Built by students, for students. Meet
+                        the people behind the matches.
+                    </p>
                 </FadeIn>
 
-                <FadeIn delay={0.3} triggerAt="35%">
+                <FadeIn delay={0.4}>
                     <StandardButton
                         title="Learn More."
                         color="lime"

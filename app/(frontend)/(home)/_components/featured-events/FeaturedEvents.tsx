@@ -1,5 +1,6 @@
 import EventCard from "../../../events/_components/EventCard";
 import StandardButton from "../../../_components/StandardButton";
+import FadeIn from "../../../_components/FadeIn";
 
 interface FeaturedEventsProps {
     events: any[];
@@ -19,7 +20,9 @@ export default function FeaturedEvents({ events }: FeaturedEventsProps) {
             <div className="events-wrapper">
                 {events.length ? (
                     events.map((event, index) => (
-                        <EventCard event={event} key={index} />
+                        <FadeIn key={index} delay={(index % 3) * 0.16}>
+                            <EventCard event={event} />
+                        </FadeIn>
                     ))
                 ) : (
                     <p className="placeholder-text">

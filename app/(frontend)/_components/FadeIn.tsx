@@ -1,56 +1,49 @@
 "use client";
 
+import { useEffect, useRef, type ReactNode } from "react";
 import {
-    useEffect,
-    useRef,
-    useState,
-    type ElementType,
-    type ReactNode,
-} from "react";
+    motion,
+    useAnimation,
+    useInView,
+    useReducedMotion,
+} from "framer-motion";
 
 type FadeInProps = {
-    as?: ElementType;
-    variant?: "up" | "in";
-    delay?: number;
-    triggerAt?: string;
-    className?: string;
     children: ReactNode;
+    className?: string;
+    delay?: number;
 };
 
-export default function FadeIn({
-    as: Tag = "div",
-    variant = "up",
-    delay = 0,
-    triggerAt = "10%",
-    className = "",
-    children,
-}: FadeInProps) {
-    const ref = useRef<HTMLElement>(null);
-    const [visible, setVisible] = useState(false);
+export default function FadeIn({ children, className, delay }: FadeInProps) {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once: true });
+    const reduceMotion = useReducedMotion();
+
+    const mainControls = useAnimation();
 
     useEffect(() => {
-        const el = ref.current;
-        if (!el) return;
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { rootMargin: `0px 0px -${triggerAt} 0px` },
-        );
-        observer.observe(el);
-        return () => observer.disconnect();
-    }, [triggerAt]);
+        if (isInView) {
+            mainControls.start("visible");
+        }
+    }, [isInView, mainControls]);
 
     return (
-        <Tag
-            ref={ref}
-            className={`${visible ? (variant === "in" ? "animate-fade-in" : "animate-fade-up") : "opacity-0"} motion-reduce:animate-none motion-reduce:opacity-100 ${className}`}
-            style={{ animationDelay: `${delay}s` }}
-        >
-            {children}
-        </Tag>
+        <div ref={ref} className="relative">
+            <motion.div
+                className={`h-full ${className ?? ""}`}
+                variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0 },
+                }}
+                transition={{
+                    duration: 0.7,
+                    delay: delay,
+                }}
+                initial={reduceMotion ? "visible" : "hidden"}
+                animate={mainControls}
+            >
+                {children}
+            </motion.div>
+        </div>
     );
 }

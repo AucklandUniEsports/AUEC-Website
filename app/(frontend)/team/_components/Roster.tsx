@@ -30,13 +30,14 @@ export function Roster({ execs }: { execs: Exec[] }) {
 
             <div
                 ref={gridRef}
-                className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8 transition-opacity duration-500 starting:opacity-0"
+                className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8"
             >
-                {execs.map((exec) => (
+                {execs.map((exec, i) => (
                     <RosterCard
                         key={exec.name}
                         exec={exec}
                         stackedPosition={stacked.indexOf(exec)}
+                        delay={(i % 5) * 0.14}
                     />
                 ))}
             </div>
