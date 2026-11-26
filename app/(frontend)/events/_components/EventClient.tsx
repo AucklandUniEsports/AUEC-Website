@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EventCard from "./EventCard";
 import SearchBar from "./SearchBar";
+import FadeIn from "../../_components/FadeIn";
 
 interface Events {
     CategoriesOnEvents: {
@@ -30,7 +31,28 @@ interface Events {
     thumbnailPath: string;
 }
 
+// Matches the .events-wrapper column breakpoints in globals.css
+function getColumns() {
+    if (window.innerWidth < 950) return 1;
+    if (window.innerWidth < 1400) return 2;
+    return 3;
+}
+
 export default function EventClient({ events }: { events: Events[] }) {
+    const [columns, setColumns] = useState(3);
+
+    useEffect(() => {
+        const update = () => setColumns(getColumns());
+        update();
+        window.addEventListener("resize", update);
+        return () => window.removeEventListener("resize", update);
+    }, []);
+
+    const rowDelay = (index: number) => {
+        const row = Math.floor(index / columns);
+        return row < 3 ? row * 0.18 : 0;
+    };
+
     const [input, setInput] = useState("");
     const [suggestion, setSuggestion] = useState<Events[]>([]);
     const sortedEvents = [...events].sort(
@@ -71,7 +93,9 @@ export default function EventClient({ events }: { events: Events[] }) {
             ) : (
                 <div className="events-wrapper">
                     {sortedEvents.map((event, index) => (
-                        <EventCard event={event} key={index} />
+                        <FadeIn key={index} delay={rowDelay(index)}>
+                            <EventCard event={event} />
+                        </FadeIn>
                     ))}
                 </div>
             )}

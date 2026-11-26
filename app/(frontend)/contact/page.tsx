@@ -1,4 +1,5 @@
 import PageHero from "../_components/PageHero";
+import FadeIn from "../_components/FadeIn";
 import ContactForm from "./_components/ContactForm";
 import ContactDetail from "./_components/ContactDetail";
 import SocialMediaLinkBar from "../_components/SocialMediaLinkBar";
@@ -31,25 +32,28 @@ export default function Contact() {
             />
             <section className="flex flex-col gap-8 px-8 pt-12 pb-16 min-[950px]:px-16">
                 <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-stretch">
-                    <div className="sm:rounded-[5px] sm:bg-[#272727] sm:p-6 md:p-8">
+                    <div className="h-full sm:rounded-[5px] sm:bg-[#272727] sm:p-6 md:p-8">
                         <ContactForm />
                     </div>
 
                     <aside className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:flex lg:flex-col lg:*:flex-1">
-                        {ContactDetails.map((detail) => (
-                            <ContactDetail
-                                key={detail.label}
-                                label={detail.label}
-                                value={detail.value}
-                                link={detail.link}
-                            />
+                        {ContactDetails.map((detail, index) => (
+                            <FadeIn key={detail.label} delay={index * 0.35}>
+                                <ContactDetail
+                                    label={detail.label}
+                                    value={detail.value}
+                                    link={detail.link}
+                                />
+                            </FadeIn>
                         ))}
-                        <div className="flex flex-col justify-center gap-4 rounded-[5px] bg-[#272727] p-6">
-                            <p className="text-sm uppercase tracking-[1.2px] text-[#aaaaaa]">
-                                Socials
-                            </p>
-                            <SocialMediaLinkBar />
-                        </div>
+                        <FadeIn delay={ContactDetails.length * 0.35}>
+                            <div className="flex h-full flex-col justify-center gap-4 rounded-[5px] bg-[#272727] p-6">
+                                <p className="text-sm uppercase tracking-[1.2px] text-[#aaaaaa]">
+                                    Socials
+                                </p>
+                                <SocialMediaLinkBar />
+                            </div>
+                        </FadeIn>
                     </aside>
                 </div>
             </section>

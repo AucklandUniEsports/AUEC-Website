@@ -14,6 +14,7 @@ export function YearSwitcher({
             value={year}
             onChange={onChange}
             labelledBy="committee-year-label"
+            stagger={false}
         />
     );
 }

@@ -104,11 +104,7 @@ export default function Navbar() {
                         </div>
 
                         <StandardButton
-                            title={
-                                <em>
-                                    <strong>SIGN UP</strong>
-                                </em>
-                            }
+                            title={<em>SIGN UP.</em>}
                             color="lime"
                             link="https://docs.google.com/forms/d/e/1FAIpQLScOvsq5IQ-yDr0wx3xYN3ZNJkCz1mP4Kw8NZl6XQ_HSc8rswg/viewform"
                             external

@@ -9,7 +9,7 @@ export default function ContactDetail({ label, value, link }: ContactDetailProps
 
     return (
         <a
-            className="group flex items-center justify-between gap-4 rounded-[5px] bg-[#272727] p-6 transition-colors hover:bg-[#2f2f2f]"
+            className="group flex h-full items-center justify-between gap-4 rounded-[5px] bg-[#272727] p-6 transition-colors hover:bg-[#2f2f2f]"
             href={link}
             target={isExternal ? "_blank" : undefined}
             rel={isExternal ? "noopener noreferrer" : undefined}
